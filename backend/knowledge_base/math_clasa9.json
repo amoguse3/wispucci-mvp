@@ -1,0 +1,128 @@
+{
+  "subject": "math",
+  "name": "Matematică",
+  "authority": "ANCE Moldova, clasa 9, gimnaziu",
+  "exam_format": "Test unic 120 min. Itemi cu răspuns scurt (completare casete) și itemi cu rezolvare desfășurată. Punctaj parțial pe pași. Permis: pix albastru, creion, riglă, radieră. Se oferă anexă cu formule.",
+  "grading_notes": "Rezolvarea desfășurată se punctează pe pași: identificarea datelor, aplicarea formulei/algoritmului, calcul corect, răspuns final cu unitate. Chiar și cu răspuns final greșit, pașii corecți aduc puncte.",
+  "units": {
+    "multimi_numere": {
+      "title": "Mulțimi numerice (N, Z, Q, R)",
+      "summary": "Ierarhia N ⊂ Z ⊂ Q ⊂ R. Operații, ordinea operațiilor, modul, divizibilitate.",
+      "formulas": ["|a| = a dacă a≥0, −a dacă a<0", "a/b + c/d = (ad+bc)/(bd)", "C.M.M.D.C.(a,b) × C.M.M.M.C.(a,b) = a×b"],
+      "key_facts": ["Criterii divizibilitate: 2 (ultima cifră pară), 3 și 9 (suma cifrelor), 5 (0 sau 5), 10 (0).", "c.m.m.d.c. = factori primi comuni la puterea minimă; c.m.m.m.c. = toți factorii la puterea maximă.", "Numerele iraționale (√2, π) nu se scriu ca fracție."],
+      "terminology": ["divizor", "multiplu", "număr prim", "număr compus", "c.m.m.d.c.", "c.m.m.m.c.", "fracție ordinară", "modul"],
+      "worked_pattern": "Procente: creștere de la 8 la 9,2 mil. → (9,2−8)/8 × 100 = 15%.",
+      "common_mistakes": ["√(a+b) ≠ √a+√b", "Semne greșite la numere negative", "Ordinea operațiilor ignorată"],
+      "exam_notes": "Frecvent în probleme cu procente și cantități reale."
+    },
+    "radicali": {
+      "title": "Radicali (radical de ordinul 2)",
+      "summary": "Simplificare, scoatere de sub radical, raționalizarea numitorului.",
+      "formulas": ["√(a·b)=√a·√b", "√(a/b)=√a/√b", "√(a²)=|a|", "(√a)²=a", "1/√a = √a/a"],
+      "key_facts": ["Scoaterea de sub radical: cauți cel mai mare pătrat perfect factor. √72=√(36·2)=6√2.", "Raționalizare: amplifici cu radicalul (sau conjugata) din numitor."],
+      "terminology": ["radical", "radicand", "pătrat perfect", "raționalizare", "conjugată"],
+      "worked_pattern": "√48 = √(16·3) = 4√3 ; 6/√2 = 6√2/2 = 3√2",
+      "common_mistakes": ["Uitarea modulului la √(a²)", "Alegerea unui pătrat perfect care nu e cel mai mare"],
+      "exam_notes": "Item scurt clasic: simplificarea unei expresii cu radicali."
+    },
+    "puteri": {
+      "title": "Puteri cu exponent natural și întreg",
+      "summary": "Proprietățile puterilor, exponent negativ, notație științifică.",
+      "formulas": ["aⁿ·aᵐ=aⁿ⁺ᵐ", "aⁿ/aᵐ=aⁿ⁻ᵐ", "(aⁿ)ᵐ=aⁿᵐ", "(a·b)ⁿ=aⁿbⁿ", "a⁰=1", "a⁻ⁿ=1/aⁿ"],
+      "key_facts": ["(−2)⁴=16 (par → pozitiv); (−2)³=−8 (impar → negativ).", "−2⁴ = −16 (puterea se aplică înainte de semn)."],
+      "terminology": ["bază", "exponent", "putere", "notație științifică"],
+      "common_mistakes": ["Confundarea (−2)⁴ cu −2⁴", "Adunarea exponenților la înmulțirea bazelor diferite"],
+      "exam_notes": "Apare în calcule de expresii și în notație științifică."
+    },
+    "ecuatii_gr1": {
+      "title": "Ecuații de gradul I",
+      "summary": "ax+b=0, a≠0. Rezolvare, cazuri speciale, probleme aplicate.",
+      "formulas": ["x = −b/a"],
+      "key_facts": ["0·x=0 → infinitate de soluții; 0·x=c (c≠0) → imposibilă."],
+      "terminology": ["necunoscută", "coeficient", "termen liber"],
+      "worked_pattern": "5x−3=2x+9 → 3x=12 → x=4",
+      "common_mistakes": ["Uitarea schimbării semnului la mutare"],
+      "exam_notes": "Bază pentru transpunerea problemelor în limbaj matematic."
+    },
+    "ecuatii_gr2": {
+      "title": "Ecuații de gradul II",
+      "summary": "ax²+bx+c=0. Discriminant, formula soluțiilor, relațiile lui Viète.",
+      "formulas": ["Δ=b²−4ac", "x₁,₂=(−b±√Δ)/(2a)", "x₁+x₂=−b/a", "x₁·x₂=c/a"],
+      "key_facts": ["Δ>0: 2 soluții; Δ=0: soluție dublă; Δ<0: nicio soluție reală.", "Viète verifică soluțiile fără rezolvare completă."],
+      "terminology": ["discriminant", "soluție dublă", "relațiile lui Viète", "trinom de gradul II"],
+      "worked_pattern": "x²−5x+6=0 → Δ=25−24=1 → x=(5±1)/2 → x₁=3, x₂=2",
+      "common_mistakes": ["Semn greșit la b în Δ", "Uitarea lui ±"],
+      "exam_notes": "Item clasic cu rezolvare desfășurată."
+    },
+    "sisteme": {
+      "title": "Sisteme de ecuații liniare",
+      "summary": "Două ecuații, două necunoscute. Metode: substituție, reducere, grafic.",
+      "formulas": ["substituție", "reducere (eliminare)"],
+      "key_facts": ["O soluție: drepte concurente; nicio soluție: paralele; infinit: suprapuse."],
+      "terminology": ["sistem", "substituție", "reducere", "soluție a sistemului"],
+      "worked_pattern": "x+y=5, x−y=1 → adun: 2x=6 → x=3, y=2",
+      "common_mistakes": ["Greșeli de semn la reducere"],
+      "exam_notes": "Adesea din probleme aplicate (amestecuri, vârste)."
+    },
+    "inecuatii": {
+      "title": "Inecuații",
+      "summary": "Inecuații de gradul I și II. Regula schimbării sensului.",
+      "formulas": ["la ×/÷ cu număr negativ, semnul se inversează"],
+      "key_facts": ["Grad II: analizezi semnul trinomului pe intervale față de rădăcini."],
+      "terminology": ["inecuație", "interval de soluții", "semnul trinomului"],
+      "worked_pattern": "−3x+6≤0 → −3x≤−6 → x≥2",
+      "common_mistakes": ["Uitarea inversării semnului la număr negativ"],
+      "exam_notes": "Rezultatul se exprimă ca interval."
+    },
+    "functia_liniara": {
+      "title": "Funcția liniară",
+      "summary": "f(x)=ax+b. Grafic (dreaptă), zerou, monotonie, citirea graficului.",
+      "formulas": ["zeroul: x=−b/a", "panta = a", "ordonata la origine = b"],
+      "key_facts": ["a>0 crescătoare, a<0 descrescătoare, a=0 constantă."],
+      "terminology": ["pantă", "zeroul funcției", "ordonată la origine", "monotonie"],
+      "worked_pattern": "f(x)=−2x+6, zerou: −2x+6=0 → x=3",
+      "common_mistakes": ["Confundarea pantei cu ordonata"],
+      "exam_notes": "Adesea cu citirea unui grafic dat."
+    },
+    "functia_patratica": {
+      "title": "Funcția pătratică",
+      "summary": "f(x)=ax²+bx+c. Parabolă, vârf, axă de simetrie, intersecții cu axele.",
+      "formulas": ["xᵥ=−b/(2a)", "yᵥ=−Δ/(4a)", "axa de simetrie: x=−b/(2a)"],
+      "key_facts": ["a>0: minim (brațe sus); a<0: maxim (brațe jos).", "Intersecția cu Ox: rezolvi ax²+bx+c=0."],
+      "terminology": ["parabolă", "vârf", "axă de simetrie", "minim", "maxim"],
+      "worked_pattern": "y=x²−4x+3, xᵥ=4/2=2, yᵥ=f(2)=−1",
+      "common_mistakes": ["Confundarea semnului lui a cu direcția"],
+      "exam_notes": "Vârful și zerourile sunt itemi frecvenți."
+    },
+    "triunghi": {
+      "title": "Triunghiul",
+      "summary": "Proprietăți, teorema lui Pitagora, arii, linii importante.",
+      "formulas": ["a²+b²=c² (dreptunghic)", "Arie=b·h/2", "suma unghiurilor=180°"],
+      "key_facts": ["Ipotenuza e opusă unghiului drept, cea mai lungă.", "Mediană/bisectoare/înălțime/mediatoare: definiții distincte."],
+      "terminology": ["ipotenuză", "catetă", "mediană", "bisectoare", "înălțime", "mediatoare"],
+      "worked_pattern": "catete 6 și 8 → ipotenuza=√(36+64)=10",
+      "common_mistakes": ["Pitagora aplicat în triunghi nedreptunghic"],
+      "exam_notes": "De obicei cu figură și rezolvare desfășurată."
+    },
+    "patrulatere": {
+      "title": "Patrulatere",
+      "summary": "Paralelogram, dreptunghi, romb, pătrat, trapez. Proprietăți și arii.",
+      "formulas": ["Arie trapez=(B+b)·h/2", "Linia mijlocie=(B+b)/2", "suma unghiurilor=360°"],
+      "key_facts": ["Romb: diagonale perpendiculare. Dreptunghi: diagonale egale. Pătrat: ambele."],
+      "terminology": ["paralelogram", "romb", "trapez", "linie mijlocie", "diagonală"],
+      "worked_pattern": "trapez B=10, b=6, h=4 → Arie=(16)·4/2=32",
+      "common_mistakes": ["Confundarea proprietăților rombului cu dreptunghiul"],
+      "exam_notes": "Arii și proprietăți ale diagonalelor."
+    },
+    "cerc": {
+      "title": "Cercul",
+      "summary": "Lungime, arie, unghi central/înscris, tangentă.",
+      "formulas": ["L=2πr", "Arie disc=πr²", "unghi înscris=½ arc"],
+      "key_facts": ["Unghi înscris în semicerc=90°. Tangenta ⊥ pe rază în punctul de contact."],
+      "terminology": ["rază", "diametru", "coardă", "arc", "unghi central", "unghi înscris", "tangentă"],
+      "worked_pattern": "r=7 → Arie=49π ≈ 153,9",
+      "common_mistakes": ["Confundarea unghiului central cu cel înscris"],
+      "exam_notes": "Formulele de lungime/arie sunt în anexă."
+    }
+  }
+}
