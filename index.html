@@ -50,6 +50,7 @@
       <p class="lead anim-in">Wispucci te ghidează prin fiecare temă de examen. Matematică, Istorie, Limba Română — pas cu pas, la ritmul tău.</p>
       <div class="welcome-actions anim-in">
         <button class="btn btn-primary" id="startBtn">Începe pregătirea</button>
+        <button class="btn-back" id="showAuthBtn" style="margin-top:8px;">am deja cont / creează cont</button>
         <p class="welcome-footnote">Clasa 9 · Examenele naționale · Moldova 🇲🇩</p>
       </div>
     </div>
@@ -77,9 +78,7 @@
         <button class="btn-back" id="backToSubjects">← Înapoi</button>
         <h2 class="h1" id="topicsTitle">Matematică</h2>
         <p class="lead" id="topicsSubtitle">Alege un capitol din programa de examen.</p>
-      </div>
-      <div style="text-align:center;margin-bottom:20px;">
-        <button class="btn btn-exam" id="startExamBtn">🎯 Simulare examen</button>
+        <button class="btn btn-primary btn-sm" id="examSimBtn" style="margin-top:16px;height:40px;">🎯 Simulare examen</button>
       </div>
       <div class="topics-list" id="topicsList"></div>
     </div>
@@ -110,14 +109,10 @@
 </section>
 
 <!-- ===== EXAM SIMULATION ===== -->
-<section class="view" data-view="exam">
+<section class="view" data-view="exam" id="examView">
   <div class="page-center">
-    <div class="page-inner" style="max-width:680px;">
-      <div class="page-header">
-        <button class="btn-back" id="examBackBtn">← Înapoi</button>
-        <h2 class="h1">🎯 Simulare examen</h2>
-        <p class="lead" id="examSubtitle">Format identic cu examenul național.</p>
-      </div>
+    <div class="page-inner" style="max-width:720px;">
+      <button class="btn-back" id="examBackBtn">← Înapoi</button>
       <div id="examBody"></div>
     </div>
   </div>
@@ -129,7 +124,7 @@
     <div class="page-inner" style="max-width:600px;">
       <div class="page-header">
         <h2 class="h1">🔄 Repetă ce ai învățat</h2>
-        <p class="lead">Verifică cât ai reținut din lecțiile anterioare.</p>
+        <p class="lead">E timpul să verifici cât ai reținut din lecțiile anterioare.</p>
       </div>
       <div id="reviewBody"></div>
     </div>
@@ -146,7 +141,7 @@
         <div class="stat-card"><p class="stat-val" id="statQuizzes">0</p><p class="stat-label">Teste</p></div>
         <div class="stat-card"><p class="stat-val" id="statAccuracy">—</p><p class="stat-label">Acuratețe</p></div>
       </div>
-      <p class="small muted" style="margin-bottom:10px;">Streak <span id="streakInfo" class="streak-info"></span></p>
+      <p class="small muted" style="margin-bottom:10px;">Streak</p>
       <div class="streak-row" id="streakRow"></div>
       <p class="small muted" style="margin:24px 0 10px;">Progres pe materii</p>
       <div id="subjectProgress"></div>
@@ -154,9 +149,20 @@
   </div>
 </section>
 
-<!-- ===== EXPLAIN POPOVER ===== -->
-<div class="explain-popover" id="explainPopover">
-  <button class="explain-btn" id="explainBtn">✨ Explică-mi mai simplu</button>
+<!-- ===== AUTH MODAL ===== -->
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-modal">
+    <button class="auth-close" id="authClose">✕</button>
+    <h3 class="h1" id="authTitle" style="font-size:1.4rem;margin-bottom:16px;">Creează cont</h3>
+    <div id="authNameWrap">
+      <input class="auth-input" id="authName" placeholder="cum te cheamă (apare în clasament)">
+    </div>
+    <input class="auth-input" id="authEmail" type="email" placeholder="email">
+    <input class="auth-input" id="authPassword" type="password" placeholder="parolă">
+    <p class="auth-error" id="authError"></p>
+    <button class="btn btn-primary" id="authSubmit" style="width:100%;margin-top:8px;">Salvează contul</button>
+    <p class="small muted" style="text-align:center;margin-top:12px;cursor:pointer;" id="authToggle">Ai deja cont? Intră</p>
+  </div>
 </div>
 
 <!-- ===== BOTTOM NAV ===== -->
@@ -175,8 +181,10 @@
   </button>
 </nav>
 
-<script src="curriculum.js"></script>
 <script src="api.js"></script>
+<script src="curriculum.js"></script>
 <script src="app.js"></script>
+<script src="features.js"></script>
+<script src="integrations.js"></script>
 </body>
 </html>
