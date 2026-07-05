@@ -2,10 +2,16 @@
 
 Handles: lesson generation, adaptive re-explanation, contextual Q&A,
 and exam question generation in the ANCE format.
+
+Every generation is GROUNDED in the Moldova ANCE grade-9 knowledge base
+(see knowledge.py + knowledge_base/ance_clasa9.json), so lessons use the
+exact official facts, formulas, terminology and exam format instead of the
+model's general knowledge.
 """
 import json
 from anthropic import AsyncAnthropic
 from config import settings
+from knowledge import kb_context
 
 client = AsyncAnthropic(api_key=settings.anthropic_api_key) if settings.anthropic_api_key else None
 MODEL = "claude-3-5-sonnet-20241022"
@@ -15,8 +21,17 @@ TUTOR_SYSTEM = (
     "care se pregătesc pentru examenele naționale de absolvire a gimnaziului (ANCE). "
     "Predai în limba română, clar și pas cu pas. Nu dai răspunsul de-a gata: ghidezi elevul "
     "să înțeleagă. Folosești exemple concrete, analogii simple și un ton cald, încurajator. "
-    "Eviți jargonul inutil. Când elevul greșește, explici ALTFEL, nu repeți la fel."
+    "Eviți jargonul inutil. Când elevul greșește, explici ALTFEL, nu repeți la fel. "
+    "REGULĂ IMPORTANTĂ: când primești un bloc 'CONTEXT OFICIAL (ANCE Moldova)', "
+    "folosești STRICT faptele, formulele, datele și terminologia de acolo. Ele au "
+    "prioritate față de cunoștințele tale generale, fiindcă reflectă exact programa de examen."
 )
+
+
+def _with_context(subject: str, topic_title: str, prompt: str) -> str:
+    """Prepend the Moldova ANCE grounding block to a prompt when available."""
+    ctx = kb_context(subject, topic_title)
+    return f"{ctx}\n\n{prompt}" if ctx else prompt
 
 
 async def generate_lesson(subject: str, topic_title: str, level: int) -> dict:
@@ -30,23 +45,23 @@ async def generate_lesson(subject: str, topic_title: str, level: int) -> dict:
         f"nivel {level_name}, conform programei ANCE clasa 9.\n\n"
         "Răspunde DOAR cu JSON valid în această structură:\n"
         "{\n"
-        '  "content_html": "<h2>...</h2><p>...</p> (folosește h2, h3, p, span.formula, div.note)",\n'
+        '  "content_html": "...... (folosește h2, h3, p, span.formula, div.note)",\n'
         '  "quiz": [\n'
         '    {"q": "întrebare", "opts": ["a","b","c","d"], "correct": 0, "explanation": "de ce"}\n'
         "  ]\n"
         "}\n"
         "Lecția: scurtă (2-4 paragrafe), 1-2 formule/note cheie, 2 întrebări quiz. "
-        "Formulele în span class='formula'. Notele importante în div class='note' cu <strong>."
+        "Formulele în span class='formula'. Notele importante în div class='note'."
     )
     msg = await client.messages.create(
         model=MODEL, max_tokens=2000, system=TUTOR_SYSTEM,
-        messages=[{"role": "user", "content": prompt}],
+        messages=[{"role": "user", "content": _with_context(subject, topic_title, prompt)}],
     )
     text = msg.content[0].text.strip()
     return _parse_json(text, fallback=_fallback_lesson(topic_title))
 
 
-async def reexplain(topic_title: str, section: str, prior_attempt: str = "") -> str:
+async def reexplain(topic_title: str, section: str, prior_attempt: str = "", subject: str = "") -> str:
     """Re-explain a section differently when the student is stuck."""
     if client is None:
         return "Backend AI neconfigurat. Adaugă ANTHROPIC_API_KEY în .env."
@@ -58,12 +73,12 @@ async def reexplain(topic_title: str, section: str, prior_attempt: str = "") -> 
     prompt += "Explică ALTFEL, mai simplu, cu un exemplu concret. Max 3 propoziții."
     msg = await client.messages.create(
         model=MODEL, max_tokens=400, system=TUTOR_SYSTEM,
-        messages=[{"role": "user", "content": prompt}],
+        messages=[{"role": "user", "content": _with_context(subject, topic_title, prompt)}],
     )
     return msg.content[0].text.strip()
 
 
-async def answer_question(topic_title: str, lesson_context: str, question: str) -> str:
+async def answer_question(topic_title: str, lesson_context: str, question: str, subject: str = "") -> str:
     """Answer a student's contextual question about the current lesson."""
     if client is None:
         return "Backend AI neconfigurat. Adaugă ANTHROPIC_API_KEY în .env."
@@ -74,7 +89,7 @@ async def answer_question(topic_title: str, lesson_context: str, question: str) 
     )
     msg = await client.messages.create(
         model=MODEL, max_tokens=500, system=TUTOR_SYSTEM,
-        messages=[{"role": "user", "content": prompt}],
+        messages=[{"role": "user", "content": _with_context(subject, topic_title, prompt)}],
     )
     return msg.content[0].text.strip()
 
@@ -83,6 +98,8 @@ async def generate_exam(subject: str, topics: list[str], num_questions: int = 10
     """Generate a full exam simulation in ANCE format from covered topics."""
     if client is None:
         return {"questions": _fallback_exam()}
+    # Ground on the whole subject (join per-topic context blocks).
+    ctx_blocks = "\n\n".join(filter(None, (kb_context(subject, t) for t in topics)))
     prompt = (
         f"Generează o simulare de examen ANCE clasa 9 la {subject}, {num_questions} întrebări, "
         f"acoperind temele: {', '.join(topics)}.\n"
@@ -90,6 +107,8 @@ async def generate_exam(subject: str, topics: list[str], num_questions: int = 10
         '{"questions": [{"q":"...","opts":["a","b","c","d"],"correct":0,"points":1,"topic":"..."}]}\n'
         "Dificultate progresivă. Include punctaj (1-3 puncte per item)."
     )
+    if ctx_blocks:
+        prompt = f"{ctx_blocks}\n\n{prompt}"
     msg = await client.messages.create(
         model=MODEL, max_tokens=3000, system=TUTOR_SYSTEM,
         messages=[{"role": "user", "content": prompt}],
@@ -109,7 +128,6 @@ async def generate_mnemonic(fact: str) -> str:
 
 
 def _parse_json(text: str, fallback: dict) -> dict:
-    # Strip markdown code fences if present
     if text.startswith("```"):
         text = text.split("```", 2)[1]
         if text.startswith("json"):
