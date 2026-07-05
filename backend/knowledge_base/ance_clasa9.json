@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "country": "Moldova",
+    "level": "gimnaziu",
+    "grade": 9,
+    "authority": "ANCE — Agenția Națională pentru Curriculum și Evaluare",
+    "source": "https://ance.gov.md/clasa-sesiunea-examen/clasa-9",
+    "exam_duration_min": 120,
+    "language": "ro",
+    "note": "Grounding knowledge base. The AI tutor MUST prefer facts, terminology and formulas from here over its parametric knowledge, so lessons match the official Moldovan exam program exactly."
+  },
+  "subjects": {
+    "math": {
+      "name": "Matematică",
+      "exam_format": "Test unic, 120 min. Itemi cu răspuns scurt și rezolvare desfășurată. Punctaj parțial pe pași. Sunt permise: pix albastru, creion, riglă, radieră. Anexă cu formule oferită.",
+      "competences": [
+        "Operarea cu numere reale în diverse contexte",
+        "Exprimarea în limbaj matematic a unui demers/soluții",
+        "Aplicarea raționamentului la rezolvarea problemelor",
+        "Explorarea noțiunilor și instrumentelor geometrice",
+        "Justificarea unui demers sau rezultat matematic"
+      ],
+      "units": {
+        "numere_reale": {
+          "title": "Numere reale și radicali",
+          "summary": "Mulțimea R = Q ∪ (numere iraționale). Operații, modul, puteri, radicali de ordinul 2.",
+          "formulas": ["√(a·b)=√a·√b", "√(a/b)=√a/√b", "√(a²)=|a|", "(√a)²=a", "aⁿ·aᵐ=aⁿ⁺ᵐ", "(aⁿ)ᵐ=aⁿᵐ"],
+          "key_facts": ["Scoaterea de sub radical se face folosind cel mai mare pătrat perfect factor.", "Raționalizarea numitorului: se amplifică fracția cu radicalul din numitor.", "Modulul e mereu ≥ 0."],
+          "terminology": ["radical", "radicand", "pătrat perfect", "raționalizare", "număr irațional", "modul"],
+          "common_mistakes": ["√(a+b) ≠ √a+√b (eroare frecventă!)", "Uitarea modulului la √(a²).", "Confundarea (−2)⁴ cu −2⁴."],
+          "exam_notes": "Apare des ca item cu răspuns scurt: simplificarea unei expresii cu radicali."
+        },
+        "numere_intregi_rationale": {
+          "title": "Numere întregi și raționale",
+          "summary": "Mulțimile Z și Q. Operații, ordinea operațiilor, module, puteri, divizibilitate (criterii cu 2,3,5,9,10), c.m.m.d.c./c.m.m.m.c.",
+          "formulas": ["a/b + c/d = (ad+bc)/(bd)", "a/b · c/d = ac/(bd)", "C.M.M.D.C. × C.M.M.M.C. = a × b"],
+          "key_facts": ["Criteriul cu 3 și 9: suma cifrelor.", "La descompunere în factori primi: c.m.m.d.c. = factori comuni la puterea minimă; c.m.m.m.c. = toți factorii la puterea maximă."],
+          "terminology": ["divizor", "multiplu", "număr prim", "factor", "c.m.m.d.c.", "c.m.m.m.c.", "fracție ordinară"],
+          "common_mistakes": ["Greșeli de semn la înmulțirea numerelor negative.", "Ordinea operațiilor ignorată."],
+          "exam_notes": "Frecvent în probleme aplicate (procente, cantități)."
+        },
+        "ecuatii_gr1": {
+          "title": "Ecuații de gradul I",
+          "summary": "ax + b = 0, a≠0. Soluția x = −b/a. Cazuri speciale: identitate / imposibilă.",
+          "formulas": ["x = −b/a"],
+          "key_facts": ["0·x=0 → infinitate de soluții; 0·x=c (c≠0) → nicio soluție."],
+          "terminology": ["necunoscută", "coeficient", "termen liber", "soluție"],
+          "common_mistakes": ["Uitarea schimbării semnului la mutarea termenilor."],
+          "exam_notes": "Bază pentru probleme aplicate (transpunere în limbaj matematic)."
+        },
+        "ecuatii_gr2": {
+          "title": "Ecuații de gradul II",
+          "summary": "ax² + bx + c = 0, a≠0. Discriminant Δ = b²−4ac. Relațiile lui Viète.",
+          "formulas": ["Δ = b² − 4ac", "x₁,₂ = (−b ± √Δ)/(2a)", "x₁+x₂ = −b/a", "x₁·x₂ = c/a"],
+          "key_facts": ["Δ>0: două soluții reale; Δ=0: o soluție dublă; Δ<0: nicio soluție reală.", "Viète util pentru verificare fără rezolvare completă."],
+          "terminology": ["discriminant", "soluție dublă", "relațiile lui Viète", "trinom"],
+          "common_mistakes": ["Greșirea semnului lui b în discriminant.", "Uitarea lui ± la radical."],
+          "exam_notes": "Item clasic cu rezolvare desfășurată."
+        },
+        "functii": {
+          "title": "Funcții (liniară și pătratică)",
+          "summary": "f(x)=ax+b (dreaptă) și f(x)=ax²+bx+c (parabolă). Zerouri, monotonie, vârf.",
+          "formulas": ["zeroul funcției liniare: x=−b/a", "vârf parabolă: xᵥ=−b/(2a), yᵥ=−Δ/(4a)"],
+          "key_facts": ["a>0: liniară crescătoare / parabolă cu minim. a<0: descrescătoare / parabolă cu maxim.", "b din f(x)=ax+b = ordonata la origine."],
+          "terminology": ["zeroul funcției", "monotonie", "vârful parabolei", "axă de simetrie", "ordonată la origine"],
+          "common_mistakes": ["Confundarea semnului lui a cu direcția parabolei."],
+          "exam_notes": "Adesea cu citirea graficului dintr-un desen."
+        },
+        "geometrie": {
+          "title": "Geometrie (triunghi, patrulater, cerc)",
+          "summary": "Teorema lui Pitagora, arii, proprietăți ale patrulaterelor, elemente ale cercului.",
+          "formulas": ["Pitagora: a²+b²=c²", "Arie triunghi = b·h/2", "Arie trapez = (B+b)·h/2", "L cerc = 2πr", "Arie disc = πr²"],
+          "key_facts": ["Suma unghiurilor: triunghi 180°, patrulater 360°.", "Unghi înscris în semicerc = 90°.", "Ipotenuza e opusă unghiului drept, cea mai lungă latură."],
+          "terminology": ["ipotenuză", "catetă", "mediană", "bisectoare", "înălțime", "mediatoare", "unghi înscris", "tangentă"],
+          "common_mistakes": ["Confundarea ipotenuzei cu o catetă.", "Aplicarea Pitagora în triunghi nedreptunghic."],
+          "exam_notes": "De obicei item cu figură și rezolvare desfășurată."
+        }
+      }
+    },
+    "history": {
+      "name": "Istoria românilor și universală",
+      "exam_format": "120 min. Subiectul I: studiu de surse (imagini/texte). Cerințe de identificare, argumentare și determinare a importanței. Punctaj pe argumentare.",
+      "competences": ["Analiza surselor istorice", "Argumentarea unui punct de vedere", "Situarea evenimentelor în timp și spațiu"],
+      "units": {
+        "formare_popor": {
+          "title": "Formarea poporului român",
+          "summary": "Romanizarea dacilor după cucerirea romană. Sinteza daco-romană și creștinarea.",
+          "key_facts": ["106 d.Hr.: Traian cucerește Dacia, devine provincie romană.", "271: retragerea aureliană.", "Româna e singura limbă latină din sud-estul Europei (≈80% fond latin)."],
+          "dates": {"106 d.Hr.": "Cucerirea Daciei de Traian", "271": "Retragerea aureliană"},
+          "terminology": ["romanizare", "sinteză daco-romană", "provincie", "colonizare"],
+          "common_mistakes": ["Confundarea anului cuceririi (106) cu retragerea (271)."],
+          "exam_notes": "Poate apărea ca sursă-imagine (Columna lui Traian)."
+        },
+        "evul_mediu": {
+          "title": "Țările Române în Evul Mediu",
+          "summary": "Formarea Țării Românești, Moldovei, Transilvaniei. Domnitori importanți.",
+          "key_facts": ["~1310: Basarab I (Țara Românească); Posada 1330 contra Ungariei.", "~1359: Bogdan I descalecă, Moldova.", "Ștefan cel Mare (1457-1504): Vaslui 1475."],
+          "dates": {"1330": "Bătălia de la Posada", "1359": "Întemeierea Moldovei (Bogdan I)", "1457-1504": "Domnia lui Ștefan cel Mare", "1475": "Victoria de la Vaslui"},
+          "terminology": ["voievod", "domn", "descălecat", "suzeranitate", "autonomie"],
+          "common_mistakes": ["Confundarea întemeietorilor celor două țări (Basarab vs Bogdan)."],
+          "exam_notes": "Frecvent cu personalități și datarea domniilor."
+        },
+        "epoca_moderna": {
+          "title": "Epoca modernă (1848, 1859, 1877)",
+          "summary": "Revoluția de la 1848, Unirea Principatelor 1859, reformele lui Cuza, Independența 1877.",
+          "key_facts": ["1848: Proclamația de la Islaz; Adunarea de la Blaj (Câmpia Libertății).", "24 ianuarie 1859: dubla alegere a lui Cuza = Unirea Principatelor.", "Reforme Cuza: agrară 1864, secularizarea 1863, instrucțiunea publică 1864.", "1877: Independența României."],
+          "dates": {"1848": "Revoluția (Islaz, Blaj)", "24 ianuarie 1859": "Unirea Principatelor", "1863": "Secularizarea averilor mănăstirești", "1864": "Reforma agrară și legea instrucțiunii", "9 mai 1877": "Independența"},
+          "terminology": ["proclamație", "unionism", "secularizare", "reformă agrară", "împroprietărire"],
+          "common_mistakes": ["Confundarea anului Unirii (1859) cu Independența (1877) sau Marea Unire (1918)."],
+          "exam_notes": "Argumentare pe importanța Unirii sau a reformelor."
+        },
+        "secolul_xx": {
+          "title": "Secolul XX (1918, WWII, 1991)",
+          "summary": "Marea Unire 1918, Al Doilea Război Mondial, independența R. Moldova 1991.",
+          "key_facts": ["27 martie 1918: Unirea Basarabiei (Sfatul Țării).", "28 noiembrie 1918: Bucovina. 1 decembrie 1918: Transilvania (Alba Iulia).", "1940: pactul Ribbentrop-Molotov → pierderea Basarabiei. 23 august 1944: România trece la Aliați.", "Conferințe: Teheran 1943, Ialta 1945, Potsdam 1945.", "27 august 1991: independența Republicii Moldova."],
+          "dates": {"27 martie 1918": "Unirea Basarabiei", "1 decembrie 1918": "Marea Unire (Alba Iulia)", "23 august 1944": "România trece de partea Aliaților", "27 august 1991": "Independența R. Moldova"},
+          "terminology": ["Sfatul Țării", "autodeterminare", "pact", "conferință interaliată", "suveranitate"],
+          "common_mistakes": ["Confundarea celor trei date ale unirilor din 1918.", "Confundarea suveranității (1990) cu independența (1991)."],
+          "exam_notes": "Item cheie pentru Moldova: independența 1991 și contextul URSS."
+        }
+      }
+    },
+    "romana": {
+      "name": "Limba și literatura română",
+      "exam_format": "120 min. Înțelegerea textului, elemente de limbă (fonetică, morfologie, sintaxă) și redactare/compoziție. Punctaj pe corectitudine și coerență.",
+      "competences": ["Înțelegerea textului literar și nonliterar", "Aplicarea normelor limbii", "Redactarea coerentă"],
+      "units": {
+        "fonetica": {
+          "title": "Fonetică",
+          "summary": "Sunete, litere, silabe, diftong, triftong, hiat, accent.",
+          "key_facts": ["Diftong: 2 vocale în aceeași silabă. Triftong: 3. Hiat: vocale alăturate în silabe diferite.", "31 de litere în alfabetul român."],
+          "terminology": ["vocală", "consoană", "diftong", "triftong", "hiat", "silabă", "accent"],
+          "common_mistakes": ["Confundarea hiatului cu diftongul (ex: po-e-zi-e are hiat)."],
+          "exam_notes": "Item scurt: despărțirea în silabe, identificarea diftong/hiat."
+        },
+        "vocabular": {
+          "title": "Vocabular",
+          "summary": "Sinonime, antonime, omonime, paronime; derivare, compunere.",
+          "key_facts": ["Paronime: formă apropiată, sens diferit (eminent/iminent).", "Derivare cu prefixe/sufixe; compunere din cuvinte întregi."],
+          "terminology": ["sinonim", "antonim", "omonim", "paronim", "derivare", "prefix", "sufix", "compunere"],
+          "common_mistakes": ["Confundarea omonimelor cu paronimele."],
+          "exam_notes": "Apare în cerințe de sens al cuvintelor din text."
+        },
+        "morfologie": {
+          "title": "Morfologie",
+          "summary": "Părți de vorbire flexibile (substantiv, adjectiv, pronume, numeral, verb) și neflexibile (adverb, prepoziție, conjuncție, interjecție).",
+          "key_facts": ["Moduri personale: indicativ, conjunctiv, condițional-optativ, imperativ.", "Moduri nepersonale: infinitiv, gerunziu, participiu, supin.", "Conjuncții subordonatoare: că, dacă, deși, fiindcă, deoarece."],
+          "terminology": ["parte de vorbire", "gen", "număr", "caz", "mod", "timp", "conjugare", "declinare"],
+          "common_mistakes": ["Confundarea modurilor personale cu cele nepersonale."],
+          "exam_notes": "Item de identificare a părții de vorbire dintr-un text dat."
+        },
+        "sintaxa": {
+          "title": "Sintaxă",
+          "summary": "Părți de propoziție (subiect, predicat, atribut, complement) și tipuri de propoziții.",
+          "key_facts": ["Subiect: cine? ce? Predicat: ce face? ce este?", "Complement direct: pe cine? ce?", "Atribut: care? ce fel de? al cui?"],
+          "terminology": ["subiect", "predicat", "atribut", "complement direct", "complement indirect", "complement circumstanțial"],
+          "common_mistakes": ["Confundarea complementului direct cu cel indirect."],
+          "exam_notes": "Analiză sintactică a unei propoziții din text."
+        }
+      }
+    }
+  }
+}
