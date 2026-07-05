@@ -3,188 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wispucci — AI Tutor pentru Examenele de Clasa 9</title>
+<title>Wispucci — Tutor AI pentru Examene</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<canvas class="embers-canvas" id="embers"></canvas>
-<div class="aurora"></div>
-
-<div class="country-clock" id="countryClock">
-  <span>🇲🇩</span>
-  <span id="clock">--:--</span>
+<canvas class="bg-canvas" id="bg"></canvas>
+<div class="bg-aurora"></div>
+<div id="orbLayer">
+  <div class="orb is-happy" id="orb">
+    <div class="orb-glow"></div>
+    <div class="orb-halo"></div>
+    <div class="orb-core"></div>
+    <div class="orb-shine"></div>
+    <svg class="orb-face" viewBox="0 0 100 100">
+      <g class="face-brows">
+        <path class="brow brow-l" d="M 30 38 Q 38 34 46 38"/>
+        <path class="brow brow-r" d="M 54 38 Q 62 34 70 38"/>
+      </g>
+      <g class="face-eyes">
+        <ellipse class="eye eye-l" cx="38" cy="48" rx="5" ry="6"/>
+        <ellipse class="eye eye-r" cx="62" cy="48" rx="5" ry="6"/>
+        <circle class="eye-shine" cx="36" cy="45" r="2"/>
+        <circle class="eye-shine" cx="60" cy="45" r="2"/>
+      </g>
+      <path class="mouth" d="M 40 62 Q 50 68 60 62"/>
+      <ellipse class="cheek cheek-l" cx="30" cy="58" rx="5" ry="3"/>
+      <ellipse class="cheek cheek-r" cx="70" cy="58" rx="5" ry="3"/>
+    </svg>
+  </div>
 </div>
-
-<!-- ===== WELCOME ===== -->
-<section class="view is-active" data-view="welcome">
-  <div class="welcome-center">
-    <div class="welcome-content">
-      <div class="orb-wrap" data-orb-host="welcome">
-        <div class="orb" id="theOrb">
-          <div class="orb-glow"></div>
-          <div class="orb-halo halo-1"></div>
-          <div class="orb-halo halo-2"></div>
-          <div class="orb-core"></div>
-          <div class="orb-shine"></div>
-          <svg class="orb-face" viewBox="0 0 100 100">
-            <g class="face-brows">
-              <path class="brow brow-l" d="M 30 38 Q 38 34 46 38"/>
-              <path class="brow brow-r" d="M 54 38 Q 62 34 70 38"/>
-            </g>
-            <g class="face-eyes">
-              <ellipse class="eye eye-l" cx="38" cy="48" rx="5" ry="6"/>
-              <ellipse class="eye eye-r" cx="62" cy="48" rx="5" ry="6"/>
-              <circle class="eye-shine" cx="36" cy="45" r="2"/>
-              <circle class="eye-shine" cx="60" cy="45" r="2"/>
-            </g>
-            <path class="mouth" d="M 40 62 Q 50 68 60 62"/>
-            <ellipse class="cheek cheek-l" cx="30" cy="58" rx="5" ry="3"/>
-            <ellipse class="cheek cheek-r" cx="70" cy="58" rx="5" ry="3"/>
-          </svg>
-        </div>
-      </div>
-      <h1 class="display anim-in">Pregătește-te pentru <em>examene</em></h1>
-      <p class="lead anim-in">Wispucci te ghidează prin fiecare temă de examen. Matematică, Istorie, Limba Română — pas cu pas, la ritmul tău.</p>
-      <div class="welcome-actions anim-in">
-        <button class="btn btn-primary" id="startBtn">Începe pregătirea</button>
-        <button class="btn-back" id="showAuthBtn" style="margin-top:8px;">am deja cont / creează cont</button>
-        <p class="welcome-footnote">Clasa 9 · Examenele naționale · Moldova 🇲🇩</p>
-      </div>
+<div id="orbSpeech"></div>
+<section class="screen landing is-active" data-screen="landing">
+  <nav class="landing-nav">
+    <div class="brand"><span class="brand-dot"></span> Wispucci</div>
+    <div class="landing-nav-actions">
+      <span class="landing-clock">MD <span id="clock">--:--</span></span>
+      <button class="btn-glass btn-sm" id="loginTop">Intra</button>
+    </div>
+  </nav>
+  <div class="landing-hero">
+    <p class="hero-eyebrow">Tutor AI - Examenele Nationale - Clasa 9</p>
+    <h1 class="display">Nu doar testezi. <em>Inveti.</em></h1>
+    <p class="lead">Te trec prin fiecare tema pas cu pas, verific ce ai inteles si revin la ce ai uitat, cu variante tot mai grele ca sa ramana in cap.</p>
+    <button class="btn btn-primary" id="tryNow">Incearca acum, fara cont</button>
+    <p class="hero-note">2 minute si vezi cum functioneaza. Cont doar daca vrei sa salvezi progresul.</p>
+  </div>
+  <div class="exam-section">
+    <div class="exam-section-title">
+      <h2 class="h1">Alege examenul</h2>
+      <p class="lead" style="margin-top:8px;">Conform programei oficiale ANCE.</p>
+    </div>
+    <div class="exam-grid" id="examGrid"></div>
+    <div class="landing-feats">
+      <div class="feat"><p class="feat-title">Invatare prin efort</p><p class="feat-desc">Teorie scurta, apoi practica. Dificultatea creste ca sa retii cu adevarat.</p></div>
+      <div class="feat"><p class="feat-title">Repetare inteligenta</p><p class="feat-desc">Temele vechi revin la momentul potrivit, cu variante mai grele.</p></div>
+      <div class="feat"><p class="feat-title">Wispucci langa tine</p><p class="feat-desc">Iti vorbeste ca un prieten, nu ca un manual.</p></div>
     </div>
   </div>
 </section>
-
-<!-- ===== SUBJECTS ===== -->
-<section class="view" data-view="subjects">
-  <div class="page-center">
-    <div class="page-inner">
-      <div class="page-header">
-        <h2 class="h1">Alege examenul</h2>
-        <p class="lead">La ce te pregătești?</p>
-      </div>
-      <div class="subject-grid" id="subjectGrid"></div>
-    </div>
+<section class="screen lesson" data-screen="lesson">
+  <div class="lesson-top">
+    <button class="lesson-top-back" id="lessonBack">Inapoi</button>
+    <div class="lesson-top-spacer"></div>
+    <span class="lesson-top-title" id="lessonTitle">-</span>
+    <div class="lesson-top-spacer"></div>
+    <div class="lesson-steps-dots" id="stepDots"></div>
+  </div>
+  <div class="lesson-stage" id="lessonStage"></div>
+  <div class="lesson-nav">
+    <span class="lesson-nav-hint" id="lessonHint">Citeste, apoi continua</span>
+    <button class="btn btn-primary btn-sm" id="stepNext" style="height:44px;padding:0 26px;">Continua</button>
   </div>
 </section>
-
-<!-- ===== TOPICS ===== -->
-<section class="view" data-view="topics">
-  <div class="page-center">
-    <div class="page-inner" style="max-width:720px;">
-      <div class="page-header">
-        <button class="btn-back" id="backToSubjects">← Înapoi</button>
-        <h2 class="h1" id="topicsTitle">Matematică</h2>
-        <p class="lead" id="topicsSubtitle">Alege un capitol din programa de examen.</p>
-        <button class="btn btn-primary btn-sm" id="examSimBtn" style="margin-top:16px;height:40px;">🎯 Simulare examen</button>
-      </div>
-      <div class="topics-list" id="topicsList"></div>
+<section class="screen stats" data-screen="stats">
+  <div class="stats-wrap">
+    <h2 class="h1" style="margin-bottom:28px;">Progresul tau</h2>
+    <div class="stats-grid">
+      <div class="stat-glass"><div class="stat-num" id="sLessons">0</div><div class="stat-cap">Lectii</div></div>
+      <div class="stat-glass"><div class="stat-num" id="sAcc">-</div><div class="stat-cap">Acuratete</div></div>
+      <div class="stat-glass"><div class="stat-num" id="sStreak">0</div><div class="stat-cap">Streak</div></div>
     </div>
-  </div>
-</section>
-
-<!-- ===== LESSON ===== -->
-<section class="view" data-view="lesson">
-  <div class="lesson-view">
-    <div class="lesson-topbar">
-      <div class="orb-mini" data-orb-host="lesson"><div class="orb-mini-core"></div></div>
-      <span class="lesson-topbar-title" id="lessonTopTitle">—</span>
-      <span class="lesson-topbar-progress" id="lessonTopProgress">—</span>
-      <button class="btn-ghost btn-sm" id="lessonBackBtn">Înapoi</button>
-    </div>
-    <div class="lesson-progress-bar"><div class="lesson-progress-fill" id="lessonProgressFill"></div></div>
-    <div class="lesson-scroll" id="lessonScroll">
-      <div class="lesson-body" id="lessonBody"></div>
-    </div>
-    <div class="ai-bar">
-      <div class="ai-bar-orb-state" id="aiBarState">gata</div>
-      <input type="text" class="ai-bar-input" id="aiInput" placeholder="Nu înțeleg partea cu...">
-      <button class="ai-bar-send" id="aiSend">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- ===== EXAM SIMULATION ===== -->
-<section class="view" data-view="exam" id="examView">
-  <div class="page-center">
-    <div class="page-inner" style="max-width:720px;">
-      <button class="btn-back" id="examBackBtn">← Înapoi</button>
-      <div id="examBody"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== REVIEW ===== -->
-<section class="view" data-view="review">
-  <div class="page-center">
-    <div class="page-inner" style="max-width:600px;">
-      <div class="page-header">
-        <h2 class="h1">🔄 Repetă ce ai învățat</h2>
-        <p class="lead">E timpul să verifici cât ai reținut din lecțiile anterioare.</p>
-      </div>
-      <div id="reviewBody"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== STATS ===== -->
-<section class="view" data-view="stats">
-  <div class="page-center">
-    <div class="page-inner" style="max-width:560px;">
-      <div class="page-header"><h2 class="h1">Progresul tău</h2></div>
-      <div class="stats-row" id="statsRow">
-        <div class="stat-card"><p class="stat-val" id="statLessons">0</p><p class="stat-label">Lecții</p></div>
-        <div class="stat-card"><p class="stat-val" id="statQuizzes">0</p><p class="stat-label">Teste</p></div>
-        <div class="stat-card"><p class="stat-val" id="statAccuracy">—</p><p class="stat-label">Acuratețe</p></div>
-      </div>
-      <p class="small muted" style="margin-bottom:10px;">Streak</p>
+    <div class="stats-block">
+      <p class="stats-block-title">Ultimele 7 zile</p>
       <div class="streak-row" id="streakRow"></div>
-      <p class="small muted" style="margin:24px 0 10px;">Progres pe materii</p>
-      <div id="subjectProgress"></div>
+    </div>
+    <div class="stats-block">
+      <p class="stats-block-title">Pe materii</p>
+      <div id="subjProg"></div>
+    </div>
+    <div class="stats-block">
+      <p class="stats-block-title">Ce ai evidentiat</p>
+      <div class="hl-note" id="hlNote">Selecteaza text in timpul lectiei ca sa-l evidentiezi.</div>
     </div>
   </div>
 </section>
-
-<!-- ===== AUTH MODAL ===== -->
-<div class="auth-overlay" id="authOverlay">
-  <div class="auth-modal">
-    <button class="auth-close" id="authClose">✕</button>
-    <h3 class="h1" id="authTitle" style="font-size:1.4rem;margin-bottom:16px;">Creează cont</h3>
-    <div id="authNameWrap">
-      <input class="auth-input" id="authName" placeholder="cum te cheamă (apare în clasament)">
-    </div>
-    <input class="auth-input" id="authEmail" type="email" placeholder="email">
-    <input class="auth-input" id="authPassword" type="password" placeholder="parolă">
-    <p class="auth-error" id="authError"></p>
-    <button class="btn btn-primary" id="authSubmit" style="width:100%;margin-top:8px;">Salvează contul</button>
-    <p class="small muted" style="text-align:center;margin-top:12px;cursor:pointer;" id="authToggle">Ai deja cont? Intră</p>
+<div class="modal-backdrop" id="signupModal">
+  <div class="modal">
+    <div class="modal-progress">Ai invatat deja cateva minute</div>
+    <h2 class="h2">Salveaza-ti progresul</h2>
+    <p class="modal-sub">Ai un inceput bun. Creeaza un cont ca sa nu pierzi streak-ul si progresul.</p>
+    <input class="modal-field" type="text" placeholder="Cum te cheama">
+    <input class="modal-field" type="email" placeholder="Email">
+    <button class="btn btn-primary" id="signupConfirm">Salveaza contul</button>
+    <button class="modal-skip" id="signupSkip">Mai tarziu, continua sa invat</button>
   </div>
 </div>
-
-<!-- ===== BOTTOM NAV ===== -->
-<nav class="bottom-nav" id="bottomNav" style="display:none;">
-  <button class="bnav-item" data-go="subjects">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-    <span>Materii</span>
-  </button>
-  <button class="bnav-item" data-go="review">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-    <span>Repetă</span>
-  </button>
-  <button class="bnav-item" data-go="stats">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-    <span>Progres</span>
-  </button>
+<nav class="bnav" id="bnav">
+  <button class="bnav-btn" data-nav="landing">Materii</button>
+  <button class="bnav-btn" data-nav="stats">Progres</button>
 </nav>
-
-<script src="api.js"></script>
 <script src="curriculum.js"></script>
 <script src="app.js"></script>
-<script src="features.js"></script>
-<script src="integrations.js"></script>
 </body>
 </html>
