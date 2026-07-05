@@ -1,0 +1,62 @@
+{
+  "subject": "romana",
+  "name": "Limba și literatura română",
+  "authority": "ANCE Moldova, clasa 9, gimnaziu",
+  "exam_format": "120 min. Trei componente: înțelegerea unui text (literar/nonliterar), elemente de limbă (fonetică, vocabular, morfologie, sintaxă), și redactare (compunere/eseu structurat). Punctaj pe corectitudine, coerență și respectarea structurii.",
+  "grading_notes": "La redactare se punctează: respectarea temei, structura (introducere/cuprins/încheiere), corectitudinea gramaticală și ortografică, coerența și registrul. Răspunsurile la text trebuie susținute cu citate/exemple.",
+  "units": {
+    "fonetica": {
+      "title": "Fonetică",
+      "summary": "Sunete, litere, silabe, diftong, triftong, hiat, accent, despărțirea în silabe.",
+      "key_facts": ["Diftong: 2 vocale în aceeași silabă (oa, ea, ie, ai...).", "Triftong: 3 vocale în aceeași silabă (eau, iau...).", "Hiat: vocale alăturate în silabe diferite (po-e-zi-e).", "Alfabetul român: 31 de litere."],
+      "terminology": ["vocală", "consoană", "semivocală", "diftong", "triftong", "hiat", "silabă", "accent"],
+      "worked_pattern": "extraordinar → ex-tra-or-di-nar = 5 silabe",
+      "common_mistakes": ["Confundarea hiatului cu diftongul"],
+      "exam_notes": "Item scurt: despărțirea în silabe, identificarea diftong/triftong/hiat."
+    },
+    "vocabular": {
+      "title": "Vocabular",
+      "summary": "Sinonime, antonime, omonime, paronime; derivare, compunere, familia de cuvinte.",
+      "key_facts": ["Sinonime: sens apropiat. Antonime: sens opus. Omonime: aceeași formă, sens diferit. Paronime: formă apropiată, sens diferit (eminent/iminent).", "Derivare: prefixe + sufixe. Compunere: din cuvinte întregi."],
+      "terminology": ["sinonim", "antonim", "omonim", "paronim", "derivare", "prefix", "sufix", "familie de cuvinte", "câmp lexical"],
+      "worked_pattern": "ne- + drept → nedrept (derivare cu prefix)",
+      "common_mistakes": ["Confundarea omonimelor cu paronimele"],
+      "exam_notes": "Cerințe de sens al cuvintelor din textul dat."
+    },
+    "morfologie": {
+      "title": "Morfologie",
+      "summary": "Părți de vorbire flexibile și neflexibile, categorii gramaticale.",
+      "key_facts": ["Flexibile: substantiv, articol, adjectiv, pronume, numeral, verb.", "Neflexibile: adverb, prepoziție, conjuncție, interjecție.", "Moduri personale: indicativ, conjunctiv, condițional-optativ, imperativ.", "Moduri nepersonale: infinitiv, gerunziu, participiu, supin."],
+      "terminology": ["gen", "număr", "caz", "mod", "timp", "persoană", "conjugare", "declinare", "grad de comparație"],
+      "worked_pattern": "'deși' = conjuncție subordonatoare (concesivă)",
+      "common_mistakes": ["Confundarea modurilor personale cu cele nepersonale", "Confundarea prepoziției cu conjuncția"],
+      "exam_notes": "Identificarea părții de vorbire și a categoriilor dintr-un text dat."
+    },
+    "sintaxa": {
+      "title": "Sintaxă",
+      "summary": "Părți de propoziție, tipuri de propoziții, fraza și raporturile sintactice.",
+      "key_facts": ["Principale: subiect (cine? ce?), predicat (ce face? ce este?).", "Secundare: atribut (care? ce fel de?), complement direct (pe cine? ce?), indirect (cui?), circumstanțial (unde? când? cum?).", "Fraza: mai multe propoziții legate prin coordonare/subordonare."],
+      "terminology": ["subiect", "predicat", "atribut", "complement direct", "complement indirect", "complement circumstanțial", "propoziție principală", "propoziție subordonată"],
+      "worked_pattern": "'Maria citește o carte' → o carte = complement direct (citește ce?)",
+      "common_mistakes": ["Confundarea complementului direct cu cel indirect", "Confundarea subiectului cu complementul"],
+      "exam_notes": "Analiză sintactică a unei propoziții din text."
+    },
+    "text_literar": {
+      "title": "Înțelegerea textului literar",
+      "summary": "Figuri de stil, moduri de expunere, genuri și specii literare.",
+      "key_facts": ["Figuri de stil: epitet, comparație, metaforă, personificare, hiperbolă, repetiție.", "Moduri de expunere: narațiune, descriere, dialog, monolog.", "Genuri: epic, liric, dramatic."],
+      "terminology": ["epitet", "metaforă", "comparație", "personificare", "strofă", "vers", "rimă", "narator", "personaj"],
+      "worked_pattern": "'codrul clocoti' → personificare (atribuie o acțiune umană codrului)",
+      "common_mistakes": ["Confundarea metaforei cu comparația (comparația are 'ca')"],
+      "exam_notes": "Identificarea și comentarea figurilor de stil dintr-un fragment."
+    },
+    "redactare": {
+      "title": "Redactare / compunere",
+      "summary": "Structura unei compuneri: introducere, cuprins, încheiere. Coerență și registru.",
+      "key_facts": ["Introducere: prezinți tema. Cuprins: dezvolți cu argumente/exemple. Încheiere: concluzie.", "Se punctează structura, gramatica, ortografia, coerența."],
+      "terminology": ["introducere", "cuprins", "încheiere", "argument", "idee principală", "registru", "coerență"],
+      "common_mistakes": ["Lipsa structurii clare", "Argumente fără exemple din text"],
+      "exam_notes": "Componenta cu cel mai mare punctaj; respectă structura cerută."
+    }
+  }
+}
