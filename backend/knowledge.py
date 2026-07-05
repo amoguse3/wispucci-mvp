@@ -4,6 +4,12 @@ Grounds the AI tutor in the official Moldovan exam program so generated
 lessons use the exact facts, formulas, terminology and exam format from
 ANCE, instead of the model's general (and possibly wrong) knowledge.
 
+Data layout (knowledge_base/):
+  math_clasa9.json      -> deep Mathematics KB
+  history_clasa9.json   -> deep History KB
+  romana_clasa9.json    -> deep Romanian KB
+  ance_clasa9.json      -> original combined seed (fallback)
+
 Usage (in ai_tutor.py):
     from knowledge import kb_context
     ctx = kb_context(subject, topic_title)   # -> grounding string for the prompt
@@ -13,19 +19,41 @@ import re
 from functools import lru_cache
 from pathlib import Path
 
-_KB_PATH = Path(__file__).parent / "knowledge_base" / "ance_clasa9.json"
+_KB_DIR = Path(__file__).parent / "knowledge_base"
+_SEED = _KB_DIR / "ance_clasa9.json"
+_DEEP = {
+    "math": _KB_DIR / "math_clasa9.json",
+    "history": _KB_DIR / "history_clasa9.json",
+    "romana": _KB_DIR / "romana_clasa9.json",
+}
 
 
 @lru_cache(maxsize=1)
-def _load() -> dict:
-    with open(_KB_PATH, encoding="utf-8") as f:
+def _seed() -> dict:
+    with open(_SEED, encoding="utf-8") as f:
         return json.load(f)
+
+
+@lru_cache(maxsize=8)
+def _deep(skey: str) -> dict | None:
+    path = _DEEP.get(skey)
+    if path and path.exists():
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    return None
+
+
+def _subject_data(skey: str) -> dict:
+    """Prefer the deep per-subject file; fall back to the combined seed."""
+    deep = _deep(skey)
+    if deep:
+        return deep
+    return _seed()["subjects"][skey]
 
 
 def _normalize(s: str) -> str:
     s = s.lower()
-    # strip Romanian diacritics for fuzzy matching
-    for a, b in (("ă", "a"), ("â", "a"), ("î", "i"), ("ș", "s"), ("ț", "t")):
+    for a, b in (("\u0103", "a"), ("\u00e2", "a"), ("\u00ee", "i"), ("\u0219", "s"), ("\u021b", "t")):
         s = s.replace(a, b)
     return re.sub(r"[^a-z0-9 ]", " ", s)
 
@@ -42,7 +70,6 @@ def _subject_key(subject: str) -> str | None:
 
 
 def _best_unit(subject_data: dict, topic_title: str) -> dict | None:
-    """Find the unit whose title/terminology best overlaps the topic title."""
     target = set(_normalize(topic_title).split())
     best, best_score = None, 0
     for unit in subject_data.get("units", {}).values():
@@ -60,38 +87,42 @@ def kb_context(subject: str, topic_title: str) -> str:
 
     Empty string if nothing matches (AI falls back to general knowledge).
     """
-    kb = _load()
     skey = _subject_key(subject)
     if not skey:
         return ""
-    sdata = kb["subjects"][skey]
+    sdata = _subject_data(skey)
     unit = _best_unit(sdata, topic_title)
     lines = [
-        "CONTEXT OFICIAL (ANCE Moldova, clasa 9) — folosește STRICT aceste date:",
-        f"Materie: {sdata['name']}",
-        f"Format examen: {sdata['exam_format']}",
+        "CONTEXT OFICIAL (ANCE Moldova, clasa 9) \u2014 folose\u0219te STRICT aceste date:",
+        f"Materie: {sdata.get('name', subject)}",
+        f"Format examen: {sdata.get('exam_format', '')}",
     ]
+    if sdata.get("grading_notes"):
+        lines.append(f"Punctare: {sdata['grading_notes']}")
     if unit:
         lines.append(f"Unitate: {unit['title']}")
-        lines.append(f"Rezumat: {unit['summary']}")
+        lines.append(f"Rezumat: {unit.get('summary', '')}")
         if unit.get("formulas"):
             lines.append("Formule oficiale: " + " ; ".join(unit["formulas"]))
         if unit.get("dates"):
             lines.append("Date cheie: " + " ; ".join(f"{k} = {v}" for k, v in unit["dates"].items()))
         if unit.get("key_facts"):
             lines.append("Fapte cheie: " + " | ".join(unit["key_facts"]))
+        if unit.get("worked_pattern"):
+            lines.append(f"Model de rezolvare: {unit['worked_pattern']}")
         if unit.get("terminology"):
-            lines.append("Terminologie corectă: " + ", ".join(unit["terminology"]))
+            lines.append("Terminologie corect\u0103: " + ", ".join(unit["terminology"]))
         if unit.get("common_mistakes"):
-            lines.append("Greșeli frecvente de evitat/semnalat: " + " | ".join(unit["common_mistakes"]))
+            lines.append("Gre\u0219eli frecvente de evitat/semnalat: " + " | ".join(unit["common_mistakes"]))
+        if unit.get("sources_hint"):
+            lines.append(f"Surse tipice: {unit['sources_hint']}")
         if unit.get("exam_notes"):
             lines.append(f"Note de examen: {unit['exam_notes']}")
     return "\n".join(lines)
 
 
 def list_units(subject: str) -> list[str]:
-    kb = _load()
     skey = _subject_key(subject)
     if not skey:
         return []
-    return [u["title"] for u in kb["subjects"][skey].get("units", {}).values()]
+    return [u["title"] for u in _subject_data(skey).get("units", {}).values()]
