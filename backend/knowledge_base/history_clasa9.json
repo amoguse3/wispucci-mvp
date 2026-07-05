@@ -1,0 +1,64 @@
+{
+  "subject": "history",
+  "name": "Istoria românilor și universală",
+  "authority": "ANCE Moldova, clasa 9, gimnaziu",
+  "exam_format": "120 min. Subiectul I: studiu de surse (imagini/texte) cu identificare, argumentare, determinarea importanței. Se punctează argumentarea și folosirea corectă a termenilor istorici.",
+  "grading_notes": "Punctaj pe: identificarea corectă a evenimentului/personalității, argument bazat pe sursă, folosirea limbajului istoric. Răspunsurile trebuie să conțină explicații, nu doar enunțuri.",
+  "units": {
+    "antichitate": {
+      "title": "Antichitatea și formarea poporului român",
+      "summary": "Dacia, cucerirea romană, romanizarea, sinteza daco-romană, creștinarea.",
+      "key_facts": ["106 d.Hr.: Traian cucerește Dacia (după două războaie dacice).", "271 d.Hr.: retragerea aureliană.", "Româna: singura limbă romanică din sud-estul Europei, ~80% fond lexical latin."],
+      "dates": {"101-106 d.Hr.": "Războaiele daco-romane", "106": "Dacia devine provincie romană", "271": "Retragerea aureliană"},
+      "terminology": ["romanizare", "sinteză daco-romană", "provincie", "colonizare", "etnogeneză"],
+      "sources_hint": "Columna lui Traian apare frecvent ca sursă-imagine.",
+      "common_mistakes": ["Confundarea anului cuceririi (106) cu retragerea (271)"],
+      "exam_notes": "Argumentare pe continuitatea populației după retragere."
+    },
+    "evul_mediu": {
+      "title": "Evul Mediu — statele medievale românești",
+      "summary": "Formarea Țării Românești, Moldovei, Transilvaniei. Domnitori și lupte pentru independență.",
+      "key_facts": ["~1310 Basarab I (Țara Românească); Posada 1330 contra Ungariei.", "~1359 Bogdan I întemeiază Moldova (descălecat din Maramureș).", "Ștefan cel Mare 1457-1504: Vaslui 1475, Războieni 1476.", "Mircea cel Bătrân, Alexandru cel Bun: consolidare."],
+      "dates": {"1330": "Posada (Basarab I)", "1359": "Întemeierea Moldovei", "1457-1504": "Ștefan cel Mare", "1475": "Vaslui"},
+      "terminology": ["voievod", "domn", "descălecat", "suzeranitate", "vasalitate", "autonomie"],
+      "common_mistakes": ["Confundarea lui Basarab I (Țara Rom.) cu Bogdan I (Moldova)"],
+      "exam_notes": "Personalități și datarea domniilor; importanța luptelor antiotomane."
+    },
+    "epoca_moderna": {
+      "title": "Epoca modernă (1848–1877)",
+      "summary": "Revoluția de la 1848, Unirea 1859, reformele lui Cuza, Independența 1877.",
+      "key_facts": ["1848: Proclamația de la Islaz (Țara Rom.); Adunarea de la Blaj / Câmpia Libertății (Transilvania).", "24 ianuarie 1859: dubla alegere a lui Cuza = Unirea Principatelor.", "Reforme Cuza: secularizarea 1863, reforma agrară 1864, legea instrucțiunii 1864.", "9 mai 1877: proclamarea Independenței României."],
+      "dates": {"1848": "Revoluția (Islaz, Blaj)", "24 ianuarie 1859": "Unirea Principatelor", "1863": "Secularizarea", "1864": "Reforma agrară + instrucțiune", "9 mai 1877": "Independența"},
+      "terminology": ["proclamație", "unionism", "secularizare", "reformă agrară", "împroprietărire", "suveranitate"],
+      "common_mistakes": ["Confundarea Unirii (1859) cu Independența (1877) sau Marea Unire (1918)"],
+      "exam_notes": "Argumentare pe importanța Unirii și a reformelor lui Cuza."
+    },
+    "marea_unire": {
+      "title": "Marea Unire (1918)",
+      "summary": "Unirea Basarabiei, Bucovinei și Transilvaniei cu România în contextul WWI.",
+      "key_facts": ["27 martie 1918: Basarabia (Sfatul Țării).", "28 noiembrie 1918: Bucovina.", "1 decembrie 1918: Transilvania (Marea Adunare de la Alba Iulia).", "Context: principiul autodeterminării (Wilson), prăbușirea imperiilor."],
+      "dates": {"27 martie 1918": "Unirea Basarabiei", "28 noiembrie 1918": "Unirea Bucovinei", "1 decembrie 1918": "Unirea Transilvaniei"},
+      "terminology": ["Sfatul Țării", "autodeterminare", "plebiscit", "stat național unitar"],
+      "common_mistakes": ["Confundarea celor trei date ale unirilor din 1918"],
+      "exam_notes": "Item cheie pentru Moldova: unirea Basarabiei 27 martie 1918."
+    },
+    "al_doilea_razboi": {
+      "title": "Al Doilea Război Mondial",
+      "summary": "Pactul Ribbentrop-Molotov, pierderea Basarabiei, participarea României, conferințele interaliate.",
+      "key_facts": ["1939: Pactul Ribbentrop-Molotov (protocol secret).", "1940: URSS ocupă Basarabia și nordul Bucovinei.", "22 iunie 1941: România intră în război alături de Germania.", "23 august 1944: România trece de partea Aliaților.", "Conferințe: Teheran 1943, Ialta 1945, Potsdam 1945."],
+      "dates": {"1939": "Pactul Ribbentrop-Molotov", "1940": "Ocuparea Basarabiei", "23 august 1944": "Trecerea la Aliați", "1945": "Ialta, Potsdam"},
+      "terminology": ["pact", "protocol secret", "conferință interaliată", "armistițiu"],
+      "common_mistakes": ["Confundarea datei intrării (1941) cu ieșirea (1944)"],
+      "exam_notes": "Conferințele interaliate apar des ca sursă-imagine."
+    },
+    "moldova_contemporana": {
+      "title": "Republica Moldova contemporană",
+      "summary": "Perestroika, mișcarea națională, suveranitate, independență 1991, conflictul transnistrean.",
+      "key_facts": ["1989: limba română devine limbă de stat, revenirea la alfabetul latin.", "23 iunie 1990: Declarația de suveranitate.", "27 august 1991: Declarația de Independență a R. Moldova.", "1992: conflictul din Transnistria."],
+      "dates": {"1989": "Limba de stat, alfabet latin", "23 iunie 1990": "Suveranitatea", "27 august 1991": "Independența", "1992": "Conflictul transnistrean"},
+      "terminology": ["perestroika", "suveranitate", "independență", "Frontul Popular", "autodeterminare"],
+      "common_mistakes": ["Confundarea suveranității (1990) cu independența (1991)"],
+      "exam_notes": "Cel mai important bloc pentru elevii din Moldova."
+    }
+  }
+}
