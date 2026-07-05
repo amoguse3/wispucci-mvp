@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wispucci — Tutor AI pentru Examene</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-base: #1B0928;
+  --bg-card: rgba(45, 27, 74, 0.35);
+  --bg-glass: rgba(45, 27, 74, 0.28);
+  --bg-elev: #2D1B4A;
+  --bg-deep: #110520;
+
+  --accent: #EFDD8D;
+  --accent-soft: #F4FDAF;
+  --accent-deep: #C9B86A;
+  --accent-spark: #FFFFD9;
+
+  --text: #F4FDAF;
+  --text-2: #D9D196;
+  --text-3: #8B8453;
+  --text-reading: #EAE6D6;
+
+  --line: rgba(239, 221, 141, 0.14);
+  --line-strong: rgba(239, 221, 141, 0.28);
+
+  --success: #7FD99A;
+  --error: #E88A8A;
+
+  --highlight: rgba(239, 221, 141, 0.22);
+
+  --accent-rgb: 239, 221, 141;
+
+  --r-sm: 10px; --r-md: 16px; --r-lg: 22px; --r-xl: 30px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-base);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+input { font-family: inherit; }
+
+.bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.bg-aurora {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 15%, rgba(239,221,141,.07), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 85% 85%, rgba(244,253,175,.05), transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(139,92,246,.04), transparent 70%);
+  animation: auroraDrift 24s ease-in-out infinite alternate;
+}
+@keyframes auroraDrift { 0% { opacity: .75; transform: scale(1); } 100% { opacity: 1; transform: scale(1.05); } }
+
+.screen {
+  position: fixed; inset: 0;
+  z-index: 2;
+  display: none;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity .5s var(--ease);
+}
+.screen.is-active { display: flex; opacity: 1; }
+
+#orbLayer {
+  position: fixed;
+  z-index: 40;
+  pointer-events: none;
+  transition: top .8s var(--ease), left .8s var(--ease), width .8s var(--ease), height .8s var(--ease), bottom .8s var(--ease);
+  top: 8%; left: 50%; width: 180px; height: 180px;
+  transform: translateX(-50%);
+}
+.orb { position: relative; width: 100%; height: 100%; }
+.orb-glow {
+  position: absolute; inset: -18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--accent-rgb),.25) 0%, rgba(var(--accent-rgb),.06) 42%, transparent 66%);
+  filter: blur(8px);
+  animation: breath 5s ease-in-out infinite;
+}
+@keyframes breath { 0%,100% { transform: scale(1); opacity: .8; } 50% { transform: scale(1.07); opacity: 1; } }
+.orb-halo { position: absolute; inset: 4%; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(var(--accent-rgb),.12) 0%, transparent 56%);
+  animation: breath 7s ease-in-out -2s infinite; }
+.orb-core {
+  position: absolute; inset: 22%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, #FFFFE5 0%, var(--accent-soft) 20%, var(--accent) 56%, var(--accent-deep) 96%);
+  box-shadow: inset 0 0 30px rgba(255,255,255,.28), inset -18px -20px 38px rgba(110,60,0,.5), 0 0 24px rgba(var(--accent-rgb),.4);
+  animation: float 6s ease-in-out infinite;
+  transition: filter .5s var(--ease), transform .5s var(--ease);
+}
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+.orb-shine { position: absolute; top: 28%; left: 30%; width: 28%; height: 18%;
+  background: radial-gradient(ellipse, rgba(255,255,255,.55), transparent 65%); border-radius: 50%; filter: blur(2px); }
+.orb-face { position: absolute; inset: 22%; width: 56%; height: 56%; pointer-events: none; }
+.orb-face .eye { fill: var(--bg-base); transition: transform .4s var(--ease); transform-origin: center; transform-box: fill-box; }
+.orb-face .mouth { stroke: var(--bg-base); stroke-width: 2.4; stroke-linecap: round; fill: none; transition: d .4s var(--ease); }
+.orb-face .cheek { fill: rgba(255,130,90,.32); opacity: 0; transition: opacity .4s; }
+.orb-face .brow { stroke: var(--bg-base); stroke-width: 2; stroke-linecap: round; fill: none; opacity: 0; transition: opacity .3s, d .4s; }
+.orb-face .eye-shine { fill: var(--accent-spark); opacity: .75; transition: opacity .3s; }
+.orb-face .face-eyes { transition: transform .4s var(--ease); transform-origin: 50px 48px; transform-box: view-box; }
+
+.orb.is-happy .face-eyes { transform: scaleY(.2); }
+.orb.is-happy .mouth { d: path('M 38 60 Q 50 72 62 60'); }
+.orb.is-happy .cheek { opacity: 1; }
+.orb.is-thinking .face-eyes { transform: translateY(-2px) scaleY(.6); }
+.orb.is-thinking .brow { opacity: 1; }
+.orb.is-thinking .orb-core { filter: brightness(.96); }
+.orb.is-speaking .orb-core { animation: float 6s ease-in-out infinite, speakPulse 1.1s ease-in-out infinite; }
+@keyframes speakPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+.orb.is-confused .face-eyes { transform: scaleY(.85); }
+.orb.is-confused .eye-l { transform: rotate(-8deg); }
+.orb.is-confused .eye-r { transform: rotate(8deg); }
+.orb.is-confused .brow { opacity: 1; }
+.orb.is-confused .mouth { d: path('M 42 63 Q 50 60 58 63'); }
+.orb.is-celebrating .face-eyes { transform: scaleY(.15); }
+.orb.is-celebrating .cheek { opacity: 1; }
+.orb.is-celebrating .mouth { d: path('M 36 58 Q 50 74 64 58'); }
+.orb.is-celebrating .orb-core { filter: saturate(1.2) brightness(1.12); transform: scale(1.04); }
+
+#orbSpeech {
+  position: fixed; z-index: 41;
+  max-width: 260px;
+  padding: 12px 16px;
+  background: rgba(45, 27, 74, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  font-size: 13px; line-height: 1.5; color: var(--text-2);
+  opacity: 0; transform: translateY(6px) scale(.96);
+  transition: opacity .4s var(--ease), transform .4s var(--ease);
+  pointer-events: none;
+}
+#orbSpeech.show { opacity: 1; transform: translateY(0) scale(1); }
+
+.display { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 600; line-height: 1.05; letter-spacing: -.02em; }
+.display em { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; font-size: 1.15em; color: var(--accent-soft); }
+.h1 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; line-height: 1.15; letter-spacing: -.01em; }
+.h2 { font-size: clamp(1.2rem, 2.2vw, 1.5rem); font-weight: 600; }
+.lead { font-size: clamp(1rem, 1.2vw, 1.15rem); color: var(--text-2); line-height: 1.6; }
+.muted { color: var(--text-3); }
+.small { font-size: 13px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 52px; padding: 0 34px; border-radius: 999px;
+  font-weight: 600; font-size: 15px;
+  transition: all .3s var(--ease);
+}
+.btn-primary {
+  background: linear-gradient(180deg, var(--accent-soft) 0%, var(--accent) 60%, var(--accent-deep) 100%);
+  color: var(--bg-base);
+  box-shadow: 0 6px 24px rgba(var(--accent-rgb),.28), 0 0 60px rgba(var(--accent-rgb),.12), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(var(--accent-rgb),.4), 0 0 80px rgba(var(--accent-rgb),.18), inset 0 1px 0 rgba(255,255,255,.4); }
+.btn-primary:active { transform: translateY(0); }
+.btn-glass {
+  height: 44px; padding: 0 22px; border-radius: 999px;
+  background: var(--bg-glass); backdrop-filter: blur(16px);
+  border: 1px solid var(--line-strong); color: var(--text);
+  font-size: 14px; font-weight: 500;
+}
+.btn-glass:hover { border-color: rgba(var(--accent-rgb),.4); background: rgba(45,27,74,.45); }
+.btn-sm { height: 38px; padding: 0 16px; font-size: 13px; }
+
+.landing { overflow-y: auto; }
+.landing-nav {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 40px;
+  backdrop-filter: blur(16px);
+  background: rgba(27, 9, 40, 0.4);
+}
+.brand { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 700; }
+.brand-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px rgba(var(--accent-rgb),.5); animation: breath 3.5s ease-in-out infinite; }
+.landing-nav-actions { display: flex; align-items: center; gap: 10px; }
+.landing-clock { font-size: 13px; color: var(--text-3); font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 6px; }
+
+.landing-hero {
+  min-height: 78vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 120px 24px 40px;
+}
+.hero-eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; opacity: .9; }
+.landing-hero .display { max-width: 16ch; margin-bottom: 20px; }
+.landing-hero .lead { max-width: 46ch; margin-bottom: 36px; }
+.hero-note { font-size: 13px; color: var(--text-3); margin-top: 14px; }
+
+.exam-section { padding: 40px 24px 100px; max-width: 1080px; margin: 0 auto; width: 100%; }
+.exam-section-title { text-align: center; margin-bottom: 40px; }
+.exam-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.exam-card {
+  position: relative;
+  padding: 32px 28px;
+  border-radius: var(--r-lg);
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all .4s var(--ease);
+  overflow: hidden;
+}
+.exam-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(var(--accent-rgb),.08), transparent 60%);
+  opacity: 0; transition: opacity .4s var(--ease);
+}
+.exam-card:hover { transform: translateY(-4px); border-color: var(--line-strong); box-shadow: 0 20px 50px rgba(0,0,0,.35), 0 0 40px rgba(var(--accent-rgb),.08); }
+.exam-card:hover::before { opacity: 1; }
+.exam-card-symbol {
+  width: 56px; height: 56px; border-radius: var(--r-md);
+  background: rgba(var(--accent-rgb),.1);
+  border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; font-weight: 600; color: var(--accent);
+  margin-bottom: 20px;
+  font-family: 'Instrument Serif', serif; font-style: italic;
+}
+.exam-card-name { font-size: 1.15rem; font-weight: 600; margin-bottom: 6px; }
+.exam-card-meta { font-size: 13px; color: var(--text-3); margin-bottom: 18px; }
+.exam-card-topics { font-size: 13px; color: var(--text-2); line-height: 1.7; }
+.exam-card-cta { margin-top: 20px; font-size: 13px; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 6px; }
+
+.landing-feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
+.feat { padding: 24px; border-radius: var(--r-md); background: var(--bg-glass); backdrop-filter: blur(16px); border: 1px solid var(--line); }
+.feat-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.feat-desc { font-size: 13px; color: var(--text-3); line-height: 1.6; }
+
+.lesson { padding: 0; }
+.lesson-top {
+  display: flex; align-items: center; gap: 14px;
+  padding: 18px 28px;
+  flex-shrink: 0;
+}
+.lesson-top-back { font-size: 13px; color: var(--text-3); }
+.lesson-top-back:hover { color: var(--accent); }
+.lesson-top-title { font-size: 13px; font-weight: 600; color: var(--text-2); }
+.lesson-top-spacer { flex: 1; }
+.lesson-steps-dots { display: flex; gap: 6px; }
+.step-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line-strong); transition: all .4s var(--ease); }
+.step-dot.done { background: var(--accent-deep); }
+.step-dot.current { background: var(--accent); box-shadow: 0 0 8px rgba(var(--accent-rgb),.5); transform: scale(1.3); }
+
+.lesson-stage {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px 24px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.step-card {
+  width: 100%; max-width: 620px;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s var(--ease), transform .5s var(--ease);
+  pointer-events: none;
+}
+.step-card.is-active { opacity: 1; transform: translateY(0); pointer-events: all; position: relative; }
+.step-card.leaving { opacity: 0; transform: translateY(-20px); }
+
+.step-glass {
+  padding: 40px;
+  border-radius: var(--r-lg);
+  background: var(--bg-glass);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+.step-kicker { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+.step-title { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 600; line-height: 1.2; margin-bottom: 18px; }
+.step-body { font-size: 16px; line-height: 1.75; color: var(--text-reading); }
+.step-body p { margin-bottom: 14px; }
+.step-body .hl { background: var(--highlight); border-radius: 4px; padding: 1px 5px; transition: background .5s var(--ease); }
+.step-body .hl-speak { background: rgba(var(--accent-rgb),.4); box-shadow: 0 0 0 1px rgba(var(--accent-rgb),.3); }
+.step-formula {
+  display: block; text-align: center;
+  padding: 18px 22px; margin: 18px 0;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px; color: var(--accent);
+}
+
+.step-quiz-opts { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.step-quiz-opt {
+  padding: 15px 18px; border-radius: var(--r-sm);
+  background: rgba(27,9,40,.4); border: 1px solid var(--line);
+  font-size: 15px; color: var(--text-2); text-align: left;
+  transition: all .25s var(--ease);
+}
+.step-quiz-opt:hover { border-color: var(--line-strong); color: var(--text); transform: translateX(4px); }
+.step-quiz-opt.correct { border-color: var(--success); background: rgba(127,217,154,.1); color: var(--success); }
+.step-quiz-opt.wrong { border-color: var(--error); background: rgba(232,138,138,.08); color: var(--error); }
+.step-quiz-opt:disabled { pointer-events: none; }
+.step-quiz-fb { margin-top: 16px; font-size: 14px; line-height: 1.55; display: none; }
+.step-quiz-fb.show { display: block; }
+.step-quiz-fb.ok { color: var(--success); }
+.step-quiz-fb.no { color: var(--error); }
+
+.step-review-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent-deep); margin-bottom: 14px;
+  padding: 5px 12px; border-radius: 999px; background: rgba(var(--accent-rgb),.08);
+}
+
+.lesson-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 28px 28px;
+  flex-shrink: 0;
+}
+.lesson-nav-hint { font-size: 12px; color: var(--text-3); }
+
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 60;
+  background: rgba(17,5,32,.7);
+  backdrop-filter: blur(8px);
+  display: none; align-items: center; justify-content: center;
+  padding: 24px; opacity: 0; transition: opacity .4s var(--ease);
+}
+.modal-backdrop.show { display: flex; opacity: 1; }
+.modal {
+  width: 100%; max-width: 420px;
+  padding: 36px;
+  border-radius: var(--r-lg);
+  background: rgba(45,27,74,.65);
+  backdrop-filter: blur(30px);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 30px 80px rgba(0,0,0,.5);
+  text-align: center;
+  transform: scale(.94); transition: transform .4s var(--ease);
+}
+.modal-backdrop.show .modal { transform: scale(1); }
+.modal .h2 { margin-bottom: 10px; }
+.modal-sub { font-size: 14px; color: var(--text-2); margin-bottom: 24px; line-height: 1.6; }
+.modal-progress { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px; font-size: 13px; color: var(--accent); }
+.modal-field { width: 100%; padding: 13px 16px; margin-bottom: 12px; border-radius: var(--r-sm); background: rgba(27,9,40,.5); border: 1px solid var(--line); color: var(--text); font-size: 14px; outline: none; transition: border-color .2s; }
+.modal-field:focus { border-color: rgba(var(--accent-rgb),.4); }
+.modal .btn { width: 100%; margin-top: 8px; }
+.modal-skip { margin-top: 16px; font-size: 13px; color: var(--text-3); }
+.modal-skip:hover { color: var(--text-2); }
+
+.stats { overflow-y: auto; }
+.stats-wrap { max-width: 640px; margin: 0 auto; width: 100%; padding: 110px 24px 60px; }
+.stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 28px; }
+.stat-glass { padding: 22px; border-radius: var(--r-md); background: var(--bg-glass); backdrop-filter: blur(16px); border: 1px solid var(--line); text-align: center; }
+.stat-num { font-size: 2rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.stat-cap { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+.stats-block { margin-bottom: 28px; }
+.stats-block-title { font-size: 13px; color: var(--text-3); margin-bottom: 12px; }
+.streak-row { display: flex; gap: 8px; }
+.sd { flex: 1; max-width: 44px; aspect-ratio: 1; border-radius: var(--r-sm); background: var(--bg-glass); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--text-3); }
+.sd.done { background: rgba(var(--accent-rgb),.12); border-color: var(--line-strong); color: var(--accent); }
+.sd.today { border-color: var(--accent); box-shadow: 0 0 10px rgba(var(--accent-rgb),.25); }
+.subj-prog { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-radius: var(--r-md); background: var(--bg-glass); backdrop-filter: blur(16px); border: 1px solid var(--line); margin-bottom: 8px; }
+.subj-prog-bar { height: 6px; flex: 1; margin: 0 16px; border-radius: 999px; background: rgba(27,9,40,.5); overflow: hidden; }
+.subj-prog-fill { height: 100%; background: linear-gradient(90deg, var(--accent-deep), var(--accent)); border-radius: 999px; transition: width .8s var(--ease); }
+.hl-note { padding: 16px 20px; border-radius: var(--r-md); background: var(--bg-glass); border: 1px solid var(--line); font-size: 13px; color: var(--text-2); line-height: 1.6; }
+
+.bnav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 30;
+  display: none; justify-content: center; gap: 8px;
+  padding: 12px; background: rgba(27,9,40,.6); backdrop-filter: blur(20px); border-top: 1px solid var(--line); }
+.bnav.show { display: flex; }
+.bnav-btn { display: flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 999px; font-size: 13px; font-weight: 500; color: var(--text-3); transition: all .2s; }
+.bnav-btn:hover { color: var(--text-2); }
+.bnav-btn.on { color: var(--accent); background: rgba(var(--accent-rgb),.08); }
+
+@media (max-width: 760px) {
+  .exam-grid { grid-template-columns: 1fr; }
+  .landing-feats { grid-template-columns: 1fr; }
+  .landing-nav { padding: 16px 20px; }
+  .stats-grid { grid-template-columns: 1fr 1fr 1fr; }
+  #orbLayer { width: 130px; height: 130px; }
+  .step-glass { padding: 28px 22px; }
+}
+</style>
+</head>
+<body>
+
+<canvas class="bg-canvas" id="bg"></canvas>
+<div class="bg-aurora"></div>
+
+<div id="orbLayer">
+  <div class="orb is-happy" id="orb">
+    <div class="orb-glow"></div>
+    <div class="orb-halo"></div>
+    <div class="orb-core"></div>
+    <div class="orb-shine"></div>
+    <svg class="orb-face" viewBox="0 0 100 100">
+      <g class="face-brows">
+        <path class="brow brow-l" d="M 30 38 Q 38 34 46 38"/>
+        <path class="brow brow-r" d="M 54 38 Q 62 34 70 38"/>
+      </g>
+      <g class="face-eyes">
+        <ellipse class="eye eye-l" cx="38" cy="48" rx="5" ry="6"/>
+        <ellipse class="eye eye-r" cx="62" cy="48" rx="5" ry="6"/>
+        <circle class="eye-shine" cx="36" cy="45" r="2"/>
+        <circle class="eye-shine" cx="60" cy="45" r="2"/>
+      </g>
+      <path class="mouth" d="M 40 62 Q 50 68 60 62"/>
+      <ellipse class="cheek cheek-l" cx="30" cy="58" rx="5" ry="3"/>
+      <ellipse class="cheek cheek-r" cx="70" cy="58" rx="5" ry="3"/>
+    </svg>
+  </div>
+</div>
+<div id="orbSpeech"></div>
+
+<section class="screen landing is-active" data-screen="landing">
+  <nav class="landing-nav">
+    <div class="brand"><span class="brand-dot"></span> Wispucci</div>
+    <div class="landing-nav-actions">
+      <span class="landing-clock">🇲🈩 <span id="clock">--:--</span></span>
+      <button class="btn-glass btn-sm" id="loginTop">Intră</button>
+    </div>
+  </nav>
+
+  <div class="landing-hero">
+    <p class="hero-eyebrow">Tutor AI · Examenele Naționale · Clasa 9</p>
+    <h1 class="display">Nu doar testezi. <em>Înveți.</em></h1>
+    <p class="lead">Wispucci te trece prin fiecare temă de examen pas cu pas, verifică ce ai înțeles și revine la ce ai uitat. Fără presiune, la ritmul tău.</p>
+    <button class="btn btn-primary" id="tryNow">Încearcă acum, fără cont</button>
+    <p class="hero-note">2 minute și vezi cum funcționează. Cont doar dacă vrei să salvezi progresul.</p>
+  </div>
+
+  <div class="exam-section">
+    <div class="exam-section-title">
+      <h2 class="h1">Alege examenul</h2>
+      <p class="lead" style="margin-top:8px;">Conform programei oficiale ANCE.</p>
+    </div>
+    <div class="exam-grid" id="examGrid"></div>
+
+    <div class="landing-feats">
+      <div class="feat"><p class="feat-title">Lecții scurte</p><p class="feat-desc">O idee pe ecran. Fără ziduri de text. Avansezi când ești gata.</p></div>
+      <div class="feat"><p class="feat-title">Repetare inteligentă</p><p class="feat-desc">Temele vechi revin la momentul potrivit, ca să nu uiți.</p></div>
+      <div class="feat"><p class="feat-title">Wispucci lângă tine</p><p class="feat-desc">Îți explică, îți evidențiază ce contează, te ține motivat.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="screen lesson" data-screen="lesson">
+  <div class="lesson-top">
+    <button class="lesson-top-back" id="lessonBack">← Înapoi</button>
+    <div class="lesson-top-spacer"></div>
+    <span class="lesson-top-title" id="lessonTitle">—</span>
+    <div class="lesson-top-spacer"></div>
+    <div class="lesson-steps-dots" id="stepDots"></div>
+  </div>
+  <div class="lesson-stage" id="lessonStage"></div>
+  <div class="lesson-nav">
+    <span class="lesson-nav-hint" id="lessonHint">Citește, apoi continuă</span>
+    <button class="btn btn-primary btn-sm" id="stepNext" style="height:44px;padding:0 26px;">Continuă →</button>
+  </div>
+</section>
+
+<section class="screen stats" data-screen="stats">
+  <div class="stats-wrap">
+    <h2 class="h1" style="margin-bottom:28px;">Progresul tău</h2>
+    <div class="stats-grid">
+      <div class="stat-glass"><div class="stat-num" id="sLessons">0</div><div class="stat-cap">Lecții</div></div>
+      <div class="stat-glass"><div class="stat-num" id="sAcc">—</div><div class="stat-cap">Acuratețe</div></div>
+      <div class="stat-glass"><div class="stat-num" id="sStreak">0</div><div class="stat-cap">Streak</div></div>
+    </div>
+    <div class="stats-block">
+      <p class="stats-block-title">Ultimele 7 zile</p>
+      <div class="streak-row" id="streakRow"></div>
+    </div>
+    <div class="stats-block">
+      <p class="stats-block-title">Pe materii</p>
+      <div id="subjProg"></div>
+    </div>
+    <div class="stats-block">
+      <p class="stats-block-title">Ce ai evidențiat</p>
+      <div class="hl-note" id="hlNote">Selectează text în timpul lecției ca să-l evidențiezi. Wispucci reține ce ți s-a părut important.</div>
+    </div>
+  </div>
+</section>
+
+<div class="modal-backdrop" id="signupModal">
+  <div class="modal">
+    <div class="modal-progress">✦ Ai învățat deja câteva minute</div>
+    <h2 class="h2">Salvează-ți progresul</h2>
+    <p class="modal-sub">Ai un început bun. Creează un cont ca să nu pierzi streak-ul, progresul și temele de repetat.</p>
+    <input class="modal-field" type="text" placeholder="Cum te cheamă (apare în progres)">
+    <input class="modal-field" type="email" placeholder="Email">
+    <button class="btn btn-primary" id="signupConfirm">Salvează contul</button>
+    <button class="modal-skip" id="signupSkip">Mai târziu, continuă să învăț</button>
+  </div>
+</div>
+
+<nav class="bnav" id="bnav">
+  <button class="bnav-btn" data-nav="landing">Materii</button>
+  <button class="bnav-btn" data-nav="stats">Progres</button>
+</nav>
+
+<script>
+const CURRICULUM = [
+  {
+    id: 'math', name: 'Matematică', symbol: 'M', meta: '120 min · 4 domenii',
+    preview: 'Numere · Algebră · Funcții · Geometrie',
+    topics: [
+      { id:'m1', title:'Numere reale și radicali', steps:[
+        { kicker:'Concept', title:'Ce sunt numerele reale', body:'<p>Mulțimea <span class="hl">ℝ</span> conține tot: numere raționale (fracții) și <span class="hl">iraționale</span> (√2, π). La examen lucrezi mult cu radicali.</p>', speak:'Radicalii par grei, dar sunt doar puteri inversate. Ține minte asta.' },
+        { kicker:'Regulă', title:'Proprietățile radicalilor', body:'<p>Trei reguli îți rezolvă 90% din exerciții:</p><span class="step-formula">√(a·b) = √a · √b<br>√(a²) = |a|<br>(√a)² = a</span>', speak:'Prima regulă e cea mai folosită: spargi radicalul în bucăți.' },
+        { kicker:'Exemplu', title:'Scoaterea de sub radical', body:'<p>Cauți pătrate perfecte în interior:</p><span class="step-formula">√72 = √(36 × 2) = 6√2</span><p>36 e pătrat perfect (6²), deci iese ca 6.</p>' },
+        { type:'quiz', title:'Verifică', q:'Simplifică √48', opts:['4√3','6√2','2√12','3√4'], correct:0, exp:'√48 = √(16 × 3) = 4√3. 16 e pătrat perfect.' }
+      ]},
+      { id:'m2', title:'Ecuații de gradul II', steps:[
+        { kicker:'Concept', title:'Forma și discriminantul', body:'<p>Orice ecuație <span class="hl">ax² + bx + c = 0</span> se rezolvă prin discriminant:</p><span class="step-formula">Δ = b² − 4ac</span>', speak:'Discriminantul îți spune câte soluții ai înainte să calculezi.' },
+        { kicker:'Regulă', title:'Cele trei cazuri', body:'<p><span class="hl">Δ > 0</span>: două soluții. <span class="hl">Δ = 0</span>: o soluție dublă. <span class="hl">Δ < 0</span>: nicio soluție reală.</p>' },
+        { type:'quiz', title:'Verifică', q:'Câte soluții reale are x² + 2x + 5 = 0?', opts:['0','1','2','Infinit'], correct:0, exp:'Δ = 4 − 20 = −16 < 0, deci nicio soluție reală.' }
+      ]},
+      { id:'m3', title:'Funcția pătratică', steps:[
+        { kicker:'Concept', title:'Parabola și vârful', body:'<p>Graficul lui <span class="hl">f(x) = ax² + bx + c</span> e o parabolă. Vârful e punctul cheie:</p><span class="step-formula">xᵥ = −b / 2a</span>', speak:'Dacă a e pozitiv, parabola zâmbește (minim jos). Dacă e negativ, e tristă (maxim sus).' },
+        { type:'quiz', title:'Verifică', q:'Vârful parabolei y = x² − 4x + 3 are abscisa:', opts:['2','−2','4','3'], correct:0, exp:'xᵥ = −(−4)/2 = 2.' }
+      ]},
+      { id:'m4', title:'Teorema lui Pitagora', steps:[
+        { kicker:'Concept', title:'Relația din triunghiul dreptunghic', body:'<p>În orice triunghi dreptunghic:</p><span class="step-formula">a² + b² = c²</span><p><span class="hl">c</span> e ipotenuza, latura cea mai lungă, opusă unghiului drept.</p>', speak:'Ipotenuza e mereu cea mai lungă. Nu o confunda cu catetele.' },
+        { type:'quiz', title:'Verifică', q:'Catetele 6 și 8. Ipotenuza:', opts:['10','14','12','√48'], correct:0, exp:'6² + 8² = 100, √100 = 10.' }
+      ]}
+    ]
+  },
+  {
+    id:'hist', name:'Istoria românilor', symbol:'H', meta:'120 min · Antichitate → azi',
+    preview:'Formare · Evul Mediu · Sec. XX',
+    topics:[
+      { id:'h1', title:'Formarea poporului român', steps:[
+        { kicker:'Context', title:'Romanizarea Daciei', body:'<p>Poporul român s-a format prin <span class="hl">romanizarea dacilor</span> după cucerirea romană din <span class="hl">106 d.Hr.</span></p>', speak:'106 d.Hr. e o dată pe care trebuie să o știi pe de rost. Traian cucerește Dacia.' },
+        { type:'quiz', title:'Verifică', q:'În ce an a cucerit Traian Dacia?', opts:['106 d.Hr.','271 d.Hr.','86 î.Hr.','330 d.Hr.'], correct:0, exp:'Războaiele dacice s-au încheiat în 106 d.Hr.' }
+      ]},
+      { id:'h2', title:'Unirea Principatelor (1859)', steps:[
+        { kicker:'Eveniment', title:'Dubla alegere a lui Cuza', body:'<p>La <span class="hl">24 ianuarie 1859</span>, Alexandru Ioan Cuza a fost ales domn în ambele principate, realizând Unirea.</p>', speak:'Trucul unirii: același om ales de două ori. Deștept, nu?' },
+        { type:'quiz', title:'Verifică', q:'Unirea Principatelor s-a realizat la:', opts:['24 ianuarie 1859','1 decembrie 1918','9 mai 1877','27 martie 1918'], correct:0, exp:'24 ianuarie 1859, dubla alegere a lui Cuza.' }
+      ]},
+      { id:'h3', title:'Independența R. Moldova', steps:[
+        { kicker:'Eveniment', title:'27 august 1991', body:'<p>Pe fondul destrămării URSS, Republica Moldova își proclamă <span class="hl">independența la 27 august 1991</span>.</p>', speak:'27 august 1991. Ziua Independenței, sărbătoare națională azi.' },
+        { type:'quiz', title:'Verifică', q:'Când a fost proclamată independența R. Moldova?', opts:['27 august 1991','23 iunie 1990','25 decembrie 1991','1 ianuarie 1992'], correct:0, exp:'27 august 1991.' }
+      ]}
+    ]
+  },
+  {
+    id:'rom', name:'Limba română', symbol:'A', meta:'120 min · Gramatică & literatură',
+    preview:'Fonetică · Morfologie · Sintaxă',
+    topics:[
+      { id:'r1', title:'Diftong, triftong, hiat', steps:[
+        { kicker:'Concept', title:'Vocalele în silabe', body:'<p><span class="hl">Diftong</span>: două vocale, aceeași silabă. <span class="hl">Triftong</span>: trei. <span class="hl">Hiat</span>: vocale în silabe diferite.</p>', speak:'Hiatul e capcana: vocalele stau lângă, dar se despart. Ex: po-e-zi-e.' },
+        { type:'quiz', title:'Verifică', q:'Câte silabe are "extraordinar"?', opts:['5','6','4','7'], correct:0, exp:'ex-tra-or-di-nar = 5 silabe.' }
+      ]},
+      { id:'r2', title:'Părțile de propoziție', steps:[
+        { kicker:'Concept', title:'Principale și secundare', body:'<p><span class="hl">Subiectul</span> (cine?) și <span class="hl">predicatul</span> (ce face?) sunt principale. Complementul și atributul sunt secundare.</p>', speak:'Găsești mereu predicatul primul, apoi întrebi de la el cine face acțiunea.' },
+        { type:'quiz', title:'Verifică', q:'În "Maria citește o carte", "o carte" este:', opts:['complement direct','subiect','atribut','complement indirect'], correct:0, exp:'Citește ce? o carte, deci complement direct.' }
+      ]}
+    ]
+  }
+];
+
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const SK = 'wispucci.v2';
+function load(){ try { return JSON.parse(localStorage.getItem(SK)) || def(); } catch(_){ return def(); } }
+function def(){ return { done:[], correct:0, total:0, streak:{n:0,last:null}, minutesLearned:0, highlights:[], signedUp:false, lessonsSinceReview:0, reviewPool:[] }; }
+function save(){ localStorage.setItem(SK, JSON.stringify(P)); }
+let P = load();
+
+let curSubject=null, curTopic=null, stepIdx=0, pendingReview=null, sessionStart=Date.now(), softWallShown=false;
+
+function clock(){ const n=new Date(); $('#clock').textContent = String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0'); }
+clock(); setInterval(clock, 30000);
+
+(function(){
+  const c=$('#bg'), x=c.getContext('2d'), dpr=Math.min(devicePixelRatio,2); let W,H,ps=[];
+  function rs(){ W=innerWidth;H=innerHeight;c.width=W*dpr;c.height=H*dpr;c.style.width=W+'px';c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0); }
+  rs(); addEventListener('resize',rs);
+  const N=Math.round(26*(innerWidth/1400));
+  for(let i=0;i<N;i++) ps.push(mk(true));
+  function mk(init){ return { x:Math.random()*innerWidth, y:init?Math.random()*innerHeight:innerHeight+40, r:.4+Math.random()*1, vy:-(.06+Math.random()*.2), vx:(Math.random()-.5)*.08, a:.1+Math.random()*.4, f:Math.random()*6.28 }; }
+  function draw(){ x.clearRect(0,0,W,H); x.globalCompositeOperation='lighter';
+    for(let i=0;i<ps.length;i++){ const p=ps[i]; p.x+=p.vx;p.y+=p.vy;p.f+=.03; const a=(Math.sin(p.f)*.2+.7)*p.a*.4; x.fillStyle=`rgba(239,221,141,${a})`; x.beginPath(); x.arc(p.x,p.y,p.r,0,6.28); x.fill(); if(p.y<-10) ps[i]=mk(false); }
+    x.globalCompositeOperation='source-over'; requestAnimationFrame(draw); }
+  draw();
+})();
+
+const orb=$('#orb');
+function orbState(s){ ['happy','thinking','speaking','confused','celebrating'].forEach(k=>orb.classList.toggle('is-'+k, k===s)); }
+let blinkT; (function blink(){ blinkT=setTimeout(()=>{ const e=orb.querySelector('.face-eyes'); if(e){ e.style.transform='scaleY(.05)'; e.style.transition='transform 80ms ease-in'; setTimeout(()=>{ e.style.transition='transform .4s var(--ease)'; e.style.transform=''; },100); } blink(); }, 2600+Math.random()*3400); })();
+
+function placeOrb(screen){
+  const l=$('#orbLayer');
+  if(screen==='landing'){ l.style.top='8%'; l.style.bottom='auto'; l.style.left='50%'; l.style.width='180px'; l.style.height='180px'; l.style.transform='translateX(-50%)'; }
+  else if(screen==='lesson'){ l.style.top='auto'; l.style.bottom='24px'; l.style.left='28px'; l.style.width='72px'; l.style.height='72px'; l.style.transform='none'; }
+  else { l.style.top='70px'; l.style.bottom='auto'; l.style.left='50%'; l.style.width='100px'; l.style.height='100px'; l.style.transform='translateX(-50%)'; }
+}
+
+let speechT;
+function orbSpeak(text, highlightSelector){
+  const sp=$('#orbSpeech');
+  sp.textContent=text;
+  const l=$('#orbLayer').getBoundingClientRect();
+  sp.style.left = Math.min(l.left + l.width + 12, innerWidth-280)+'px';
+  sp.style.top = (l.top)+'px';
+  if(l.bottom > innerHeight-120){ sp.style.top=(l.top-60)+'px'; }
+  sp.classList.add('show');
+  orbState('speaking');
+  if(highlightSelector){ const el=document.querySelector(highlightSelector); if(el) el.querySelectorAll('.hl').forEach(h=>h.classList.add('hl-speak')); }
+  clearTimeout(speechT);
+  speechT=setTimeout(()=>{ sp.classList.remove('show'); orbState('happy'); document.querySelectorAll('.hl-speak').forEach(h=>h.classList.remove('hl-speak')); }, 4200);
+}
+
+function go(screen){
+  $$('.screen').forEach(s=>s.classList.toggle('is-active', s.dataset.screen===screen));
+  placeOrb(screen);
+  $('#bnav').classList.toggle('show', screen!=='landing' && screen!=='lesson');
+  $$('.bnav-btn').forEach(b=>b.classList.toggle('on', b.dataset.nav===screen));
+  if(screen==='landing'){ orbState('happy'); renderExams(); }
+  if(screen==='stats'){ orbState('happy'); renderStats(); }
+  if(screen==='lesson'){ orbState('thinking'); }
+}
+$$('.bnav-btn').forEach(b=>b.addEventListener('click',()=>go(b.dataset.nav)));
+
+function renderExams(){
+  $('#examGrid').innerHTML = CURRICULUM.map(s=>{
+    const total=s.topics.length;
+    const done=s.topics.filter(t=>P.done.includes(t.id)).length;
+    return `<div class="exam-card" data-sub="${s.id}">
+      <div class="exam-card-symbol">${s.symbol}</div>
+      <div class="exam-card-name">${s.name}</div>
+      <div class="exam-card-meta">${s.meta}${done?` · ${done}/${total} teme`:''}</div>
+      <div class="exam-card-topics">${s.preview}</div>
+      <div class="exam-card-cta">Începe →</div>
+    </div>`;
+  }).join('');
+  $$('.exam-card').forEach(c=>c.addEventListener('click',()=>startSubject(c.dataset.sub)));
+}
+
+$('#tryNow').addEventListener('click',()=>{ document.querySelector('.exam-section').scrollIntoView({behavior:'smooth'}); });
+$('#loginTop').addEventListener('click',()=>openSignup());
+
+function startSubject(subId){
+  curSubject = CURRICULUM.find(s=>s.id===subId);
+  curTopic = curSubject.topics.find(t=>!P.done.includes(t.id)) || curSubject.topics[0];
+  openTopic();
+}
+
+function openTopic(){
+  pendingReview = null;
+  if(P.reviewPool.length && P.lessonsSinceReview >= (2 + Math.floor(Math.random()*3))){
+    const rid = P.reviewPool[Math.floor(Math.random()*P.reviewPool.length)];
+    pendingReview = findReviewStep(rid);
+    P.lessonsSinceReview = 0;
+    save();
+  }
+  stepIdx = 0;
+  buildSteps();
+  go('lesson');
+}
+
+function findReviewStep(topicId){
+  for(const s of CURRICULUM){ const t=s.topics.find(t=>t.id===topicId); if(t){ const q=t.steps.find(st=>st.type==='quiz'); return q?{...q, _reviewTitle:t.title}:null; } }
+  return null;
+}
+
+function buildSteps(){
+  $('#lessonTitle').textContent = curTopic.title;
+  let steps = [...curTopic.steps];
+  if(pendingReview) steps = [ {...pendingReview, isReview:true}, ...steps ];
+  window._steps = steps;
+  $('#stepDots').innerHTML = steps.map((_,i)=>`<span class="step-dot ${i===0?'current':''}"></span>`).join('');
+  renderStep();
+}
+
+function renderStep(){
+  const steps = window._steps;
+  const step = steps[stepIdx];
+  const stage=$('#lessonStage');
+  const isQuiz = step.type==='quiz';
+  let inner='';
+  if(step.isReview){ inner += `<div class="step-review-badge">Repetare · ${step._reviewTitle}</div>`; }
+  else { inner += `<div class="step-kicker">${step.kicker||''}</div>`; }
+  inner += `<div class="step-title">${step.title}</div>`;
+  if(isQuiz){
+    inner += `<div class="step-body"><p>${step.q}</p></div>`;
+    inner += `<div class="step-quiz-opts">${step.opts.map((o,i)=>`<button class="step-quiz-opt" data-i="${i}">${o}</button>`).join('')}</div>`;
+    inner += `<div class="step-quiz-fb"></div>`;
+  } else {
+    inner += `<div class="step-body">${step.body}</div>`;
+  }
+  stage.innerHTML = `<div class="step-card is-active"><div class="step-glass" data-step-glass>${inner}</div></div>`;
+  $$('#stepDots .step-dot').forEach((d,i)=>{ d.className='step-dot'+(i<stepIdx?' done':i===stepIdx?' current':''); });
+  const nextBtn=$('#stepNext');
+  if(isQuiz){ nextBtn.style.opacity='.4'; nextBtn.style.pointerEvents='none'; $('#lessonHint').textContent='Alege un răspuns'; }
+  else { nextBtn.style.opacity='1'; nextBtn.style.pointerEvents='all'; $('#lessonHint').textContent='Citește, apoi continuă'; }
+  nextBtn.textContent = stepIdx>=steps.length-1 ? 'Termină tema ✓' : 'Continuă →';
+  if(isQuiz){
+    orbState('thinking');
+    $$('.step-quiz-opt').forEach(b=>b.addEventListener('click',()=>answerQuiz(b, step)));
+  } else {
+    orbState('happy');
+    if(step.speak){ setTimeout(()=>orbSpeak(step.speak, '[data-step-glass]'), 700); }
+  }
+  enableHighlighting();
+}
+
+function answerQuiz(btn, step){
+  const i=+btn.dataset.i;
+  const ok=i===step.correct;
+  const fb=$('.step-quiz-fb');
+  $$('.step-quiz-opt').forEach((o,idx)=>{ o.disabled=true; if(idx===step.correct) o.classList.add('correct'); });
+  if(ok){ orbState('celebrating'); fb.className='step-quiz-fb show ok'; fb.textContent='Corect. '+step.exp; P.correct++; setTimeout(()=>orbSpeak('Frumos. Ai prins ideea.'),300); }
+  else { btn.classList.add('wrong'); orbState('confused'); fb.className='step-quiz-fb show no'; fb.textContent=step.exp; setTimeout(()=>orbSpeak('Nu-i nimic. Reține explicația și mergem mai departe.'),300); }
+  P.total++; save();
+  const nextBtn=$('#stepNext'); nextBtn.style.opacity='1'; nextBtn.style.pointerEvents='all'; $('#lessonHint').textContent='';
+}
+
+$('#stepNext').addEventListener('click',()=>{
+  const steps=window._steps;
+  if(stepIdx>=steps.length-1){ finishTopic(); return; }
+  const card=$('.step-card'); card.classList.add('leaving');
+  stepIdx++;
+  setTimeout(renderStep, 260);
+});
+
+$('#lessonBack').addEventListener('click',()=>go('landing'));
+
+function finishTopic(){
+  if(!P.done.includes(curTopic.id)){
+    P.done.push(curTopic.id);
+    if(!P.reviewPool.includes(curTopic.id)) P.reviewPool.push(curTopic.id);
+    P.lessonsSinceReview++;
+    updateStreak();
+  }
+  P.minutesLearned += Math.round((Date.now()-sessionStart)/60000);
+  sessionStart=Date.now();
+  save();
+  orbState('celebrating');
+  orbSpeak('Temă terminată. Ești tot mai aproape de examen.');
+  if(!P.signedUp && !softWallShown && P.done.length>=1){
+    softWallShown=true;
+    setTimeout(openSignup, 900);
+    return;
+  }
+  setTimeout(()=>{
+    const idx=curSubject.topics.findIndex(t=>t.id===curTopic.id);
+    if(idx<curSubject.topics.length-1){ curTopic=curSubject.topics[idx+1]; openTopic(); }
+    else go('stats');
+  }, 1200);
+}
+
+function enableHighlighting(){
+  const glass=$('[data-step-glass]');
+  if(!glass) return;
+  glass.addEventListener('mouseup',()=>{
+    const sel=window.getSelection();
+    const text=sel.toString().trim();
+    if(text.length>3 && text.length<160){
+      P.highlights.push({ text, topic:curTopic?.title||'', at:Date.now() });
+      if(P.highlights.length>50) P.highlights.shift();
+      save();
+      orbSpeak('Am reținut asta ca fiind important pentru tine.');
+    }
+  });
+}
+
+function openSignup(){ $('#signupModal').classList.add('show'); orbState('happy'); }
+function closeSignup(){ $('#signupModal').classList.remove('show'); }
+$('#signupConfirm').addEventListener('click',()=>{ P.signedUp=true; save(); closeSignup(); orbSpeak('Perfect. Progresul tău e în siguranță acum.'); setTimeout(()=>{ if(curSubject){ const idx=curSubject.topics.findIndex(t=>t.id===curTopic.id); if(idx<curSubject.topics.length-1){ curTopic=curSubject.topics[idx+1]; openTopic(); } else go('stats'); } },600); });
+$('#signupSkip').addEventListener('click',()=>{ closeSignup(); if(curSubject){ const idx=curSubject.topics.findIndex(t=>t.id===curTopic.id); if(idx<curSubject.topics.length-1){ curTopic=curSubject.topics[idx+1]; openTopic(); } else go('stats'); } });
+
+function updateStreak(){
+  const today=new Date().toISOString().slice(0,10);
+  if(P.streak.last===today) return;
+  const yest=new Date(Date.now()-86400000).toISOString().slice(0,10);
+  P.streak.n = (P.streak.last===yest)? P.streak.n+1 : 1;
+  P.streak.last=today;
+}
+
+function renderStats(){
+  $('#sLessons').textContent=P.done.length;
+  $('#sAcc').textContent = P.total? Math.round(P.correct/P.total*100)+'%':'—';
+  $('#sStreak').textContent=P.streak.n;
+  const days=['L','M','M','J','V','S','D']; const td=new Date().getDay(); const mi=td===0?6:td-1;
+  $('#streakRow').innerHTML=days.map((d,i)=>`<span class="sd ${i<P.streak.n?'done':''} ${i===mi?'today':''}">${d}</span>`).join('');
+  $('#subjProg').innerHTML=CURRICULUM.map(s=>{ const total=s.topics.length; const done=s.topics.filter(t=>P.done.includes(t.id)).length; const pct=total?Math.round(done/total*100):0;
+    return `<div class="subj-prog"><span style="font-size:14px;font-weight:500;min-width:130px;">${s.name}</span><div class="subj-prog-bar"><div class="subj-prog-fill" style="width:${pct}%"></div></div><span style="font-size:12px;color:var(--text-3);">${done}/${total}</span></div>`; }).join('');
+  if(P.highlights.length){
+    $('#hlNote').innerHTML = P.highlights.slice(-5).reverse().map(h=>`<div style="margin-bottom:8px;">"<span style="color:var(--accent-soft);">${h.text}</span>" <span style="color:var(--text-3);">· ${h.topic}</span></div>`).join('');
+  }
+}
+
+orbState('happy');
+placeOrb('landing');
+renderExams();
+</script>
+</body>
+</html>
