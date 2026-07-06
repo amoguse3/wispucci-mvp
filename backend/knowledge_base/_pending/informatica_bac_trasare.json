@@ -1,0 +1,15 @@
+{
+  "title": "Trasarea programelor (BAC, C++)",
+  "summary": "Execuția pas cu pas a unui fragment de cod pentru a determina ieșirea. Cel mai frecvent item la profilul umanist.",
+  "formulas": [],
+  "key_facts": ["Se urmăresc valorile variabilelor la fiecare iterație a ciclului.", "real pr1: program cu divizori → ieșire '43 13'.", "uman sb26: ciclu care dublează → ieșire '2 4 8 16'."],
+  "terminology": ["trasare", "iterație", "variabilă", "ieșire standard", "contor"],
+  "worked_pattern": "Pentru un ciclu 'for(i=1;i<=4;i++){x*=2; cout<<x<<\" \";}' cu x=1 inițial: iterațiile dau 2, 4, 8, 16 → ieșire: 2 4 8 16.",
+  "common_mistakes": ["Greșirea condiției de oprire a ciclului.", "Ignorarea ordinii operațiilor în corpul ciclului."],
+  "exam_notes": "Frecvent la umanist. Verificat pe teste informatica sb26/es26 (Pascal și C++).",
+  "_verified": false,
+  "_node_id": "trasare_cod",
+  "_subject": "informatica",
+  "_grade": 12,
+  "_profile": "both"
+}

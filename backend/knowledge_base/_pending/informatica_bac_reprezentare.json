@@ -1,0 +1,15 @@
+{
+  "title": "Reprezentarea informației — capacitate și codificare (BAC)",
+  "summary": "Calcule de capacitate: număr de simboluri codificabile pe n biți, volum de date pentru texte/imagini/video.",
+  "formulas": ["n biți codifică 2^n simboluri", "volum text = nr_caractere × biți/caracter", "1 octet = 8 biți; 1 KB = 1024 octeți"],
+  "key_facts": ["uman sb26 it1: 8 = log2(n) → n = 256; V = 16×256×8 = 4 KB.", "real sb26 it1: 12KB/10B = 1228 parole; video 32 min ×25 ×8 Mbit = 375 Gbit."],
+  "terminology": ["bit", "octet", "capacitate", "codificare", "volum de date"],
+  "worked_pattern": "Pentru a codifica un simbol dintr-un set de 256 avem nevoie de log2(256)=8 biți. Un text de 16 caractere × 256 × 8 biți → 4 KB.",
+  "common_mistakes": ["Confuzia bit vs octet.", "Uitarea factorului 1024 la KB/MB."],
+  "exam_notes": "Subiectul I. Verificat pe teste informatica sb26 (real și uman).",
+  "_verified": false,
+  "_node_id": "reprezentare_info",
+  "_subject": "informatica",
+  "_grade": 12,
+  "_profile": "both"
+}

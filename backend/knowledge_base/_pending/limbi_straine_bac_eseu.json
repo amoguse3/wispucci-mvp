@@ -1,0 +1,14 @@
+{
+  "title": "Eseul la limba străină (BAC, 40p)",
+  "summary": "Producerea unui text de 180-200 cuvinte pe o temă dată, cu structură argumentativă și respectarea strictă a volumului. Al doilea domeniu, cel mai punctat.",
+  "formulas": [],
+  "key_facts": ["Punctare pe componente: temă (1p) + 2 puncte de conținut + 3 argumente (6p) + opinie + 2 exemple + 2 sfaturi + coeziune (4p) + gramatică (12p) + volum (4p).", "Gramatică: −1 punct la fiecare 5 greșeli; greșeala repetată se numără o singură dată.", "Volumul (180-200 cuvinte) contează real la notă, după scală.", "NB DUR: scrisul în altă limbă decât cea a testului anulează itemul."],
+  "terminology": ["eseu", "argument", "coeziune", "volum", "registru"],
+  "worked_pattern": "Structură: introducere (tema + opinie) → 2-3 paragrafe cu argumente + exemple → sfaturi/recomandări → concluzie. Ține 180-200 de cuvinte și verifică gramatica (fiecare 5 greșeli = −1p).",
+  "common_mistakes": ["Depășirea/nerespectarea limitei de cuvinte (pierde din volum).", "Argumente fără exemple.", "Amestecul de limbi."],
+  "exam_notes": "Domeniul II (40p). Identic pentru engleză/franceză, test unic toate profilurile. Verificat pe teste/baremе len/lfr sb26/pr26/es26.",
+  "_verified": false,
+  "_node_id": "eseu_l2",
+  "_subject": "limbi_straine",
+  "_grade": 12
+}

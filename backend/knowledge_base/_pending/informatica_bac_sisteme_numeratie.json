@@ -1,0 +1,15 @@
+{
+  "title": "Sisteme de numerație — conversii (BAC, C++)",
+  "summary": "Conversii între bazele 2, 8, 10, 16, inclusiv părți fracționare (la real). Metoda împărțirilor succesive (întreg) și înmulțirilor succesive (fracție).",
+  "formulas": ["întreg→10→2: împărțiri succesive la 2, resturile citite invers", "fracție→10→2: înmulțiri succesive cu 2, părțile întregi citite direct", "2→bază mai mare: grupare pe 3 biți (oct) sau 4 biți (hex)"],
+  "key_facts": ["real: (38,125)_10 = (100110,001)_2 (partea întreagă prin împărțiri, fracția prin înmulțiri).", "real es26 it1: (674,5)_8 → (1BC,A)_16 prin baza 2 intermediară.", "uman: doar întregi, fără părți fracționare."],
+  "terminology": ["bază", "bit", "octet", "conversie", "parte fracționară", "împărțiri succesive"],
+  "worked_pattern": "(38,125)_10→2: 38 prin împărțiri la 2 → 100110; 0,125×2=0,25→0; ×2=0,5→0; ×2=1,0→1 → 0,001. Rezultat: 100110,001.",
+  "common_mistakes": ["Citirea resturilor în ordine greșită (trebuie invers).", "Aplicarea împărțirilor la partea fracționară (se folosesc înmulțiri)."],
+  "exam_notes": "Subiectul I. Fracții = accent real. Verificat pe teste/baremе informatica sb26/es26.",
+  "_verified": false,
+  "_node_id": "sisteme_numeratie",
+  "_subject": "informatica",
+  "_grade": 12,
+  "_profile": "both"
+}
