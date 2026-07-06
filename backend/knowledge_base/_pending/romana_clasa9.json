@@ -1,0 +1,92 @@
+{
+  "subject": "romana",
+  "name": "Limba și literatura română",
+  "authority": "ANCE Moldova, clasa 9, gimnaziu — Examen Național de Absolvire",
+  "exam_format": "120 min. Un singur text literar/artistic, 13 itemi, bazați pe competențe (nu memorare). Itemul 13 = 5 puncte pentru corectitudinea limbii pe toată lucrarea, acordat doar dacă itemii 1,2,3,5,6,10,11,12 sunt realizați.",
+  "grading_notes": "Româna e bazată pe COMPETENȚE: punctele vin din a produce texte corecte (rezumat, opinie, dialog, descriere, text funcțional) și metalimbaj precis (figuri de stil, funcții sintactice, reguli de punctuație). Corectitudinea limbii se punctează separat, descrescător după numărul de greșeli: 5p impecabil → 4p (1-2 greșeli) → ... → 0p (>8 greșeli).",
+  "units": {
+    "comprehensiune_text": {
+      "title": "Comprehensiunea textului",
+      "summary": "Răspuns la întrebări pe baza textului, în enunțuri complete. Extragerea informației explicite și implicite.",
+      "key_facts": ["Răspunsurile trebuie construite ca enunțuri complete, nu cuvinte izolate.", "Se acordă câte 1 punct per răspuns corect și complet."],
+      "terminology": ["enunț complet", "informație explicită", "idee principală"],
+      "worked_pattern": "Întrebare: Când a învățat Kiyomi limba japoneză? Răspuns complet: „Kiyomi a învățat limba japoneză în plimbările pe care le făcea în parc cu tatăl său.”",
+      "common_mistakes": ["Răspuns în cuvinte izolate, nu enunț complet.", "Copierea unei secvențe fără a răspunde la întrebare."],
+      "exam_notes": "Item 1, de obicei 3 puncte (1×3)."
+    },
+    "figuri_de_stil": {
+      "title": "Figuri de stil",
+      "summary": "Definirea și identificarea figurilor de stil: comparație, metaforă, epitet, personificare, cu exemplu pertinent.",
+      "key_facts": ["Comparația: doi termeni în relație de asemănare puși în paralel pentru a evidenția o caracteristică.", "Exemplul trebuie să conțină toate elementele figurii; nu e obligatoriu citat cu autor."],
+      "terminology": ["comparație", "metaforă", "epitet", "personificare", "termen comparat"],
+      "common_mistakes": ["Definiție corectă dar exemplu care nu ilustrează figura.", "Confundarea comparației cu metafora."],
+      "exam_notes": "Item 2, de obicei 2 puncte (definiție + exemplu)."
+    },
+    "rezumat": {
+      "title": "Rezumatul",
+      "summary": "Rezumarea unui alineat/text în limită strictă de cuvinte (ex. 50-55), păstrând esențialul.",
+      "key_facts": ["Se punctează: fidelitatea informației, secvențele esențiale, omiterea detaliilor, coerența gramaticală, respectarea limitei.", "Numără exact cuvintele — depășirea limitei costă puncte."],
+      "terminology": ["rezumat", "idee esențială", "limită de cuvinte"],
+      "common_mistakes": ["Depășirea limitei de cuvinte.", "Includerea detaliilor nesemnificative.", "Copierea în loc de reformulare."],
+      "exam_notes": "Item 3, de obicei 5 puncte (1×5, câte 1 per cerință)."
+    },
+    "lexicografie": {
+      "title": "Articolul lexicografic (dicționar)",
+      "summary": "Citirea și analiza unui articol de dicționar: numărul de sensuri, sensul contextual, sinonime, sensul expresiilor, informații gramaticale.",
+      "key_facts": ["Se extrag: nr. de sensuri, sensul din context, sinonim, sensul unei expresii, info gramaticală (parte de vorbire, gen, forme)."],
+      "terminology": ["articol lexicografic", "sens propriu/figurat", "sinonim", "expresie", "informație gramaticală"],
+      "common_mistakes": ["Confundarea sensului contextual cu primul sens din dicționar."],
+      "exam_notes": "Item 4, de obicei 5 puncte (1×5)."
+    },
+    "text_argumentativ_opinie": {
+      "title": "Opinia argumentată",
+      "summary": "Exprimarea unei opinii pe o temă dată, susținută de un număr fix de argumente, coerent și în limita de întindere.",
+      "key_facts": ["Punctare tip 1+3+1+1: opinie clară + 3 argumente valide + coerență + respectarea limitei."],
+      "terminology": ["opinie", "argument", "coerență", "teză"],
+      "worked_pattern": "Opinie clară → argument 1 (raționament + exemplu) → argument 2 → argument 3 → concluzie, în limita cerută.",
+      "common_mistakes": ["Opinie neexprimată explicit.", "Argumente declarative fără susținere."],
+      "exam_notes": "Item 5, de obicei 6 puncte."
+    },
+    "texte_functionale": {
+      "title": "Texte funcționale (anunț, invitație, cerere, mesaj)",
+      "summary": "Redactarea unui text funcțional conform unei legende, cu structură specifică și date integrate.",
+      "key_facts": ["Anunțul cere: generic (titlu Anunț), informația, semnătura.", "Se punctează structura + respectarea integrală a datelor din legendă + limita/aranjarea în pagină."],
+      "terminology": ["anunț", "invitație", "cerere", "mesaj electronic", "formulă de adresare"],
+      "common_mistakes": ["Omiterea unor date din legendă.", "Lipsa structurii tipului de text."],
+      "exam_notes": "Item 6, de obicei 4 puncte."
+    },
+    "functii_sintactice": {
+      "title": "Funcții sintactice",
+      "summary": "Identificarea funcției sintactice a cuvintelor: subiect, predicat, atribut, complement (cu specificarea tipului de complement).",
+      "key_facts": ["Specificarea tipului de complement este OBLIGATORIE (direct, circumstanțial de timp etc.).", "Pentru atribut/predicat/subiect nu e obligatorie specificarea tipului."],
+      "terminology": ["subiect", "predicat", "atribut", "complement direct", "complement circumstanțial"],
+      "worked_pattern": "„Am înțeles parabola” → parabola = complement direct; „foarte devreme” = complement circumstanțial de timp.",
+      "common_mistakes": ["Nespecificarea tipului de complement.", "Confundarea atributului cu complementul."],
+      "exam_notes": "Item 9, de obicei 5 puncte (1×5)."
+    },
+    "punctuatie_ortografie": {
+      "title": "Punctuație și ortografie",
+      "summary": "Justificarea folosirii semnelor de punctuație prin regulă și aplicarea regulilor ortografice (ex. cratima la formele verbale inversate).",
+      "key_facts": ["Virgula la subordonata concesivă (Deși...) se izolează în orice poziție.", "Formele verbale compuse inversate se scriu cu cratimă: fi-va, venit-am."],
+      "terminology": ["virgulă", "cratimă", "subordonată concesivă", "topică inversată"],
+      "common_mistakes": ["Identificarea situației fără formularea exactă a regulii."],
+      "exam_notes": "Itemi 8 și 10, câte 2 puncte."
+    },
+    "dialog": {
+      "title": "Construirea dialogului",
+      "summary": "Redactarea unui dialog cu număr fix de replici, respectând statutul interlocutorilor și normele de redactare.",
+      "key_facts": ["Se punctează: respectarea statutului/subiectului, coerența, logica, limita de întindere.", "Normele de redactare a dialogului (linia de dialog) sunt obligatorii."],
+      "terminology": ["replică", "linie de dialog", "interlocutor"],
+      "common_mistakes": ["Nerespectarea normelor de redactare (linia de dialog).", "Replici incoerente între ele."],
+      "exam_notes": "Item 11, de obicei 4 puncte."
+    },
+    "text_descriptiv": {
+      "title": "Textul descriptiv/narativ",
+      "summary": "Producerea unui text descriptiv (ex. coperta unei cărți citite) cu respectarea rigorilor descrierii.",
+      "key_facts": ["Se punctează: subiectul solicitat, rigorile descrierii, coerența, limita de întindere."],
+      "terminology": ["descriere", "detaliu semnificativ", "coerență"],
+      "common_mistakes": ["Text prea general, fără rigorile descrierii."],
+      "exam_notes": "Item 12, de obicei 4 puncte."
+    }
+  }
+}

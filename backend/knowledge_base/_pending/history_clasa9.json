@@ -1,0 +1,71 @@
+{
+  "subject": "history",
+  "name": "Istoria românilor și universală",
+  "authority": "ANCE Moldova, clasa 9, gimnaziu — Examen Național de Absolvire",
+  "exam_format": "120 min, 50 puncte, 3 subiecte. Subiectul I (12p): 4 itemi de analiză de sursă (imagine/hartă/timbru/poster), fiecare = a numi/identifica/formula/aprecia (1p) + a argumenta (2p). Subiectul II (23p): dosar de surse A-D (repere cronologice + text + hartă), ~7 itemi. Subiectul III (15p): text argumentativ structurat din surse.",
+  "grading_notes": "Punctele se pierd din SUB-argumentare, nu din fapte greșite. Peste tot: 0p lipsă/greșit, 1p argument parțial (fără exemplu/dovadă), 2p argument deplin (raționament + exemplu concret din sursă sau cunoștințe). Formula de predat: afirmație → raționament → exemplu concret (dată/personalitate/sursă). Eseul (Sub. III): surse integrate (2p), structură intro/cuprins/concluzie (3p), ≥3 argumente (7p), referințe la personalități/repere cronologice (2p), corectitudine științifică (1p).",
+  "units": {
+    "marea_unire_1918": {
+      "title": "Marea Unire din 1918",
+      "summary": "Unirea Basarabiei (27 martie 1918), Bucovinei (28 noiembrie/15 nov. 1918) și Transilvaniei (1 decembrie 1918, Alba-Iulia) cu Regatul României, în contextul destrămării Austro-Ungariei și schimbării de regim în Rusia.",
+      "dates": {"27 martie 1918": "Unirea Basarabiei cu România (Sfatul Țării)", "28 noiembrie 1918": "Unirea Bucovinei (Congresul general, Cernăuți)", "1 decembrie 1918": "Unirea Transilvaniei (Marea Adunare Națională de la Alba-Iulia, 1228 delegați)"},
+      "key_facts": ["Sfatul Țării la Chișinău a proclamat Republica Democratică Moldovenească și a votat unirea Basarabiei la 27 martie 1918.", "Regele Ferdinand I a promulgat/ratificat actele de unire.", "Unirea s-a realizat pe cale democratică prin adunări reprezentative."],
+      "terminology": ["Sfatul Țării", "Marea Adunare Națională", "autodeterminare", "stat unitar", "România Mare"],
+      "common_mistakes": ["Confundarea datelor celor trei uniri.", "A afirma unirea fără a menționa organul care a votat-o."],
+      "exam_notes": "Dosar central în Sub. II la sb25. Frecvent cerut: personalități, caracterul democratic, teritoriile unite."
+    },
+    "perioada_interbelica": {
+      "title": "Perioada interbelică",
+      "summary": "Criza economică 1929-1933 (Marea Depresiune), regimuri totalitare, Liga Națiunilor, dezvoltarea științei/tehnicii și a culturii de consum.",
+      "dates": {"24 octombrie 1929": "Joia Neagră, crahul de la Wall Street", "1929-1933": "Marea Depresiune"},
+      "key_facts": ["Criza a lovit mai dur Germania (>40% șomaj) decât SUA (~25%), favorizând dictatura nazistă.", "Liga Națiunilor = prima organizație pentru securitate colectivă după WWI.", "Penicilina (Fleming, 1929), linia de asamblare, radio/cinema transformă viața cotidiană."],
+      "terminology": ["Marea Depresiune", "totalitarism", "Liga Națiunilor", "securitate colectivă", "cultură de consum"],
+      "common_mistakes": ["Confundarea cauzelor cu consecințele crizei.", "A trata Liga Națiunilor drept ONU."],
+      "exam_notes": "Apare ca Sub. I (grafic șomaj sb25), Sub. III (Marea Depresiune sb23)."
+    },
+    "al_doilea_razboi_mondial": {
+      "title": "Al Doilea Război Mondial și pierderile teritoriale ale României",
+      "summary": "Pactul Molotov-Ribbentrop (1939) și consecințele: pierderile teritoriale ale României în 1940 (Basarabia, Bucovina de Nord, ținutul Herța; Transilvania de Nord-Est; Cadrilaterul).",
+      "dates": {"23 august 1939": "Pactul de neagresiune sovieto-german (Molotov-Ribbentrop)", "26-28 iunie 1940": "Ultimatumurile sovietice, pierderea Basarabiei/Bucovinei", "30 august 1940": "Dictatul de la Viena (Transilvania de Nord-Est)", "7 septembrie 1940": "Tratatul de la Craiova (Cadrilaterul)", "1943-1945": "Conferințele interaliate"},
+      "key_facts": ["Protocolul secret al Pactului Molotov-Ribbentrop a împărțit sferele de influență în Europa de Est.", "România a pierdut trei teritorii în vara-toamna 1940 prin ultimatum/dictat/tratat."],
+      "terminology": ["pact de neagresiune", "protocol secret", "ultimatum", "dictat", "sferă de influență"],
+      "common_mistakes": ["A atribui toate pierderile din 1940 unui singur act.", "Confundarea Dictatului de la Viena cu ultimatumul sovietic."],
+      "exam_notes": "Sub. I la sb24 (harta 1940) și sb25 (pactul)."
+    },
+    "razboiul_rece": {
+      "title": "Războiul Rece",
+      "summary": "Confruntarea bipolară postbelică: Planul Marshall, conferințele interaliate (1943-1945), cursa înarmării și tehnologică (explorarea spațiului).",
+      "dates": {"1947": "Planul Marshall", "anii 1950-1960": "începutul explorării spațiale"},
+      "key_facts": ["Planul Marshall = program american de reconstrucție a Europei, marcând zorii Războiului Rece.", "Tehnologia spațială (sateliți de comunicații/meteo) a transformat planeta într-un „oraș global”."],
+      "terminology": ["Război Rece", "Planul Marshall", "bipolaritate", "cursa înarmării"],
+      "common_mistakes": ["Plasarea greșită în timp a Planului Marshall."],
+      "exam_notes": "Sub. I la sb24 (Marshall) și ss25 (conferințe interaliate)."
+    },
+    "sovietizarea_rssm": {
+      "title": "Sovietizarea RSS Moldovenești",
+      "summary": "Colectivizarea agriculturii, deportările, foametea organizată din 1946-1947, lichidarea chiaburimii și impunerea modelului sovietic de viață.",
+      "dates": {"12 octombrie 1924": "Formarea RASSM (Transnistria)", "2 august 1940": "Formarea RSS Moldovenești unionale", "1946-1947": "Foametea organizată", "1949": "Val masiv de deportări și colectivizare"},
+      "key_facts": ["Colectivizarea a instaurat proprietatea colectivă (de fapt de stat) și dependența de colhoz.", "Cote obligatorii de livrare către stat, rechiziții forțate, deportarea chiaburimii."],
+      "terminology": ["colectivizare", "colhoz", "chiaburime", "deportare", "cote obligatorii", "rechiziții"],
+      "common_mistakes": ["Confundarea RASSM (1924) cu RSSM (1940).", "A descrie foametea ca naturală, nu organizată."],
+      "exam_notes": "Sub. III la sb24 (eseu despre colectivizare)."
+    },
+    "independenta_rm": {
+      "title": "Republica Moldova spre independență (1989-1991)",
+      "summary": "Mișcarea democratică de eliberare națională: limba română limbă de stat (1989), suveranitate (1990), independență (27 august 1991), Constituția (1994).",
+      "dates": {"31 august 1989": "Limba română – limbă de stat", "23 iunie 1990": "Proclamarea suveranității", "27 august 1991": "Declarația de independență", "29 iulie 1994": "Adoptarea Constituției RM"},
+      "key_facts": ["Marile Adunări Naționale de la Chișinău au exprimat aspirațiile de libertate și unitate.", "Declarația de independență a fost adoptată de Parlament la 27 august 1991."],
+      "terminology": ["suveranitate", "independență", "regim democratic", "mișcare de eliberare națională"],
+      "common_mistakes": ["Confundarea suveranității (1990) cu independența (1991)."],
+      "exam_notes": "Sub. II la sb23; Sub. I la sb24 (Declarația); drapelul de stat la sb25."
+    },
+    "stiinta_cultura_contemporana": {
+      "title": "Știința, tehnica și cultura contemporană",
+      "summary": "Descoperirile științifice ale secolului XX și impactul lor asupra tehnologiei și vieții cotidiene; personalități culturale (ex. Grigore Vieru).",
+      "key_facts": ["Tehnologiile informaționale și internetul definesc lumea contemporană.", "Descoperirile științifice au schimbat comunicarea, transportul, medicina și divertismentul."],
+      "terminology": ["revoluție tehnico-științifică", "societate informațională", "cultură de masă"],
+      "common_mistakes": ["Argumentare vagă, fără exemple concrete de descoperiri."],
+      "exam_notes": "Sub. I (timbru Grigore Vieru sb25) și Sub. III (eseu descoperiri sec. XX, sb25)."
+    }
+  }
+}
