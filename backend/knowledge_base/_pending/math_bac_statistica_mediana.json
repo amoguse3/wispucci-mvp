@@ -1,0 +1,15 @@
+{
+  "title": "Statistică matematică — medie și mediană (BAC umanist)",
+  "summary": "Media aritmetică, determinarea unei valori lipsă din medie, mediana seriei statistice. Accent la profil umanist (item de statistică/calcul financiar).",
+  "formulas": ["media = (x_1+...+x_n)/n", "mediana: valoarea din mijloc a seriei ordonate (media celor două valori centrale dacă n e par)"],
+  "key_facts": ["Valoarea lipsă se află din ecuația mediei: (suma cunoscută + x)/n = media dată.", "Mediana cere ORDONAREA prealabilă a seriei.", "Exemplu (uman sb26 it14): 8 valori, media=9 ⇒ x=8; seria ordonată dă mediana 8,5."],
+  "terminology": ["medie aritmetică", "mediană", "serie statistică", "valoare centrală"],
+  "worked_pattern": "Pași (mii): 6,9,8,12,13,x,9,7; media=9 ⇒ (64+x)/8=9 ⇒ x=8. Ordonat: 6,7,8,8,9,9,12,13 ⇒ mediana=(8+9)/2=8,5.",
+  "common_mistakes": ["Calcularea medianei fără a ordona seria.", "Împărțirea la un n greșit."],
+  "exam_notes": "Item 14 la umanist (8p). Verificat pe baremе sb26/es26 uman. La real acest tip apare mai rar.",
+  "_verified": false,
+  "_node_id": "statistica_mediana",
+  "_subject": "math",
+  "_grade": 12,
+  "_profile": "uman"
+}

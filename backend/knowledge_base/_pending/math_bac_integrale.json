@@ -1,0 +1,15 @@
+{
+  "title": "Primitive și integrala definită (BAC real)",
+  "summary": "Primitive, formula Newton-Leibniz, calculul ariilor și determinarea unui parametru din egalitatea de arii. DOAR profil real (matanaliză).",
+  "formulas": ["∫ x^α dx = x^{α+1}/(α+1) + C, α≠-1", "∫ dx/x = ln|x| + C", "∫ f(x)g'(x)dx = f(x)g(x) - ∫ f'(x)g(x)dx (integrare prin părți)", "Newton-Leibniz: ∫_a^b f = F(b) - F(a)"],
+  "key_facts": ["Primitiva se determină până la o constantă; constanta se află din condiția dată (ex. F(1)=0).", "Aria dintre grafic și axe = integrala definită (cu semn corect pe intervale).", "Un parametru m care împarte figura în două arii egale se găsește din ∫_0^m f = ∫_m^b f."],
+  "terminology": ["primitivă", "integrală definită", "Newton-Leibniz", "integrare prin părți", "arie"],
+  "worked_pattern": "F primitiva lui f(x)=ln x / x^2 cu F(1)=0: prin părți ∫ ln x ·(-1/x)' dx = -(1/x)ln x - 1/x + C; F(1)=0 ⇒ C=1, deci F(x) = -(1/x)ln x - 1/x + 1 (real pr26 it10c).",
+  "common_mistakes": ["Uitarea constantei C și a condiției pentru determinarea ei.", "Semn greșit la arie pe intervale unde f<0."],
+  "exam_notes": "Item 10c la real (8p), aplicare Newton-Leibniz. NB: acest conținut NU apare la profil umanist. Verificat pe baremе sb26/pr26 real.",
+  "_verified": false,
+  "_node_id": "integrale",
+  "_subject": "math",
+  "_grade": 12,
+  "_profile": "real"
+}
