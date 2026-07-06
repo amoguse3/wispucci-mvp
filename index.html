@@ -3,43 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wispucci — Tutor AI pentru Examene</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style-v3.css">
+<title>Wispucci — Tutor AI pentru Examene și Bacalaureat</title>
+<link rel="stylesheet" href="wispucci.css">
 </head>
 <body>
-<!-- Wispucci v3 lesson engine. Docs: docs/PEDAGOGY.md, docs/RETENTION.md.
-     Step types: pretest, concept, worked, completion, quiz, elaborate.
-     Backend (optional): api.js talks to backend/ (FastAPI + Claude, grounded
-     in the Moldova ANCE knowledge base). Degrades gracefully offline. -->
-<canvas class="bg-canvas" id="bg"></canvas>
-<div class="bg-aurora"></div>
-<div id="orbLayer"><div class="orb is-happy" id="orb"><div class="orb-glow"></div><div class="orb-halo"></div><div class="orb-core"></div><div class="orb-shine"></div><svg class="orb-face" viewBox="0 0 100 100"><g class="face-brows"><path class="brow brow-l" d="M 30 38 Q 38 34 46 38"/><path class="brow brow-r" d="M 54 38 Q 62 34 70 38"/></g><g class="face-eyes"><ellipse class="eye eye-l" cx="38" cy="48" rx="5" ry="6"/><ellipse class="eye eye-r" cx="62" cy="48" rx="5" ry="6"/><circle class="eye-shine" cx="36" cy="45" r="2"/><circle class="eye-shine" cx="60" cy="45" r="2"/></g><path class="mouth" d="M 40 62 Q 50 68 60 62"/><ellipse class="cheek cheek-l" cx="30" cy="58" rx="5" ry="3"/><ellipse class="cheek cheek-r" cx="70" cy="58" rx="5" ry="3"/></svg></div></div>
-<div id="orbSpeech"></div>
+<canvas id="bg"></canvas>
 
-<section class="screen landing is-active" data-screen="landing">
-  <nav class="landing-nav"><div class="brand"><span class="brand-dot"></span> Wispucci</div><div class="landing-nav-actions"><span class="landing-clock">🇲🇩 <span id="clock">--:--</span></span><button class="btn-glass btn-sm" id="loginTop">Intră</button></div></nav>
-  <div class="landing-hero"><p class="hero-eyebrow">Tutor AI · Examenele Naționale · Clasa 9</p><h1 class="display">Nu doar testezi. <em>Înveți.</em></h1><p class="lead">Wispucci te trece prin fiecare temă pas cu pas, te pune să ghicești, îți explică de ce, și revine la ce ai uitat, mai greu de fiecare dată.</p><button class="btn btn-primary" id="tryNow">Încearcă acum, fără cont</button><p class="hero-note">2 minute și vezi cum funcționează. Cont doar dacă vrei să salvezi progresul.</p></div>
-  <div class="exam-section"><div class="exam-section-title"><h2 class="h1">Alege examenul</h2><p class="lead" style="margin-top:8px;">Conform programei oficiale ANCE.</p></div><div class="exam-grid" id="examGrid"></div><div class="landing-feats"><div class="feat"><p class="feat-title">Ghicești întâi</p><p class="feat-desc">Uneori tema începe cu o ghicitoare. Greșești, apoi înțelegi de ce, așa se lipește mai bine.</p></div><div class="feat"><p class="feat-title">Ajutor care scade</p><p class="feat-desc">Exemplu rezolvat, apoi cu spații de completat, apoi singur. Treptat, fără frică.</p></div><div class="feat"><p class="feat-title">Revii mai puternic</p><p class="feat-desc">Temele vechi revin la întâmplare, dar mai greu, ca să te forțezi să-ți amintești.</p></div></div></div>
-</section>
+<header class="top">
+  <span class="brand">Wispucci <span class="flag">🇲🇩</span></span>
+  <div class="top-right"><span id="clock" class="clock">--:--</span><button id="loginTop" class="login-btn">Intră</button></div>
+</header>
 
-<section class="screen lesson" data-screen="lesson">
-  <div class="lesson-top"><button class="lesson-top-back" id="lessonBack">← Înapoi</button><div class="lesson-top-spacer"></div><span class="lesson-top-title" id="lessonTitle">—</span><div class="lesson-top-spacer"></div><div class="lesson-steps-dots" id="stepDots"></div></div>
-  <div class="lesson-stage" id="lessonStage"></div>
-  <div class="lesson-nav"><span class="lesson-nav-hint" id="lessonHint">Citește, apoi continuă</span><button class="btn btn-primary btn-sm" id="stepNext" style="height:44px;padding:0 26px;">Continuă →</button></div>
-</section>
+<main class="main">
+  <!-- 1: уровень -->
+  <section class="screen is-active" data-screen="levels">
+    <div class="hero">
+      <span class="kicker">Tutor AI · Examene Naționale și Bacalaureat</span>
+      <h1>Nu doar testezi. Înveți.</h1>
+      <p class="hero-sub">Alege ce dai. Apoi materia, apoi tema. Începem de la bază, pas cu pas.</p>
+    </div>
+    <div id="levelGrid" class="level-grid"></div>
+    <p class="foot-note">2 minute, fără cont. Contul ți-l cere doar când vrei planul tău personalizat.</p>
+  </section>
 
-<section class="screen stats" data-screen="stats">
-  <div class="stats-wrap"><h2 class="h1" style="margin-bottom:28px;">Progresul tău</h2><div class="stats-grid"><div class="stat-glass"><div class="stat-num" id="sLessons">0</div><div class="stat-cap">Lecții</div></div><div class="stat-glass"><div class="stat-num" id="sAcc">—</div><div class="stat-cap">Acuratețe</div></div><div class="stat-glass"><div class="stat-num" id="sStreak">0</div><div class="stat-cap">Streak</div></div></div><div class="stats-block"><p class="stats-block-title">Ultimele 7 zile</p><div class="streak-row" id="streakRow"></div></div><div class="stats-block"><p class="stats-block-title">Pe materii</p><div id="subjProg"></div></div><div class="stats-block"><p class="stats-block-title">Ce ai evidențiat</p><div class="hl-note" id="hlNote">Selectează text în timpul lecției ca să-l evidențiezi. Wispucci reține ce ți s-a părut important.</div></div></div>
-</section>
+  <!-- 2: предметы -->
+  <section class="screen" data-screen="subjects">
+    <button class="back" data-back="levels">← Alt nivel</button>
+    <h2 id="subjectsTitle" class="h2"></h2>
+    <div id="subjectGrid" class="subj-grid"></div>
+  </section>
 
-<div class="modal-backdrop" id="signupModal"><div class="modal"><div class="modal-progress">✦ Ai învățat deja câteva minute</div><h2 class="h2">Salvează-ți progresul</h2><p class="modal-sub">Ai un început bun. Creează un cont ca să nu pierzi streak-ul, progresul și temele de repetat.</p><input class="modal-field" id="suName" type="text" placeholder="Cum te cheamă (apare în progres)"><input class="modal-field" id="suEmail" type="email" placeholder="Email"><input class="modal-field" id="suPass" type="password" placeholder="Parolă"><div class="modal-err" id="suErr" style="color:var(--error);font-size:13px;min-height:16px;margin-bottom:8px;"></div><button class="btn btn-primary" id="signupConfirm">Salvează contul</button><button class="modal-skip" id="signupToggle">Am deja cont? Intră</button><button class="modal-skip" id="signupSkip">Mai târziu, continuă să învăț</button></div></div>
+  <!-- 2.5: профиль -->
+  <section class="screen" data-screen="profile">
+    <button class="back" data-back="subjects">← Altă materie</button>
+    <div id="profileStage"></div>
+  </section>
 
-<nav class="bnav" id="bnav"><button class="bnav-btn" data-nav="landing">Materii</button><button class="bnav-btn" data-nav="stats">Progres</button></nav>
+  <!-- 3: темы -->
+  <section class="screen" data-screen="topics">
+    <button class="back" data-back="subjects">← Altă materie</button>
+    <h2 id="topicsTitle" class="h2"></h2>
+    <p id="topicsSub" class="h2-sub"></p>
+    <div id="topicList" class="topic-list"></div>
+  </section>
+
+  <!-- 4: урок (единый движок) -->
+  <section class="screen" data-screen="lesson">
+    <div class="lesson-head">
+      <button class="back" data-back="topics">← Altă temă</button>
+      <h2 id="lessonTitle" class="lesson-title"></h2>
+      <div id="stepDots" class="step-dots"></div>
+    </div>
+    <div id="lessonStage" class="lesson-stage"></div>
+    <div class="lesson-foot">
+      <span id="lessonHint" class="lesson-hint"></span>
+      <button id="stepNext" class="btn-primary">Continuă →</button>
+    </div>
+  </section>
+
+  <!-- 5: тизер гостя -->
+  <section class="screen" data-screen="teaser">
+    <button class="back" data-back="topics">← Altă temă</button>
+    <div id="teaserStage"></div>
+  </section>
+
+  <!-- 6: диагностика -->
+  <section class="screen" data-screen="diag">
+    <div id="diagStage"></div>
+  </section>
+</main>
+
+<!-- орб -->
+<div id="orbLayer" class="orb-layer">
+  <div id="orb" class="orb is-happy"><div class="face"><div class="face-eyes"></div><div class="face-mouth"></div></div></div>
+  <div id="orbSpeech" class="orb-speech"></div>
+</div>
+
+<!-- регистрация -->
+<div id="signupModal" class="su-modal">
+  <div class="su-card">
+    <h3>Salvează-ți progresul</h3>
+    <p class="su-sub">Cont gratis. După înscriere îți măsurăm nivelul și îți facem un plan doar pentru tine.</p>
+    <input id="suName" placeholder="Nume" class="su-in">
+    <input id="suEmail" placeholder="Email" class="su-in">
+    <input id="suPass" type="password" placeholder="Parolă" class="su-in">
+    <div id="suErr" class="su-err"></div>
+    <button id="signupConfirm" class="btn-primary">Salvează contul</button>
+    <button id="signupToggle" class="su-toggle">Am deja cont? Intră</button>
+    <button id="signupSkip" class="su-skip">Mai târziu</button>
+  </div>
+</div>
 
 <script src="api.js"></script>
-<script src="curriculum-v3.js"></script>
-<script src="app-v3.js"></script>
+<script src="api-v4.js"></script>
+<script src="wispucci-data.js"></script>
+<script src="wispucci.js"></script>
 </body>
 </html>
