@@ -1,0 +1,14 @@
+{
+  "title": "Demografie — bilanțul natural (BAC)",
+  "summary": "Calculul bilanțului natural al populației și interpretarea lui, pe baza natalității și mortalității.",
+  "formulas": ["bilanț natural (‰) = natalitate (‰) − mortalitate (‰)", "bilanț pozitiv = creștere; negativ = scădere/depopulare"],
+  "key_facts": ["sb26 it8 (România): 1990: 13,6−10,6 = +3,0‰; 2024: 7,5−12,9 = −5,4‰.", "es26-t2 it8 (Japonia): 1990: 10,0−6,7 = +3,3‰; 2025: 5,5−12,9 = −7,4‰.", "Bilanț negativ = îmbătrânire demografică și depopulare."],
+  "terminology": ["natalitate", "mortalitate", "bilanț natural", "spor natural", "îmbătrânire demografică"],
+  "worked_pattern": "Bilanț natural = natalitate − mortalitate. România 2024: 7,5 − 12,9 = −5,4‰ → populație în scădere.",
+  "common_mistakes": ["Inversarea natalității și mortalității.", "Confundarea bilanțului natural cu cel migratoriu."],
+  "exam_notes": "Item 8 (domeniul II). Test unic, atlas permis. Verificat pe baremе geografie sb26/es26.",
+  "_verified": false,
+  "_node_id": "demografie",
+  "_subject": "geografie",
+  "_grade": 12
+}
