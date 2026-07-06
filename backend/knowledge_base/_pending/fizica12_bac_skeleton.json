@@ -1,0 +1,14 @@
+{
+  "subject": "fizica",
+  "name": "Fizica (BAC)",
+  "authority": "ANCE Moldova, ciclul liceal, Bacalaureat — programa 2021",
+  "_status": "SKELETON — domain spine from liceu curriculum; per-topic formulas/facts to be filled by ingest agent from textbook + baremes, then human-verified.",
+  "exam_format": "180 min. La solicitare, real + umanist (real mai adânc, mai multe probleme/derivări). Probleme punctate pe etape: date → formulă → calcul → răspuns cu unități.",
+  "grading_notes": "Punctaj pe etape ca la matematică: identificarea datelor, alegerea formulei, calcul corect, răspuns cu unitatea de măsură.",
+  "units": {
+    "mecanica": {"title": "Mecanica", "summary": "Cinematică, dinamică, legile lui Newton, lucru/energie, impuls.", "formulas": ["v = v0 + at", "F = ma", "L = F·d·cosα", "Ec = mv²/2", "p = mv"], "terminology": ["viteză", "accelerație", "forță", "energie cinetică", "impuls"], "exam_notes": "schelet — de aprofundat."},
+    "termodinamica": {"title": "Fizică moleculară și termodinamică", "summary": "Gaz ideal, principiile termodinamicii, transformări.", "formulas": ["pV = νRT", "Q = mcΔT", "ΔU = Q − L"], "terminology": ["gaz ideal", "temperatură", "căldură", "lucru mecanic"], "exam_notes": "schelet — de aprofundat."},
+    "electricitate": {"title": "Electricitate și magnetism", "summary": "Curent electric, legea lui Ohm, câmp magnetic, inducție.", "formulas": ["U = I·R", "P = U·I", "R = ρl/S"], "terminology": ["tensiune", "intensitate", "rezistență", "câmp magnetic"], "exam_notes": "schelet — de aprofundat."},
+    "optica_atomica": {"title": "Optică și fizică atomică/nucleară", "summary": "Reflexie/refracție, lentile, model atomic, radioactivitate.", "formulas": ["n = c/v", "legea refracției: n1·sinθ1 = n2·sinθ2"], "terminology": ["refracție", "lentilă", "foton", "radioactivitate"], "exam_notes": "schelet — de aprofundat."}
+  }
+}

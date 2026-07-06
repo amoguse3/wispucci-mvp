@@ -1,0 +1,14 @@
+{
+  "subject": "chimie",
+  "name": "Chimia (BAC)",
+  "authority": "ANCE Moldova, ciclul liceal, Bacalaureat — programa 2021",
+  "_status": "SKELETON — spine confirmed from program + pr25 umanist barem; per-topic facts to be filled by ingest agent from textbook + more baremes, then human-verified.",
+  "exam_format": "180 min. La solicitare, profil real + umanist (real mai adânc). Barem pe etape: completări (1p), ecuații de reacție corecte (2p fiecare), probleme de stoechiometrie punctate pe etape (analiza condițiilor, coeficienți, M, ν, proporție).",
+  "grading_notes": "Din baremul pr25 umanist: 1p per completare corectă; 2p per ecuație de reacție scrisă corect; problemele = puncte pentru fiecare etapă (notarea condițiilor, coeficienți, calcul M, calcul ν, proporție).",
+  "units": {
+    "structura_atomului": {"title": "Structura atomului și tabelul periodic", "summary": "Configurație electronică, periodicitate, legături chimice.", "terminology": ["proton", "electron", "configurație electronică", "legătură ionică", "legătură covalentă"], "exam_notes": "schelet — de aprofundat."},
+    "stoechiometrie": {"title": "Stoechiometrie și calcule chimice", "summary": "Mol, masă molară, calcule pe baza ecuațiilor de reacție.", "formulas": ["ν = m/M", "ν = V/Vm (Vm = 22,4 L/mol la c.n.)", "proporții din ecuația reacției"], "key_facts": ["Echilibrarea ecuației precede orice calcul stoechiometric.", "Punctajul se acordă pe etape: coeficienți → M → ν → proporție."], "terminology": ["mol", "masă molară", "stoechiometrie", "coeficient"], "exam_notes": "Bloc puternic punctat (barem pr25)."},
+    "reactii_chimice": {"title": "Reacții chimice", "summary": "Tipuri de reacții, echilibrarea ecuațiilor, reacții anorganice și organice.", "key_facts": ["Scrierea corectă a ecuației reacției = 2p în barem."], "terminology": ["reacție de combinare", "substituție", "schimb", "oxido-reducere"], "exam_notes": "schelet — de aprofundat."},
+    "chimie_organica": {"title": "Chimie organică", "summary": "Hidrocarburi, funcțiuni organice, polimeri.", "terminology": ["hidrocarbură", "grupă funcțională", "izomerie", "polimer"], "exam_notes": "schelet — de aprofundat."}
+  }
+}

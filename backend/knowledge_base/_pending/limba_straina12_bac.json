@@ -1,0 +1,34 @@
+{
+  "subject": "limba_straina",
+  "name": "Limba străină (BAC, nivel B1)",
+  "authority": "ANCE Moldova, ciclul liceal, Bacalaureat — programa 2021",
+  "languages": ["engleză", "franceză", "germană", "italiană", "spaniolă"],
+  "exam_format": "Obligatoriu ambele profiluri (real + umanist). 180 min, nivel B1 CECRL. 3 subiecte: I. Înțelegere scrisă a unui text necunoscut (400-450 cuvinte); II. Eseu structurat (180-200 cuvinte) pe o temă actuală; III. Text de cultură (articol de presă/scrisoare personală, 90-100 cuvinte) despre țara limbii studiate.",
+  "grading_notes": "Barem comun pentru toate limbile; doar conținutul lingvistic diferă. Se punctează: comprehensiune (localizare/deducere/identificare info), corectitudine lingvistică, respectarea volumului de cuvinte, structura textului, adecvarea socioculturală/registrul.",
+  "units": {
+    "comprehensiune_scrisa": {
+      "title": "Înțelegerea scrisă (Subiectul I)",
+      "summary": "Citirea și înțelegerea unui text nonliterar/funcțional necunoscut de 400-450 cuvinte; localizarea informației, deducerea sensului cuvintelor din context.",
+      "key_facts": ["Se cere: localizarea info pertinente, deducerea sensului din context, identificarea ideilor principale.", "Textul e nonliterar/funcțional, pe teme din Mediile (personal, familial, școlar, natural, social, informațional)."],
+      "terminology": ["comprehensiune", "context", "idee principală", "text funcțional"],
+      "common_mistakes": ["Traducerea literală în loc de deducerea sensului din context."],
+      "exam_notes": "Subiectul I. Strategii de citire (skimming/scanning) sunt cheia."
+    },
+    "eseu_structurat": {
+      "title": "Eseu structurat pe temă actuală (Subiectul II)",
+      "summary": "Producerea unui eseu de 180-200 cuvinte pe o temă actuală, cu opinie, argumente și structură clară.",
+      "key_facts": ["Volum strict 180-200 cuvinte — se numără.", "Structură: introducere (teză) → argumente cu exemple → concluzie.", "Se evaluează gama de structuri gramaticale și precizia lexicală (nivel B1)."],
+      "terminology": ["teză", "argument", "conector logic", "paragraf"],
+      "common_mistakes": ["Depășirea/nerespectarea volumului.", "Lipsa conectorilor logici.", "Structuri gramaticale repetitive."],
+      "exam_notes": "Subiectul II. Șabloane de eseu cu conectori se pot antrena."
+    },
+    "text_de_cultura": {
+      "title": "Text de cultură (Subiectul III)",
+      "summary": "Redactarea unui articol de presă sau scrisoare personală de 90-100 cuvinte pe o temă de cultură a țării limbii studiate.",
+      "key_facts": ["Volum 90-100 cuvinte.", "Format: articol de presă SAU scrisoare personală, cu convențiile respective.", "Temă din Mediul cultural: valorează competența (pluri/inter)culturală."],
+      "terminology": ["articol de presă", "scrisoare personală", "registru", "formulă de adresare"],
+      "common_mistakes": ["Ignorarea convențiilor formatului (scrisoare fără formule).", "Conținut cultural generic, fără referire la țara-țintă."],
+      "exam_notes": "Subiectul III. Cunoștințe culturale despre țara limbii sunt necesare."
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "subject": "informatica",
+  "name": "Informatica (BAC)",
+  "authority": "ANCE Moldova, ciclul liceal, Bacalaureat — programa 2021",
+  "_status": "SKELETON — domain spine from liceu curriculum; per-topic details to be filled by ingest agent from textbook + baremes, then human-verified.",
+  "exam_format": "180 min. La solicitare, real + umanist (real mai greu pe algoritmică/programare). Itemi: teorie + citire/scriere de cod + rezolvare de probleme algoritmice.",
+  "grading_notes": "Punctaj pe corectitudinea algoritmului/codului, pe etape logice, pe trasarea corectă a execuției.",
+  "units": {
+    "algoritmi": {"title": "Algoritmi", "summary": "Noțiunea de algoritm, structuri (secvențial, alternativ, repetitiv), trasare.", "terminology": ["algoritm", "structură secvențială", "structură alternativă", "structură repetitivă", "pseudocod"], "exam_notes": "schelet — de aprofundat."},
+    "tipuri_de_date": {"title": "Tipuri de date și structuri", "summary": "Tipuri simple și structurate (tablouri, șiruri de caractere, înregistrări).", "terminology": ["variabilă", "tip de date", "tablou (vector)", "șir de caractere", "înregistrare"], "exam_notes": "schelet — de aprofundat."},
+    "programare": {"title": "Programare", "summary": "Limbaj de programare (Pascal/C++ în curriculumul MD), instrucțiuni, subprograme.", "terminology": ["instrucțiune", "subprogram", "funcție", "procedură", "recursie"], "exam_notes": "schelet — de aprofundat."},
+    "baze_de_date": {"title": "Baze de date și teoria informației", "summary": "Concepte de baze de date, reprezentarea informației, sisteme de numerație.", "terminology": ["bază de date", "tabel", "cheie", "sistem de numerație", "bit", "octet"], "exam_notes": "schelet — de aprofundat."}
+  }
+}

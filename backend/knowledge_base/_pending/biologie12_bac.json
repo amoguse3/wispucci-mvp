@@ -1,0 +1,57 @@
+{
+  "subject": "biologie",
+  "name": "Biologia (BAC)",
+  "authority": "ANCE Moldova, ciclul liceal, Bacalaureat — programa 2021",
+  "exam_format": "180 min. La solicitare (obligatoriu doar profil sport). Programe distincte real vs umanist (real mai adânc). 4 domenii: I. Diversitatea și evoluția lumii vii; II. Sisteme și procese vitale; III. Bazele geneticii; IV. Ecologia.",
+  "grading_notes": "Itemi pe niveluri cognitive diverse. Se punctează: definirea corectă a termenilor, corelația structură-funcție, potrivirea patologie-simptome, interpretarea datelor experimentale/grafice.",
+  "units": {
+    "sistematica": {
+      "title": "Sistematica organismelor",
+      "summary": "Clasificarea în regn/filum/încrengătură/clasă. Virusuri (forme acelulare), Monera, Protiste, Ciuperci, Plante, Animale.",
+      "key_facts": ["Unități taxonomice: regn → filum/încrengătură → clasă.", "Regnuri: Monera (bacterii), Protiste, Ciuperci, Plante, Animale.", "Plante: Mușchi, Ferigi, Gimnosperme, Angiosperme (Mono/Dicotiledonate).", "Animale: Celenterate, Viermi (plați/cilindrici/inelați), Moluște, Artropode, Cordate."],
+      "terminology": ["sistematică", "regn", "filum", "încrengătură", "clasă", "taxon"],
+      "common_mistakes": ["Confundarea nivelurilor taxonomice.", "A trata virusurile ca organisme celulare."],
+      "exam_notes": "Domeniul I. Recunoașterea reprezentanților tipici pe clase."
+    },
+    "evolutia": {
+      "title": "Evoluția organismelor",
+      "summary": "Factorii evoluției și dovezile ei; căile progresului biologic; evoluția omului.",
+      "key_facts": ["Factorii evoluției: ereditatea, variabilitatea, interacțiunea cu mediul, selecția naturală.", "Căi: aromorfoză, idioadaptare, degenerare.", "Dovezi: anatomie comparată (organe omoloage/analoage, rudimente, atavisme), embriologie, paleontologie, biologie moleculară."],
+      "terminology": ["selecție naturală", "aromorfoză", "idioadaptare", "degenerare", "organe omoloage", "organe analoage", "rudimente", "atavisme"],
+      "common_mistakes": ["Confundarea organelor omoloage cu analoage."],
+      "exam_notes": "Domeniul I."
+    },
+    "celula_tesuturi": {
+      "title": "Celula și țesuturile",
+      "summary": "Compoziția chimică a celulei, structura pro/eucariotă, organizarea în țesuturi.",
+      "key_facts": ["Substanțe: anorganice (apă, săruri) și organice (glucide, lipide, proteine, ADN, ARN, ATP).", "Celula procariotă vs eucariotă (vegetală/animală).", "Țesuturi vegetale (asimilator, conducător) și animale (epitelial, nervos, muscular, conjunctiv — inclusiv sângele)."],
+      "terminology": ["celulă", "organit", "țesut", "procariot", "eucariot", "ADN", "ARN", "ATP"],
+      "common_mistakes": ["Confundarea celulei vegetale cu cea animală."],
+      "exam_notes": "Domeniul II. Corelația structură-funcție e cheia punctajului."
+    },
+    "sisteme_organe_om": {
+      "title": "Sistemele de organe la om",
+      "summary": "Anatomia și fiziologia sistemelor: nervos, senzorial, endocrin, locomotor, cardiovascular, respirator, digestiv, excretor, reproducător; afecțiuni și igienă.",
+      "key_facts": ["Sistemul nervos: neuron, encefal, măduva spinării, arc reflex; central vs periferic.", "Grupele sangvine și imunitatea (sistem cardiovascular).", "Fiecare sistem: structură → funcție → afecțiuni → igienă."],
+      "terminology": ["neuron", "sinapsă", "reflex", "hormon", "glandă endocrină", "imunitate", "analizator"],
+      "common_mistakes": ["Potrivirea greșită patologie-simptom.", "Confundarea reglării nervoase cu cea umorală."],
+      "exam_notes": "Domeniul II, cel mai punctat. Determinarea patologiilor din simptome/analize."
+    },
+    "genetica": {
+      "title": "Bazele geneticii",
+      "summary": "Ereditatea și variabilitatea, legile eredității, ameliorarea organismelor.",
+      "key_facts": ["Ereditatea = transmiterea caracterelor; variabilitatea = diferențele între indivizi."],
+      "terminology": ["genă", "alelă", "genotip", "fenotip", "ereditate", "variabilitate"],
+      "common_mistakes": ["Confundarea genotipului cu fenotipul."],
+      "exam_notes": "Domeniul III. (schelet — de aprofundat cu probleme de genetică de agent)."
+    },
+    "ecologia": {
+      "title": "Ecologia și protecția mediului",
+      "summary": "Biodiversitatea, relații ecologice, măsuri de ocrotire și conservare.",
+      "key_facts": ["Măsuri de ocrotire și conservare a biodiversității la nivel individual/local/global."],
+      "terminology": ["ecosistem", "biodiversitate", "populație", "comunitate", "factor ecologic"],
+      "common_mistakes": ["Propuneri de măsuri vagi, fără concretețe."],
+      "exam_notes": "Domeniul IV."
+    }
+  }
+}

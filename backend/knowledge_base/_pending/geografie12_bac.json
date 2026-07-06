@@ -1,0 +1,54 @@
+{
+  "subject": "geografie",
+  "name": "Geografie (BAC)",
+  "authority": "ANCE Moldova, ciclul liceal, Bacalaureat — programa 2021",
+  "exam_format": "180 min. La solicitare. Două blocuri mari: Geografia fizică generală și Geografia umană a lumii. Puternic bazată pe hărți, climograme, date statistice și calcule.",
+  "grading_notes": "Se punctează: interpretarea suporturilor cartografice/grafice/statistice, calculele (coordonate, ora locală, distanțe, amplitudine termică), relații cauză-efect, localizarea obiectivelor geografice.",
+  "units": {
+    "pamantul_cartografie": {
+      "title": "Pământul și reprezentarea cartografică",
+      "summary": "Caracteristicile fizice ale Pământului, mișcările de rotație/revoluție, globul/harta/planul, ora pe Glob și fusele orare.",
+      "formulas": ["ora locală se calculează din rețeaua de grade / harta fuselor orare", "amplitudine termică = t_max − t_min"],
+      "key_facts": ["Rotație → zi/noapte; revoluție → anotimpuri.", "Coordonate geografice: latitudine și longitudine."],
+      "terminology": ["gravitație terestră", "rotație", "revoluție", "fus orar", "latitudine", "longitudine", "scară"],
+      "worked_pattern": "Calcularea orei locale: diferența de longitudine / 15° = diferența de ore.",
+      "common_mistakes": ["Confundarea latitudinii cu longitudinea.", "Greșeli la sensul diferenței de fus orar."],
+      "exam_notes": "Calcule frecvente: coordonate, ora locală, distanțe pe hartă."
+    },
+    "litosfera": {
+      "title": "Litosfera",
+      "summary": "Structura internă a Pământului, procese endogene/exogene, relieful, hazardele geologice.",
+      "key_facts": ["Procese endogene: vulcanism, cutremure. Exogene: gravitațional, fluvial, carstic, eolian.", "Hazarde: cutremure, erupții vulcanice, alunecări de teren."],
+      "terminology": ["litosferă", "scoarță terestră", "eroziune", "relief", "placă tectonică"],
+      "common_mistakes": ["Confundarea proceselor endogene cu cele exogene."],
+      "exam_notes": "Bloc fizic."
+    },
+    "atmosfera": {
+      "title": "Atmosfera terestră",
+      "summary": "Temperatura, presiunea, vânturile, precipitațiile, clima și zonele climatice; climograme.",
+      "formulas": ["gradient termic vertical ≈ 6°C / 1000 m", "amplitudine termică = t_max − t_min"],
+      "key_facts": ["Factorii climei; zonele climatice și tipurile de climă.", "Climogramele descriu o zonă climatică (temperatură + precipitații)."],
+      "terminology": ["amplitudine termică", "ciclon", "anticiclon", "alizeu", "muson", "climogramă"],
+      "common_mistakes": ["Citirea greșită a scării unei climograme."],
+      "exam_notes": "Interpretarea climogramelor e item recurent."
+    },
+    "hidrosfera": {
+      "title": "Hidrosfera",
+      "summary": "Oceanul Planetar, râurile, lacurile, proprietățile apelor, hazardele hidrologice.",
+      "key_facts": ["Componentele râului, surse de alimentare, regim de scurgere.", "Hazarde: tsunami, inundații."],
+      "terminology": ["bazin hidrografic", "deltă", "estuar", "liman", "debit"],
+      "common_mistakes": ["Confundarea deltei cu estuarul."],
+      "exam_notes": "Bloc fizic."
+    },
+    "geografie_umana": {
+      "title": "Geografia umană a lumii",
+      "summary": "Harta politică, resurse naturale, populația și așezările, economia mondială.",
+      "formulas": ["bilanț natural = natalitate − mortalitate", "densitatea populației = populație / suprafață", "bilanț migratoriu = imigranți − emigranți"],
+      "key_facts": ["Indicatori demografici: natalitate, mortalitate, bilanț natural, tranziție demografică.", "Economia: agricultură, industrie, PIB, balanță comercială, integrare economică."],
+      "terminology": ["rată a natalității", "tranziție demografică", "urbanizare", "megalopolis", "PIB", "balanță comercială"],
+      "worked_pattern": "Bilanț natural = natalitate − mortalitate (‰). Densitate = nr. locuitori / km².",
+      "common_mistakes": ["Confundarea bilanțului natural cu cel migratoriu."],
+      "exam_notes": "Calcularea indicatorilor demografici și economici e item frecvent."
+    }
+  }
+}
