@@ -1,0 +1,13 @@
+{
+  "title": "Procente, proporții, probleme aplicate",
+  "summary": "Procent = fracție cu numitorul 100. Aflarea procentului dintr-un număr, a numărului cunoscând procentul, creștere/scădere procentuală, proporții și regula de trei simplă. Bază pentru problemele din viața cotidiană.",
+  "formulas": ["p% din N = (p/100)·N", "variație procentuală = (nou − vechi)/vechi · 100", "proporție: a/b = c/d ⇔ a·d = b·c", "regula de trei simplă (direct proporțional)"],
+  "key_facts": ["Creștere cu p%: N·(1 + p/100). Scădere cu p%: N·(1 − p/100).", "Două creșteri succesive NU se adună (10% apoi 10% ≠ 20%): se înmulțesc factorii.", "În proporție, produsul mezilor = produsul extremilor."],
+  "terminology": ["procent", "proporție", "mezi", "extremi", "mărimi direct/invers proporționale", "regula de trei simplă", "variație procentuală"],
+  "worked_pattern": "Un televizor de 7500 lei: transport 5% = 375 lei; depozitare 200 lei. Cu cât mai mult pentru transport? 375 − 200 = 175 lei. (item real ANCE 2025)",
+  "common_mistakes": ["Adunarea a două procente succesive în loc de înmulțirea factorilor.", "Confuzia bazei procentului (procent din ce?).", "Direct vs invers proporțional greșit."],
+  "exam_notes": "Foarte frecvent în problemele aplicate (item 4 tip 2025); punctare pe pași.",
+  "_verified": false,
+  "_node_id": "procente_proportii",
+  "_subject": "math"
+}

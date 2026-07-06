@@ -1,0 +1,13 @@
+{
+  "title": "Numere reale, iraționale, mulțimea R",
+  "summary": "Mulțimea R = Q ∪ (numere iraționale). Un număr real e rațional (fracție/zecimal finit sau periodic) sau irațional (zecimal infinit neperiodic, ex. √2, π). Ordonare și reprezentare pe axă, modul, aproximări.",
+  "formulas": ["N ⊂ Z ⊂ Q ⊂ R", "|a| = a dacă a≥0, −a dacă a<0", "√(a²) = |a|", "a irațional ⇔ zecimală infinită neperiodică"],
+  "key_facts": ["Orice număr rațional are reprezentare zecimală finită sau periodică; iraționalele au zecimală infinită neperiodică.", "√2, √3, √5, π sunt iraționale; √4 = 2 este rațional (pătrat perfect).", "Între oricare două numere reale există o infinitate de alte numere reale (densitate).", "Pe axă, fiecărui punct îi corespunde exact un număr real și invers."],
+  "terminology": ["număr rațional", "număr irațional", "mulțimea R", "axa numerelor", "modul", "aproximare prin lipsă/adaos", "zecimală periodică"],
+  "worked_pattern": "Arată că 0,(3) e rațional: fie x=0,333... ⇒ 10x=3,333... ⇒ 9x=3 ⇒ x=1/3. Deci 0,(3)=1/3 ∈ Q.",
+  "common_mistakes": ["A crede că orice zecimală infinită e irațională (periodică = rațională).", "A uita modulul la √(a²).", "A trata π ca fiind exact 3,14 (e doar aproximare)."],
+  "exam_notes": "Apare la clasificarea numerelor și la justificarea că o expresie cu radicali e/nu e un număr rațional/întreg.",
+  "_verified": false,
+  "_node_id": "numere_reale",
+  "_subject": "math"
+}

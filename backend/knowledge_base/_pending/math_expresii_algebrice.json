@@ -1,0 +1,13 @@
+{
+  "title": "Simplificarea expresiilor algebrice",
+  "summary": "Aducerea expresiilor la formă minimă: factorizare, restrângere, amplificare/simplificare de fracții algebrice, condiții de existență (numitor ≠ 0). Combină formulele de calcul prescurtat cu operațiile pe fracții.",
+  "formulas": ["a/b · c/d = ac/bd", "a/b : c/d = a/b · d/c", "a/b ± c/d = (ad ± bc)/bd", "factor comun: ab + ac = a(b+c)", "simplificare: (a·k)/(b·k) = a/b, k≠0"],
+  "key_facts": ["Înainte de simplificare se factorizează numărătorul și numitorul, apoi se reduc factorii comuni.", "Condiția de existență: numitorul trebuie ≠ 0 — se stabilește la început.", "Nu se simplifică termeni, ci FACTORI (nu tai un x dintr-o sumă)."],
+  "terminology": ["fracție algebrică", "condiție de existență", "factor comun", "restrângere", "amplificare", "numitor comun"],
+  "worked_pattern": "Simplifică (x²−9)/(x²−3x), x≠0,3: = (x−3)(x+3) / [x(x−3)] = (x+3)/x.",
+  "common_mistakes": ["Simplificarea unui termen dintr-o sumă în loc de factor.", "Uitarea condiției de existență (numitor ≠ 0).", "Greșeli de semn la scoaterea factorului comun negativ."],
+  "exam_notes": "Item clasic cu rezolvare desfășurată; punctare pe pași inclusiv pe condiția de existență.",
+  "_verified": false,
+  "_node_id": "expresii_algebrice",
+  "_subject": "math"
+}

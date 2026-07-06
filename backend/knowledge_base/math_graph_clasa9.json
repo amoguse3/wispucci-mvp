@@ -1,0 +1,189 @@
+{
+  "subject": "math",
+  "grade": 9,
+  "authority": "ANCE Moldova — Examen Național de Absolvire a Gimnaziului",
+  "notes": "Micro-skill graph. 'kb_unit' points to a unit key in math_clasa9.json (null = not yet authored, target for the ingest agent). 'prereqs' are node ids that must be reasonably mastered first. 'exam_weight' 1-5 = how heavily this shows up on real ANCE tests (2022-2025 sampling). 'difficulty' 1-5 = baseline item difficulty. 'bac_link' = the clasa 12 BAC topic this feeds into.",
+  "bkt_defaults": { "p_L0": 0.30, "p_transit": 0.15, "p_slip": 0.10, "p_guess": 0.20, "mastery_threshold": 0.95 },
+  "nodes": {
+    "numere_naturale": {
+      "title": "Numere naturale, divizibilitate, cmmdc/cmmmc",
+      "domain": "multimi_numerice",
+      "kb_unit": "multimi_numere",
+      "prereqs": [],
+      "exam_weight": 4,
+      "difficulty": 2,
+      "bac_link": "multimi_numere_reale"
+    },
+    "numere_intregi": {
+      "title": "Numere întregi — operații, semne, modul",
+      "domain": "multimi_numerice",
+      "kb_unit": "multimi_numere",
+      "prereqs": ["numere_naturale"],
+      "exam_weight": 5,
+      "difficulty": 2,
+      "bac_link": "multimi_numere_reale"
+    },
+    "numere_rationale": {
+      "title": "Numere raționale — fracții, zecimale, modul",
+      "domain": "multimi_numerice",
+      "kb_unit": "multimi_numere",
+      "prereqs": ["numere_intregi"],
+      "exam_weight": 4,
+      "difficulty": 3,
+      "bac_link": "multimi_numere_reale"
+    },
+    "numere_reale": {
+      "title": "Numere reale, iraționale, mulțimea R",
+      "domain": "multimi_numerice",
+      "kb_unit": null,
+      "prereqs": ["numere_rationale"],
+      "exam_weight": 3,
+      "difficulty": 3,
+      "bac_link": "multimi_numere_reale"
+    },
+    "puteri": {
+      "title": "Puteri cu exponent natural și întreg",
+      "domain": "calcul_algebric",
+      "kb_unit": "puteri",
+      "prereqs": ["numere_intregi"],
+      "exam_weight": 5,
+      "difficulty": 3,
+      "bac_link": "functii_exponentiale"
+    },
+    "radicali": {
+      "title": "Radicali de ordinul 2",
+      "domain": "calcul_algebric",
+      "kb_unit": "radicali",
+      "prereqs": ["puteri", "numere_reale"],
+      "exam_weight": 5,
+      "difficulty": 3,
+      "bac_link": "calcul_algebric_liceu"
+    },
+    "formule_calcul_prescurtat": {
+      "title": "Formule de calcul prescurtat",
+      "domain": "calcul_algebric",
+      "kb_unit": null,
+      "prereqs": ["puteri"],
+      "exam_weight": 4,
+      "difficulty": 3,
+      "bac_link": "calcul_algebric_liceu"
+    },
+    "expresii_algebrice": {
+      "title": "Simplificarea expresiilor algebrice",
+      "domain": "calcul_algebric",
+      "kb_unit": null,
+      "prereqs": ["formule_calcul_prescurtat", "radicali"],
+      "exam_weight": 4,
+      "difficulty": 4,
+      "bac_link": "calcul_algebric_liceu"
+    },
+    "ecuatii_gr1": {
+      "title": "Ecuații de gradul I",
+      "domain": "ecuatii",
+      "kb_unit": "ecuatii_gr1",
+      "prereqs": ["numere_rationale"],
+      "exam_weight": 4,
+      "difficulty": 2,
+      "bac_link": "ecuatii_liceu"
+    },
+    "ecuatii_gr2": {
+      "title": "Ecuații de gradul II — discriminant, Viète",
+      "domain": "ecuatii",
+      "kb_unit": "ecuatii_gr2",
+      "prereqs": ["ecuatii_gr1", "radicali", "formule_calcul_prescurtat"],
+      "exam_weight": 5,
+      "difficulty": 4,
+      "bac_link": "ecuatii_liceu"
+    },
+    "sisteme": {
+      "title": "Sisteme de ecuații liniare",
+      "domain": "ecuatii",
+      "kb_unit": "sisteme",
+      "prereqs": ["ecuatii_gr1"],
+      "exam_weight": 4,
+      "difficulty": 3,
+      "bac_link": "sisteme_liceu"
+    },
+    "inecuatii": {
+      "title": "Inecuații de gradul I și II",
+      "domain": "ecuatii",
+      "kb_unit": "inecuatii",
+      "prereqs": ["ecuatii_gr1", "ecuatii_gr2"],
+      "exam_weight": 3,
+      "difficulty": 4,
+      "bac_link": "inecuatii_liceu"
+    },
+    "functia_liniara": {
+      "title": "Funcția liniară",
+      "domain": "functii",
+      "kb_unit": "functia_liniara",
+      "prereqs": ["ecuatii_gr1"],
+      "exam_weight": 4,
+      "difficulty": 3,
+      "bac_link": "functii_liceu"
+    },
+    "functia_patratica": {
+      "title": "Funcția pătratică — vârf, zerouri, monotonie",
+      "domain": "functii",
+      "kb_unit": "functia_patratica",
+      "prereqs": ["functia_liniara", "ecuatii_gr2"],
+      "exam_weight": 5,
+      "difficulty": 4,
+      "bac_link": "functii_liceu"
+    },
+    "procente_proportii": {
+      "title": "Procente, proporții, probleme aplicate",
+      "domain": "organizare_date",
+      "kb_unit": null,
+      "prereqs": ["numere_rationale"],
+      "exam_weight": 4,
+      "difficulty": 3,
+      "bac_link": "organizare_date_liceu"
+    },
+    "triunghi": {
+      "title": "Triunghiul — Pitagora, arii, linii importante",
+      "domain": "geometrie_plana",
+      "kb_unit": "triunghi",
+      "prereqs": ["numere_reale", "radicali"],
+      "exam_weight": 5,
+      "difficulty": 4,
+      "bac_link": "geometrie_liceu"
+    },
+    "patrulatere": {
+      "title": "Patrulatere — proprietăți și arii",
+      "domain": "geometrie_plana",
+      "kb_unit": "patrulatere",
+      "prereqs": ["triunghi"],
+      "exam_weight": 4,
+      "difficulty": 3,
+      "bac_link": "geometrie_liceu"
+    },
+    "cerc": {
+      "title": "Cercul — unghi central/înscris, arii",
+      "domain": "geometrie_plana",
+      "kb_unit": "cerc",
+      "prereqs": ["triunghi"],
+      "exam_weight": 4,
+      "difficulty": 4,
+      "bac_link": "geometrie_liceu"
+    },
+    "corpuri_geometrice": {
+      "title": "Corpuri geometrice — paralelipiped, cilindru, volume",
+      "domain": "geometrie_spatiala",
+      "kb_unit": null,
+      "prereqs": ["patrulatere", "cerc"],
+      "exam_weight": 3,
+      "difficulty": 4,
+      "bac_link": "geometrie_spatiala_liceu"
+    },
+    "organizare_date": {
+      "title": "Organizarea datelor — medii, grafice, probabilități simple",
+      "domain": "organizare_date",
+      "kb_unit": null,
+      "prereqs": ["procente_proportii"],
+      "exam_weight": 2,
+      "difficulty": 3,
+      "bac_link": "statistica_liceu"
+    }
+  }
+}
