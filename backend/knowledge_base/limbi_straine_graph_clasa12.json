@@ -2,14 +2,13 @@
   "subject": "limbi_straine",
   "grade": 12,
   "authority": "ANCE Moldova — Bacalaureat, Limba străină (engleză/franceză/germană etc.)",
-  "notes": "Граф BAC по иностранному языку. КЛЮЧЕВОЕ: единый тест для ВСЕХ профилей (как география), профили НЕ разделены. 180 мин, 100 баллов, 3 домена: I Comprehensiune/citire (30p), II Producere scrisă/эссе 180-200 слов (40p), III Cultură (30p, статья 100-110 слов). Уровень ~B1-B2. English и French одинаковая архитектура, различие только в культурном домене. Отдельный вариант: bilingv (lfrbil/lenbil) — другая структура (3 épreuves 40+25+35, уровень B2+), помечен bilingv=true. exam_weight из тестов/баремов sb26/pr26/es26.",
+  "notes": "Граф BAC по иностранному языку. КЛЮЧЕВОЕ: единый тест для ВСЕХ профилей (как география), профили НЕ разделены. 180 мин, 100 баллов, 3 домена: I Comprehensiune/citire (30p), II Producere scrisă/эссе 180-200 слов (40p), III Cultură (30p, статья 100-110 слов). Уровень ~B1-B2. English и French одинаковая архитектура, различие только в культурном домене. exam_weight из тестов/баремов sb26/pr26/es26.",
   "bkt_defaults": {"p_L0": 0.30, "p_transit": 0.15, "p_slip": 0.10, "p_guess": 0.20, "mastery_threshold": 0.95},
   "single_test_all_profiles": true,
   "grading_notes": "Eseu (40p): gramatică −1 punct la fiecare 5 greșeli (greșeala repetată = una), puncte pentru volum după scală strictă de cuvinte (12p la 180-200 cuvinte). NB DUR: răspuns în altă limbă decât cea indicată = anulează itemul/testul. True/false: justificarea NU se punctează dacă răspunsul t/f e greșit. Răspuns scurt: exact un cuvânt, textual din text.",
   "nodes": {
     "comprehensiune_citire": {"title": "Comprehensiunea textului scris — multiple choice, lexic în context, răspuns scurt, matching, true/false cu citat, idee principală", "kb_unit": "comprehensiune_l2", "prereqs": [], "exam_weight": 5, "difficulty": 4},
     "producere_eseu": {"title": "Producerea scrisă — eseu 180-200 cuvinte (temă, argumente, opinie, sfaturi, coeziune, gramatică)", "kb_unit": "eseu_l2", "prereqs": ["comprehensiune_citire"], "exam_weight": 5, "difficulty": 5},
-    "domeniul_cultura": {"title": "Domeniul cultură — articol 100-110 cuvinte (simbol cultural/personalitate/geografie)", "kb_unit": null, "prereqs": ["comprehensiune_citire"], "exam_weight": 4, "difficulty": 4},
-    "bilingv": {"title": "Varianta bilingv (fr/en) — 3 épreuves: comprehensiune 40p, cultural 25p, civique eseu ~250 cuvinte 35p (B2+)", "kb_unit": null, "prereqs": ["producere_eseu"], "exam_weight": 3, "difficulty": 5, "bilingv": true}
+    "domeniul_cultura": {"title": "Domeniul cultură — articol 100-110 cuvinte (simbol cultural/personalitate/geografie)", "kb_unit": null, "prereqs": ["comprehensiune_citire"], "exam_weight": 4, "difficulty": 4}
   }
 }

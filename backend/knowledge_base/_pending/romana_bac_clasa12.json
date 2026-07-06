@@ -1,0 +1,41 @@
+{
+  "subject": "romana",
+  "name": "Limba și literatura română (BAC)",
+  "authority": "ANCE Moldova, clasa 12, Bacalaureat",
+  "exam_format": "100 puncte, 180 min. Text literar + itemi. real (real, sport): 9 itemi scurți + item 10 = eseu argumentativ 24p de la o citație. umanist (umanist, arte): 12 itemi (include invitație/cerere/personaj) + item 12 = eseu structurat 24p pe temă. Ambele + REDACTARE 20p separat.",
+  "grading_notes": "Eseu (24p) punctat pe repere (opinie, teze, argumente, 2 texte lit., structură, volum). REDACTARE 20p = stil (5) + ortografie/gramatică (5) + punctuație (5) + organizare (2) + analiză/interpretări critice (3), scală '−1 la fiecare 2 greșeli'. NB DUR: referințele la 2 texte din literatura română trebuie să numească textul ȘI autorul; fără asta punctele pentru referințe = 0.",
+  "_verified": false,
+  "_grade": 12,
+  "_profiles": "real, umanist",
+  "_source": "Заземлено на реальные тесты+баремы ANCE 12_llro sb26/pr26/es26 (real: Tudoran/Lovinescu/Druță; umanist: Beșleagă/Lari).",
+  "units": {
+    "eseu_bac": {
+      "title": "Eseul BAC (24p)",
+      "summary": "real: eseu argumentativ pornind de la o citație (Jung, Herbert, Beauvoir). umanist: eseu structurat pe o temă dată. Ambele cer 2 texte din literatura română cu autor.",
+      "key_facts": ["Referința la 2 texte din literatura română CU AUTOR e obligatorie; fără autor → 0 la referințe.", "real: opinie clară + teze + argumente + 2 texte lit. + structură + volum.", "umanist: înțelegerea noțiunii + interpretare + 2 texte reperate + comentarea aspectelor + exemple + concluzie.", "Autori uzuali: Eminescu, Creangă, Druță, Vieru, Alecsandri, Curțescu."],
+      "terminology": ["teză", "argument", "citație-suport", "text-reper", "structură argumentativă"],
+      "worked_pattern": "real: citație → opinie clară → 2 teze → câte un argument per teză + text din lit. română (autor!) → concluzie, în limita de întindere. umanist: definește noțiunea → interpretează tema → reper 2 texte cu autor → comentează 2 aspecte per text → concluzie.",
+      "common_mistakes": ["Texte lit. fără autor (pierde referințele).", "Nerespectarea limitei de întindere.", "Opinie neexprimată explicit."],
+      "exam_notes": "Item 10 (real) / item 12 (umanist), 24p. Verificat pe teste llro sb26/pr26/es26."
+    },
+    "redactare": {
+      "title": "Redactarea (20p)",
+      "summary": "Punctaj separat pentru corectitudinea tuturor secvențelor scrise: stil, ortografie/gramatică, punctuație, organizare, analiză.",
+      "barem_detaliat": {"organizare_idei": "2p", "analiza_interpretari": "3p", "corectitudine_stilistica": "5p", "ortografie_gramatica": "5p", "punctuatie": "5p"},
+      "key_facts": ["Se punctează pe TOATă lucrarea scrisă, nu doar eseul.", "Scală descrescătoare: −1 la fiecare 2 greșeli, greșeala repetată = una.", "20p = jumătate din impactul unei lucrări bune; corectitudinea contează la fel de mult ca conținutul."],
+      "terminology": ["redactare", "corectitudine stilistică", "ortografie", "punctuație", "coerență"],
+      "worked_pattern": "După ce scrii eseul, recitește pentru: ortografie (5p), punctuație (5p, virgule/cratime), stil (5p, evită repetiții și clișee), organizare (2p) și profunzimea analizei (3p).",
+      "common_mistakes": ["Ignorarea corectitudinii pentru că 'conținutul e bun' (pierde până la 20p).", "Greșeli de punctuație la subordonate."],
+      "exam_notes": "Secțiune separată (20p) la ambele profiluri. Verificat pe baremе llro sb26/pr26/es26."
+    },
+    "motiv_literar_comparat": {
+      "title": "Motivul literar în raport cu alt text",
+      "summary": "Analiza unui motiv literar (libertate, sacrificiu, probe etc.) din textul dat, comparat cu același motiv dintr-un alt text din literatura română (numit, cu autor).",
+      "key_facts": ["Cere numirea explicită a textului de comparație ȘI a autorului.", "Se prezintă/citează o situație din textul ales.", "Motive frecvente: libertatea (real sb26), sacrificiul (uman es26), probele."],
+      "terminology": ["motiv literar", "temă", "intertextualitate"],
+      "worked_pattern": "Motivul libertății în textul dat → același motiv într-un alt text (ex. o poezie de Vieru, cu autor) → prezintă situația comparabilă.",
+      "common_mistakes": ["Text de comparație fără autor.", "Motiv enunțat dar nedemonstrat cu situație concretă."],
+      "exam_notes": "Item de 8p la ambele profiluri. Verificat pe teste llro sb26/es26."
+    }
+  }
+}
