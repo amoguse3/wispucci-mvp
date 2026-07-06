@@ -2,7 +2,7 @@
   "subject": "istorie",
   "grade": 12,
   "authority": "ANCE Moldova — Bacalaureat, Istoria românilor și universală",
-  "notes": "Граф микро-скиллов BAC по истории. ВАЖНО: 4 профиля (real / umanist / arte / sport), НЕ 2. Структура одинакова у всех (4 subiecte: I=24p, II=22p, III=19p harta, IV eseu=35p, всего 100p), но глубина и акценты тем разные: umanist глубже премодерн, real упор на модерн, arte облегчённый. 'profile' = real/umanist/arte/all (all = встречается у всех профилей). exam_weight 1-5 из частоты на реальных баремах sb26/pr26/es26. Ядро подготовки = эссе Sub IV на 35 баллов.",
+  "notes": "Граф микро-скиллов BAC по истории. Профили: real / umanist. Структура одинакова (4 subiecte: I=24p, II=22p, III=19p harta, IV eseu=35p, всего 100p), различается глубина/акцент: umanist глубже премодерн, real упор на модерн. 'profile' = both (оба профиля), real (акцент real), umanist (акцент umanist). exam_weight 1-5 из частоты на реальных баремах sb26/pr26/es26. Ядро подготовки = эссе Sub IV на 35 баллов.",
   "bkt_defaults": {"p_L0": 0.30, "p_transit": 0.15, "p_slip": 0.10, "p_guess": 0.20, "mastery_threshold": 0.95},
   "exam_structure": {
     "subiectul_I": "24p — 5 itemi de analiză de sursă",
@@ -12,22 +12,22 @@
     "barem_eseu_35p": "3 argumente (6p=2×3) + concordanță cu teza (2p) + relevanță (2p) + cauză-efect min 2 legături (6p) + integrare surse (4p, integrat NU citat) + timp/spațiu (4p = 2 date + 2 locuri) + personalitate (2p) + plan intro/cuprins/concluzie (7p) + limbaj istoric (2p). NB DUR: limbaj istoric se punctează DOAR dacă s-au obținut ≥4p la argumente (IV.1)."
   },
   "nodes": {
-    "antichitate_greco_romana": {"title": "Antichitatea greco-romană (colonizarea greacă, civilizația romană, Cezar, Alexandru Macedon)", "profile": "all", "kb_unit": null, "prereqs": [], "exam_weight": 4, "difficulty": 3},
-    "dacia_romanizare": {"title": "Geto-dacii, războaiele daco-romane (Decebal/Traian), colonizarea și romanizarea Daciei", "profile": "all", "kb_unit": null, "prereqs": ["antichitate_greco_romana"], "exam_weight": 4, "difficulty": 3},
+    "antichitate_greco_romana": {"title": "Antichitatea greco-romană (colonizarea greacă, civilizația romană, Cezar, Alexandru Macedon)", "profile": "both", "kb_unit": null, "prereqs": [], "exam_weight": 4, "difficulty": 3},
+    "dacia_romanizare": {"title": "Geto-dacii, războaiele daco-romane (Decebal/Traian), colonizarea și romanizarea Daciei", "profile": "both", "kb_unit": null, "prereqs": ["antichitate_greco_romana"], "exam_weight": 4, "difficulty": 3},
     "imperiul_roman_tarziu": {"title": "Imperiul Roman târziu — Dioclețian/tetrarhia, Constantin cel Mare (Edict Milano 313, Niceea 325), divizarea 395", "profile": "umanist", "kb_unit": null, "prereqs": ["dacia_romanizare"], "exam_weight": 3, "difficulty": 3},
-    "evul_mediu_state": {"title": "Formarea statelor medievale românești, obștea sătească, descălecatul", "profile": "all", "kb_unit": null, "prereqs": ["dacia_romanizare"], "exam_weight": 4, "difficulty": 3},
-    "suzeranitate_otomana": {"title": "Suzeranitatea otomană (1538), relațiile cu Poarta, Tighina/Bugeac", "profile": "all", "kb_unit": null, "prereqs": ["evul_mediu_state"], "exam_weight": 4, "difficulty": 4},
-    "domnitori_medievali": {"title": "Domnitori: Mihai Viteazul, Matei Basarab, Vasile Lupu (cultură, tipar)", "profile": "all", "kb_unit": null, "prereqs": ["suzeranitate_otomana"], "exam_weight": 4, "difficulty": 3},
+    "evul_mediu_state": {"title": "Formarea statelor medievale românești, obștea sătească, descălecatul", "profile": "both", "kb_unit": null, "prereqs": ["dacia_romanizare"], "exam_weight": 4, "difficulty": 3},
+    "suzeranitate_otomana": {"title": "Suzeranitatea otomană (1538), relațiile cu Poarta, Tighina/Bugeac", "profile": "both", "kb_unit": null, "prereqs": ["evul_mediu_state"], "exam_weight": 4, "difficulty": 4},
+    "domnitori_medievali": {"title": "Domnitori: Mihai Viteazul, Matei Basarab, Vasile Lupu (cultură, tipar)", "profile": "both", "kb_unit": null, "prereqs": ["suzeranitate_otomana"], "exam_weight": 4, "difficulty": 3},
     "reforma_iluminism": {"title": "Reforma (Luther), Războiul de 30 de ani, revoluția engleză (Cromwell)", "profile": "umanist", "kb_unit": null, "prereqs": ["evul_mediu_state"], "exam_weight": 3, "difficulty": 4},
-    "revolutii_moderne": {"title": "Revoluția americană, Napoleon/Primul Imperiu francez, Carol cel Mare", "profile": "all", "kb_unit": null, "prereqs": ["reforma_iluminism"], "exam_weight": 4, "difficulty": 4},
-    "basarabia_1812": {"title": "Anexarea Basarabiei 1812, mișcarea 1821 (Tudor Vladimirescu)", "profile": "all", "kb_unit": null, "prereqs": ["suzeranitate_otomana"], "exam_weight": 4, "difficulty": 4},
-    "unirea_1859": {"title": "Unirea Principatelor 1859 (Alexandru Ioan Cuza, Kogălniceanu), reforme, războiul de independență 1877-78", "profile": "all", "kb_unit": null, "prereqs": ["basarabia_1812", "revolutii_moderne"], "exam_weight": 5, "difficulty": 4},
-    "marea_unire_1918_bac": {"title": "Marea Unire 1918, Sfatul Țării, autonomia Basarabiei, sistemul Versailles", "profile": "all", "kb_unit": null, "prereqs": ["unirea_1859"], "exam_weight": 5, "difficulty": 4},
-    "regimuri_totalitare_bac": {"title": "Regimuri totalitare interbelice (fascism, nazism, stalinism), Liga Națiunilor", "profile": "all", "kb_unit": null, "prereqs": ["marea_unire_1918_bac"], "exam_weight": 4, "difficulty": 4},
-    "al_doilea_rm_bac": {"title": "Al Doilea Război Mondial, Pactul Molotov-Ribbentrop, pierderile 1940, Overlord, Teheran", "profile": "all", "kb_unit": null, "prereqs": ["regimuri_totalitare_bac"], "exam_weight": 5, "difficulty": 4},
-    "sovietizare_rssm_bac": {"title": "Sovietizarea RSSM, colectivizare, deportări 1940-49, politica lingvistică RASSM 1924-1940", "profile": "all", "kb_unit": null, "prereqs": ["al_doilea_rm_bac"], "exam_weight": 4, "difficulty": 4},
-    "razboi_rece_bac": {"title": "Lumea postbelică, Războiul Rece, blocuri militare, Planul Marshall", "profile": "all", "kb_unit": null, "prereqs": ["al_doilea_rm_bac"], "exam_weight": 4, "difficulty": 4},
-    "independenta_rm_bac": {"title": "Republica Moldova spre independență 1991, cultura/știința RM în context european", "profile": "all", "kb_unit": null, "prereqs": ["sovietizare_rssm_bac", "razboi_rece_bac"], "exam_weight": 5, "difficulty": 4},
-    "eseu_istoric": {"title": "Eseul istoric structurat (Sub IV, 35p) — teză, argumente, cauză-efect, integrare surse, plan", "profile": "all", "kb_unit": null, "prereqs": ["marea_unire_1918_bac", "independenta_rm_bac"], "exam_weight": 5, "difficulty": 5}
+    "revolutii_moderne": {"title": "Revoluția americană, Napoleon/Primul Imperiu francez, Carol cel Mare", "profile": "both", "kb_unit": null, "prereqs": ["reforma_iluminism"], "exam_weight": 4, "difficulty": 4},
+    "basarabia_1812": {"title": "Anexarea Basarabiei 1812, mișcarea 1821 (Tudor Vladimirescu)", "profile": "both", "kb_unit": null, "prereqs": ["suzeranitate_otomana"], "exam_weight": 4, "difficulty": 4},
+    "unirea_1859": {"title": "Unirea Principatelor 1859 (Alexandru Ioan Cuza, Kogălniceanu), reforme, războiul de independență 1877-78", "profile": "both", "kb_unit": null, "prereqs": ["basarabia_1812", "revolutii_moderne"], "exam_weight": 5, "difficulty": 4},
+    "marea_unire_1918_bac": {"title": "Marea Unire 1918, Sfatul Țării, autonomia Basarabiei, sistemul Versailles", "profile": "both", "kb_unit": null, "prereqs": ["unirea_1859"], "exam_weight": 5, "difficulty": 4},
+    "regimuri_totalitare_bac": {"title": "Regimuri totalitare interbelice (fascism, nazism, stalinism), Liga Națiunilor", "profile": "both", "kb_unit": null, "prereqs": ["marea_unire_1918_bac"], "exam_weight": 4, "difficulty": 4},
+    "al_doilea_rm_bac": {"title": "Al Doilea Război Mondial, Pactul Molotov-Ribbentrop, pierderile 1940, Overlord, Teheran", "profile": "both", "kb_unit": null, "prereqs": ["regimuri_totalitare_bac"], "exam_weight": 5, "difficulty": 4},
+    "sovietizare_rssm_bac": {"title": "Sovietizarea RSSM, colectivizare, deportări 1940-49, politica lingvistică RASSM 1924-1940", "profile": "both", "kb_unit": null, "prereqs": ["al_doilea_rm_bac"], "exam_weight": 4, "difficulty": 4},
+    "razboi_rece_bac": {"title": "Lumea postbelică, Războiul Rece, blocuri militare, Planul Marshall", "profile": "both", "kb_unit": null, "prereqs": ["al_doilea_rm_bac"], "exam_weight": 4, "difficulty": 4},
+    "independenta_rm_bac": {"title": "Republica Moldova spre independență 1991, cultura/știința RM în context european", "profile": "both", "kb_unit": null, "prereqs": ["sovietizare_rssm_bac", "razboi_rece_bac"], "exam_weight": 5, "difficulty": 4},
+    "eseu_istoric": {"title": "Eseul istoric structurat (Sub IV, 35p) — teză, argumente, cauză-efect, integrare surse, plan", "profile": "both", "kb_unit": null, "prereqs": ["marea_unire_1918_bac", "independenta_rm_bac"], "exam_weight": 5, "difficulty": 5}
   }
 }
