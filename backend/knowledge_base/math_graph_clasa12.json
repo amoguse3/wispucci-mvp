@@ -1,0 +1,27 @@
+{
+  "subject": "math",
+  "grade": 12,
+  "authority": "ANCE Moldova — Bacalaureat, Matematică (profil real / umanist)",
+  "notes": "Граф микро-скиллов BAC по математике. КЛЮЧЕВОЕ: real и uman это разные экзамены. 'profile' = real (только real), uman (только uman), both (оба). Real: 12 итемов, есть matanaliza (пределы, производные, интегралы Ньютон-Лейбниц), тригонометрия, комплексные, стереометрия. Uman: 14 итемов, БЕЗ matanaliza; есть determinanti, statistica/mediana, combinatorica. Оба 100 баллов, 180 мин, любой метод принимается, баллы по шагам. 'gimnaziu_link' связывает с узлами math_graph_clasa9. exam_weight 1-5 из частоты на реальных тестах sb/pr/es 2026.",
+  "bkt_defaults": {"p_L0": 0.30, "p_transit": 0.15, "p_slip": 0.10, "p_guess": 0.20, "mastery_threshold": 0.95},
+  "nodes": {
+    "puteri_radicali_liceu": {"title": "Puteri cu exponent rațional, radicali, calcul numeric", "profile": "both", "kb_unit": null, "prereqs": [], "exam_weight": 5, "difficulty": 2, "gimnaziu_link": "radicali"},
+    "logaritmi": {"title": "Logaritmi — proprietăți, calcul, schimbare de bază", "profile": "both", "kb_unit": null, "prereqs": ["puteri_radicali_liceu"], "exam_weight": 5, "difficulty": 3, "gimnaziu_link": null},
+    "numere_complexe": {"title": "Numere complexe — formă algebrică/trigonometrică, modul, De Moivre", "profile": "both", "kb_unit": null, "prereqs": ["puteri_radicali_liceu"], "exam_weight": 5, "difficulty": 4, "gimnaziu_link": null},
+    "ecuatii_inecuatii_liceu": {"title": "Ecuații și inecuații (exponențiale, logaritmice, ira�ionale)", "profile": "both", "kb_unit": null, "prereqs": ["logaritmi"], "exam_weight": 5, "difficulty": 4, "gimnaziu_link": "ecuatii_gr2"},
+    "matrice_determinanti": {"title": "Matrice și determinanți, inversabilitate", "profile": "both", "kb_unit": null, "prereqs": ["ecuatii_inecuatii_liceu"], "exam_weight": 4, "difficulty": 4, "gimnaziu_link": null},
+    "sisteme_liceu": {"title": "Sisteme de ecuații (inclusiv probleme aplicate)", "profile": "both", "kb_unit": null, "prereqs": ["ecuatii_inecuatii_liceu"], "exam_weight": 4, "difficulty": 3, "gimnaziu_link": "sisteme"},
+    "progresii": {"title": "Progresii aritmetice și geometrice", "profile": "both", "kb_unit": null, "prereqs": ["ecuatii_inecuatii_liceu"], "exam_weight": 4, "difficulty": 3, "gimnaziu_link": null},
+    "trigonometrie": {"title": "Trigonometrie — identități, ecuații, teorema sinusurilor/cosinusului", "profile": "real", "kb_unit": null, "prereqs": ["ecuatii_inecuatii_liceu"], "exam_weight": 5, "difficulty": 4, "gimnaziu_link": null},
+    "functii_proprietati": {"title": "Funcții — domeniu, paritate, monotonie, grafic", "profile": "both", "kb_unit": null, "prereqs": ["logaritmi"], "exam_weight": 4, "difficulty": 3, "gimnaziu_link": "functia_patratica"},
+    "limite": {"title": "Limite de funcții, continuitate", "profile": "real", "kb_unit": null, "prereqs": ["functii_proprietati"], "exam_weight": 5, "difficulty": 4, "gimnaziu_link": null},
+    "derivate": {"title": "Derivate, tangenta la grafic, puncte de extrem", "profile": "real", "kb_unit": null, "prereqs": ["limite"], "exam_weight": 5, "difficulty": 5, "gimnaziu_link": null},
+    "integrale": {"title": "Primitive și integrala definită (Newton-Leibniz), arii", "profile": "real", "kb_unit": null, "prereqs": ["derivate"], "exam_weight": 5, "difficulty": 5, "gimnaziu_link": null},
+    "combinatorica_binom": {"title": "Combinatorică și binomul lui Newton", "profile": "both", "kb_unit": null, "prereqs": ["puteri_radicali_liceu"], "exam_weight": 4, "difficulty": 4, "gimnaziu_link": null},
+    "probabilitati": {"title": "Elemente de teoria probabilităților", "profile": "both", "kb_unit": null, "prereqs": ["combinatorica_binom"], "exam_weight": 4, "difficulty": 4, "gimnaziu_link": "organizare_date"},
+    "statistica_mediana": {"title": "Statistică matematică — medie, mediană, calcul financiar", "profile": "uman", "kb_unit": null, "prereqs": ["progresii"], "exam_weight": 4, "difficulty": 3, "gimnaziu_link": "organizare_date"},
+    "procente_financiar": {"title": "Procente și calcul financiar (scumpire/ieftinire)", "profile": "both", "kb_unit": null, "prereqs": ["ecuatii_inecuatii_liceu"], "exam_weight": 4, "difficulty": 3, "gimnaziu_link": "procente_proportii"},
+    "geometrie_plana_liceu": {"title": "Geometrie plană — triunghi, trapez, cerc, arii", "profile": "both", "kb_unit": null, "prereqs": ["trigonometrie"], "exam_weight": 5, "difficulty": 4, "gimnaziu_link": "triunghi"},
+    "geometrie_spatiala_liceu": {"title": "Corpuri geometrice — prismă, piramidă, con, cilindru, volume", "profile": "both", "kb_unit": null, "prereqs": ["geometrie_plana_liceu"], "exam_weight": 5, "difficulty": 5, "gimnaziu_link": "corpuri_geometrice"}
+  }
+}
