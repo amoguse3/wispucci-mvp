@@ -1,0 +1,14 @@
+{
+  "title": "Calcule geografice — întindere, fuse orare, gradient (BAC)",
+  "summary": "Algoritmele de calcul din domeniul II: întinderea pe meridian, diferența de fus orar, gradientul termic altitudinal. Se rezolvă cu atlasul la îndemână.",
+  "formulas": ["întindere pe meridian = diferența de latitudine (°) × 111 km", "diferența orară = diferența de fuse (fiecare fus = 1 oră)", "gradient termic: temperatura scade cu ~0,6°C la fiecare 100 m alt."],
+  "key_facts": ["sb26 it6: 34°S − 20°S = 14° × 111 = 1554 km.", "pr26 it6: 12°N + 55°S = 67° × 111 = 7437 km (latitudini de emisfere diferite se ADUNĂ).", "sb26 it7: Chișinău (+2) mai la est → întâmpină Anul Nou cu 2 ore mai devreme.", "gradient (Elbrus 5342 m): 5342×0,6/100 ≈ 32°C diferență."],
+  "terminology": ["latitudine", "longitudine", "meridian", "paralelă", "fus orar", "gradient termic altitudinal"],
+  "worked_pattern": "Întindere pe meridian între 34°S și 20°S: aceeași emisferă → scădere 34−20=14°; 14×111=1554 km. Între emisfere (12°N și 55°S) → adunare: 12+55=67°; 67×111=7437 km.",
+  "common_mistakes": ["Scăderea latitudinilor din emisfere diferite în loc de adunare.", "Uitarea că fiecare fus orar = 1 oră."],
+  "exam_notes": "Itemi 6-7 (domeniul II). Test unic pentru toate profilurile, atlas permis. Verificat pe baremе geografie sb26/pr26/es26.",
+  "_verified": false,
+  "_node_id": "calcule_geografice",
+  "_subject": "geografie",
+  "_grade": 12
+}

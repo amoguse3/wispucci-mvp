@@ -1,0 +1,59 @@
+{
+  "subject": "istorie",
+  "name": "Istoria românilor și universală (BAC)",
+  "authority": "ANCE Moldova, clasa 12, Bacalaureat",
+  "exam_format": "100 puncte. 4 subiecte: I (24p, 5 itemi analiză sursă), II (22p, dosar surse), III (19p, item cu hartă), IV (eseu structurat 35p). Identic ca structură la profilurile real și umanist; diferă adâncimea și accentul temelor.",
+  "grading_notes": "Eseul Sub IV (35p) = coloana vertebrală. Barem: 3 argumente (6p=2×3) + concordanță cu teza (2p) + relevanță (2p) + relații cauză-efect min. 2 (6p) + integrarea surselor în text, NU citate izolate (4p) + reperare timp/spațiu = 2 date + 2 locuri (4p) + personalitate istorică (2p) + plan intro/cuprins/concluzie (7p) + limbaj istoric (2p). NB DUR: limbajul istoric (2p) se acordă DOAR dacă elevul a obținut ≥4p la argumente. Formula de predat: afirmație(teză) → raționament(cauză-efect) → exemplu concret(dată+personalitate+sursă).",
+  "_verified": false,
+  "_grade": 12,
+  "_profiles": "real, umanist",
+  "_source": "Заземлено на реальные тесты+баремы ANCE 12_ist sb26/pr26/es26 (real/umanist).",
+  "units": {
+    "eseu_istoric": {
+      "title": "Eseul istoric structurat (Sub IV, 35p)",
+      "summary": "Cel mai greu și mai valoros item: eseu argumentativ pe o temă istorică, punctat pe componente stricte. Jumătate din șansa de reușită stă aici.",
+      "barem_detaliat": {"argumente": "6p (relevanță 1p + argumente depline raționament+exemplu)", "cauza_efect": "6p (minim 2 relații)", "integrare_surse": "4p (surse țesute în text, nu citate izolate)", "timp_spatiu": "4p (2 date + 2 locuri concrete)", "personalitate": "2p", "plan": "7p (intro/cuprins/concluzie)", "limbaj_istoric": "2p DOAR dacă ≥4p la argumente"},
+      "key_facts": ["Integrarea surselor = referire în text la conținutul lor, NU copierea unui citat.", "Timp/spațiu cere date EXACTE și locuri concrete (nu 'secolul XX').", "Regula limbajului istoric (2p condiționat de ≥4p argumente) elimină eseurile goale dar frumoase."],
+      "terminology": ["teză", "argument", "relație cauză-efect", "integrare de surse", "reper cronologic", "limbaj istoric"],
+      "worked_pattern": "Temă 'Independența RM 1991' (real es26): teză clară → argument 1 (mișcarea națională 1988-89 → efect: limba de stat 31.08.1989) → argument 2 (suveranitate 23.06.1990 → independență 27.08.1991, 277 deputați) → sursă integrată + personalitate (Alexandru Moșanu) → concluzie.",
+      "common_mistakes": ["Citate izolate în loc de surse integrate (pierde 4p).", "Date vagi fără an/loc exact (pierde timp/spațiu).", "Argumente declarative fără cauză-efect."],
+      "exam_notes": "Sub IV la real și umanist. Teme confirmate: cruciade, independența RM (real), Marea Unire, Cuza 1859 (umanist)."
+    },
+    "marea_unire_1918_bac": {
+      "title": "Marea Unire 1918 și sistemul Versailles",
+      "summary": "Autonomia și unirea Basarabiei prin Sfatul Țării, contextul destrămării imperiilor, recunoașterea prin tratatele de pace.",
+      "dates": {"2 decembrie 1917": "Proclamarea RDM", "24 ianuarie 1918": "RDM independentă", "27 martie 1918": "Unirea Basarabiei (Sfatul Țării: 86 pentru, 3 contra, 36 abțineri)", "28 iunie 1919": "Tratatul de la Versailles", "28 octombrie 1920": "Tratatul de la Paris (recunoașterea unirii Basarabiei)"},
+      "key_facts": ["Sfatul Țării a votat unirea la 27 martie 1918 cu 86 voturi pentru.", "Sistemul Versailles (1919-1920) a reconfigurat harta Europei."],
+      "terminology": ["Sfatul Țării", "RDM", "autodeterminare", "sistemul Versailles"],
+      "common_mistakes": ["Confundarea RDM (1917) cu unirea (1918).", "Omiterea votului concret al Sfatului Țării."],
+      "exam_notes": "Sub II/IV la umanist sb26, es24-t1. Personalități: Ferdinand I, Ion Inculeț, Pantelimon Halippa."
+    },
+    "unirea_1859_bac": {
+      "title": "Unirea Principatelor 1859",
+      "summary": "Dubla alegere a lui Alexandru Ioan Cuza, reformele epocii Cuza (Kogălniceanu), consolidarea statului modern român.",
+      "dates": {"5 ianuarie 1859": "Alegerea lui Cuza în Moldova", "24 ianuarie 1859": "Alegerea lui Cuza în Țara Românească (dubla alegere)", "1864": "Reforma agrară"},
+      "key_facts": ["Dubla alegere a lui Cuza a realizat unirea de facto a Principatelor.", "Mihail Kogălniceanu a fost artizanul reformelor."],
+      "terminology": ["dubla alegere", "Principatele Unite", "reformă agrară", "secularizare"],
+      "common_mistakes": ["Confundarea unirii 1859 cu Marea Unire 1918."],
+      "exam_notes": "Eseu la umanist. Personalități: Alexandru Ioan Cuza, Mihail Kogălniceanu."
+    },
+    "regimuri_totalitare_bac": {
+      "title": "Regimuri totalitare și diplomația interbelică",
+      "summary": "Fascism (Mussolini), nazism (Hitler), stalinism; Liga Națiunilor și securitatea colectivă; relațiile româno-sovietice.",
+      "dates": {"28 octombrie 1922": "Marșul asupra Romei", "30 ianuarie 1933": "Hitler cancelar", "1 august 1934": "Hitler Führer", "1930-1931": "Titulescu președinte al Adunării Ligii Națiunilor", "1936": "Conferința de la Montreux"},
+      "key_facts": ["Regimurile totalitare: partid unic, cult al conducătorului, teroare de stat.", "Titulescu a fost figură centrală a diplomației române interbelice."],
+      "terminology": ["totalitarism", "Liga Națiunilor", "securitate colectivă", "partid unic"],
+      "common_mistakes": ["Confundarea fascismului cu nazismul.", "A trata Liga Națiunilor drept ONU."],
+      "exam_notes": "Sub II în es25-t2 (Montreux), es26-t2 (Mussolini/Hitler/Stalin). Personalități: Nicolae Titulescu."
+    },
+    "independenta_rm_bac": {
+      "title": "Republica Moldova spre independență (1988-1994)",
+      "summary": "Mișcarea de eliberare națională, limba de stat, suveranitate, independență, Constituția; RM în context european.",
+      "dates": {"31 august 1989": "Limba română – limbă de stat", "23 iunie 1990": "Suveranitatea", "27 august 1991": "Declarația de independență (277 deputați)", "29 iulie 1994": "Constituția RM"},
+      "key_facts": ["Independența a fost proclamată de Parlament la 27 august 1991 cu 277 de voturi.", "Mișcarea națională 1988-1989 a pregătit terenul."],
+      "terminology": ["suveranitate", "independență", "mișcare de eliberare națională"],
+      "common_mistakes": ["Confundarea suveranității (1990) cu independența (1991)."],
+      "exam_notes": "Eseu Sub IV la real (es26). Personalități: Alexandru Moșanu."
+    }
+  }
+}

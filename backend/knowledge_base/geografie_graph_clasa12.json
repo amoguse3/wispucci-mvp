@@ -1,0 +1,23 @@
+{
+  "subject": "geografie",
+  "grade": 12,
+  "authority": "ANCE Moldova — Bacalaureat, Geografie",
+  "notes": "Граф BAC по географии. КЛЮЧЕВОЕ: единый тест для ВСЕХ профилей (real/umanist/arte/sport), профили НЕ разделены (в отличие от mat/bio/chi/fiz). 180 мин, 100 баллов, 14 итемов, 3 домена. РАЗРЕШЁН АТЛАС (Geografia fizică generală, umană, RM) — учить надо метод работы с атласом + расчётные алгоритмы, не зубрёжку карт. Барем гибкий ('se acceptă și alte răspunsuri corecte'). exam_weight из баремов sb26/pr26/es26. Профиля нет, поэтому profile НЕ используется.",
+  "bkt_defaults": {"p_L0": 0.30, "p_transit": 0.15, "p_slip": 0.10, "p_guess": 0.20, "mastery_threshold": 0.95},
+  "atlas_allowed": true,
+  "exam_structure": {
+    "domeniul_I": "Cunoaștere și înțelegere (it1-5): A/F cu corectare, tabele industrie, râuri, forme de relief, oceane/lacuri",
+    "domeniul_II": "Aplicare și operare (it6-10): calcul întindere pe meridian (1°≈111 km), fuse orare, demografie (bilanț natural), climatograme, călătorie imaginară pe hartă",
+    "domeniul_III": "Integrare și transfer (it11-14): argumentare cauză-efect pe hărți tematice"
+  },
+  "nodes": {
+    "pamant_forma_miscari": {"title": "Pământul — formă, mișcări, coordonate geografice, fuse orare", "kb_unit": "calcule_geografice", "prereqs": [], "exam_weight": 5, "difficulty": 4},
+    "litosfera_relief": {"title": "Litosfera și relieful — forme, plăci tectonice, gradient termic altitudinal", "kb_unit": null, "prereqs": ["pamant_forma_miscari"], "exam_weight": 4, "difficulty": 4},
+    "atmosfera_clima": {"title": "Atmosfera și clima — climatograme, factori climatici", "kb_unit": null, "prereqs": ["pamant_forma_miscari"], "exam_weight": 4, "difficulty": 4},
+    "hidrosfera": {"title": "Hidrosfera — râuri, lacuri, oceane, circuitul apei", "kb_unit": null, "prereqs": ["pamant_forma_miscari"], "exam_weight": 3, "difficulty": 3},
+    "geografie_umana_populatie": {"title": "Geografia populației — bilanț natural, densitate, migrații", "kb_unit": "demografie", "prereqs": [], "exam_weight": 5, "difficulty": 4},
+    "geografie_economica": {"title": "Geografia economică — industrie, agricultură, resurse", "kb_unit": null, "prereqs": ["geografie_umana_populatie"], "exam_weight": 4, "difficulty": 3},
+    "lucru_cu_atlasul": {"title": "Metoda de lucru cu atlasul — citirea hărților tematice, călătoria imaginară", "kb_unit": null, "prereqs": ["litosfera_relief", "geografie_economica"], "exam_weight": 5, "difficulty": 3},
+    "integrare_transfer": {"title": "Integrare și transfer — argumentare cauză-efect pe hărți", "kb_unit": null, "prereqs": ["lucru_cu_atlasul"], "exam_weight": 5, "difficulty": 4}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Efectul fotoelectric (BAC)",
+  "summary": "Ecuația lui Einstein pentru efectul fotoelectric, energia fotonului, lucrul de extracție, tensiunea de stopare.",
+  "formulas": ["E_foton = hν = hc/λ", "hc/λ = L_ex + E_c (ecuația lui Einstein)", "E_c = eU_stop", "U = (hc/λ − L_ex)/e"],
+  "key_facts": ["real sb26 it5: U=(hc/λ − L_ex)/e = 2,5 V.", "Energia fotonului crește cu scăderea lungimii de undă.", "Sub pragul roșu (frecvența de prag) efectul nu are loc, indiferent de intensitate."],
+  "terminology": ["foton", "lucru de extracție", "tensiune de stopare", "frecvență de prag", "efect fotoelectric"],
+  "worked_pattern": "U = (hc/λ − L_ex)/e. Cu valorile din item (sb26 real) → U = 2,5 V. Formulele sunt în anexă.",
+  "common_mistakes": ["Confuzia dintre energia fotonului și energia cinetică a electronului.", "Unități greșite (eV vs J)."],
+  "exam_notes": "Item ~5. La ambele profiluri (mai profund la real). Verificat pe barem fizică sb26 real.",
+  "_verified": false,
+  "_node_id": "efect_fotoelectric",
+  "_subject": "fizica",
+  "_grade": 12,
+  "_profile": "both"
+}

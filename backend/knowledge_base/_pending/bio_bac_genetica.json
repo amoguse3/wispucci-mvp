@@ -1,0 +1,15 @@
+{
+  "title": "Probleme de genetică (BAC)",
+  "summary": "Rezolvarea problemelor de încrucișare cu grila Punnett. Monohibrid la ambele profiluri; dihibrid și înlănțuire cu sexul (daltonism, hemofilie) DOAR la real.",
+  "formulas": ["monohibrid heterozigot × heterozigot → 3:1 fenotipic (75% dominant, 25% recesiv)", "grila Punnett: gameți pe axe, combinații în celule", "înlănțuire cu sexul: gene pe cromozomul X"],
+  "key_facts": ["uman: monohibrid — culoarea tuberculului de cartof 25% recesiv; Rh 50%; păr ondulat 50%.", "real: dihibrid + înlănțuire cu sexul — fiică daltonistă cu păr drept = 12,5%; daltonism+grupă sangvină = 37,5%.", "Punctare pe pași: date → genotip → gameți → grilă → fenotipuri → calcul → răspuns."],
+  "terminology": ["genotip", "fenotip", "homozigot", "heterozigot", "grila Punnett", "înlănțuire cu sexul", "dihibridare"],
+  "worked_pattern": "uman: cartof, culoare (A dominant). Aa × Aa → 1AA:2Aa:1aa → 25% recesiv (aa). real: daltonism (X^d) → fiică daltonistă cu păr drept = 12,5% (verificat barem pr26/es26 real).",
+  "common_mistakes": ["Aplicarea monohibridului la o problemă de înlănțuire cu sexul (real).", "Uitarea cromozomului X la daltonism/hemofilie."],
+  "exam_notes": "Item 13/14 (11p). NB: dihibrid+sex-linked = real-only; uman rămâne la monohibrid. Verificat pe baremе bio pr26/sb26/es26.",
+  "_verified": false,
+  "_node_id": "genetica_probleme",
+  "_subject": "bio",
+  "_grade": 12,
+  "_profile": "both"
+}

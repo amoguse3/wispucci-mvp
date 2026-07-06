@@ -1,0 +1,18 @@
+{
+  "subject": "romana",
+  "grade": 12,
+  "authority": "ANCE Moldova — Bacalaureat, Limba și literatura română (profil real / umanist)",
+  "notes": "Граф BAC по румынскому. КЛЮЧЕВОЕ: real и umanist разные экзамены. real (тексты Cornilă/Druță, 'real, sport'): 9 коротких итемов + item 10 = eseu argumentativ 24p от цитаты. umanist (Cărtărescu/Ciobanu, 'umanist, arte'): 12 итемов, есть invitație/cerere/personaj + item 12 = eseu structurat 24p на тему. Оба + REDACTARE 20p (стиль 5 + орфо/грам 5 + пункт 5 + организация 2 + анализ 3), шкала '−1 за каждые 2 ошибки'. NB ЖЁСТКО: эссе требует 2 текста рум. литературы С АВТОРОМ, иначе баллы за референции = 0. 'profile' = both/real/umanist. exam_weight из баремов sb26/pr26/es26.",
+  "bkt_defaults": {"p_L0": 0.30, "p_transit": 0.15, "p_slip": 0.10, "p_guess": 0.20, "mastery_threshold": 0.95},
+  "nodes": {
+    "sinonime_sensuri": {"title": "Sinonime contextuale, sensuri multiple ale cuvintelor", "profile": "both", "kb_unit": null, "prereqs": [], "exam_weight": 4, "difficulty": 3},
+    "stil_functional": {"title": "Încadrarea în stil funcțional + trăsături cu citate", "profile": "both", "kb_unit": null, "prereqs": ["sinonime_sensuri"], "exam_weight": 4, "difficulty": 4},
+    "figuri_de_stil": {"title": "Figuri de stil — identificare, comentariu, sugestie contextuală", "profile": "both", "kb_unit": null, "prereqs": ["sinonime_sensuri"], "exam_weight": 5, "difficulty": 4},
+    "motiv_literar_comparat": {"title": "Motiv literar în raport cu alt text din literatura română (nume text+autor)", "profile": "both", "kb_unit": null, "prereqs": ["figuri_de_stil"], "exam_weight": 5, "difficulty": 5},
+    "portret_personaj": {"title": "Portretul moral al unui personaj (tip uman + trăsături cu exemple)", "profile": "umanist", "kb_unit": null, "prereqs": ["figuri_de_stil"], "exam_weight": 4, "difficulty": 4},
+    "gen_specie_literara": {"title": "Argumentarea genului/speciei (liric/epic/dramatic, eseistic)", "profile": "both", "kb_unit": null, "prereqs": ["figuri_de_stil"], "exam_weight": 4, "difficulty": 4},
+    "text_functional": {"title": "Texte funcționale — anunț, invitație, cerere (după legendă)", "profile": "umanist", "kb_unit": null, "prereqs": ["sinonime_sensuri"], "exam_weight": 4, "difficulty": 3},
+    "eseu_argumentativ": {"title": "Eseul (24p) — real: argumentativ de la citație; umanist: structurat pe temă; 2 texte lit. cu autor obligatoriu", "profile": "both", "kb_unit": "eseu_bac", "prereqs": ["motiv_literar_comparat", "gen_specie_literara"], "exam_weight": 5, "difficulty": 5},
+    "redactare": {"title": "Redactarea (20p) — stil, ortografie/gramatică, punctuație, organizare, analiză", "profile": "both", "kb_unit": "redactare", "prereqs": ["eseu_argumentativ"], "exam_weight": 5, "difficulty": 4}
+  }
+}

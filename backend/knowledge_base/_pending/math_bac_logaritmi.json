@@ -1,0 +1,15 @@
+{
+  "title": "Logaritmi (BAC)",
+  "summary": "Proprietățile logaritmilor, schimbarea de bază, calculul expresiilor logaritmice. Frecvent item 1 la ambele profiluri.",
+  "formulas": ["log_a(bc) = log_a b + log_a c", "log_a(b/c) = log_a b - log_a c", "log_a b^c = c·log_a b", "log_{a^c} b = (1/c)·log_a b", "a^{log_a b} = b", "log_a b = ln b / ln a"],
+  "key_facts": ["log_4 9 = log_{2^2} 3^2 = log_2 3; deci 2^{-log_4 9} = 2^{-log_2 3} = 1/3 (real es26 it1).", "log_{1/7} 98 + log_7 2 = log_7(1/49) = -2 (real pr26 it1).", "25^{7/6} : (∛25)^2 = 5^{7/3} : 5^{4/3} = 5 (uman pr26 it1)."],
+  "terminology": ["logaritm", "bază", "argument", "schimbare de bază", "logaritm natural"],
+  "worked_pattern": "Calcul 2^{-log_4 9}: log_4 9 = log_{2^2} 3^2 = (2/2)log_2 3 = log_2 3, deci 2^{-log_2 3} = 1/(2^{log_2 3}) = 1/3.",
+  "common_mistakes": ["Uitarea condiției de existență (argument > 0, bază > 0 ≠ 1).", "Greșeli la schimbarea bazei."],
+  "exam_notes": "Item 1 la real și uman (5p). Răspunsuri verificate din baremе sb26/pr26/es26.",
+  "_verified": false,
+  "_node_id": "logaritmi",
+  "_subject": "math",
+  "_grade": 12,
+  "_profile": "both"
+}

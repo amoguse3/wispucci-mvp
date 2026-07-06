@@ -1,0 +1,17 @@
+{
+  "subject": "bio",
+  "grade": 12,
+  "authority": "ANCE Moldova — Bacalaureat, Biologie (profil real / umanist)",
+  "notes": "Граф BAC по биологии. КЛЮЧЕВОЕ: real и uman разные экзамены. real (14 итемов, '...și particularitățile evolutive'): есть moleculară (АДН→АРНм→белок, кодоны, мутации) и глубокая эволюция (палеонтология, сравнит. анатомия); задачи дигибрид+сцепление с полом. uman (14 итемов): БЕЗ молекулярки и глубокой эволюции; задачи моногибрид; акцент прикладной (породы, брожение, биотехнологии). Оба 180 мин, 100 баллов, 4 домена (real дробит diversitate+evolutie). 'profile' = both/real/uman. exam_weight из баремов pr26/sb26/es26.",
+  "bkt_defaults": {"p_L0": 0.30, "p_transit": 0.15, "p_slip": 0.10, "p_guess": 0.20, "mastery_threshold": 0.95},
+  "nodes": {
+    "diversitate_sistematica": {"title": "Diversitatea în lumea vie — sistematică, regnuri", "profile": "both", "kb_unit": null, "prereqs": [], "exam_weight": 4, "difficulty": 3},
+    "evolutie": {"title": "Evoluția — paleontologie, anatomie comparată (atavisme/rudimente/organe omoloage-analoage), dovezi", "profile": "real", "kb_unit": null, "prereqs": ["diversitate_sistematica"], "exam_weight": 4, "difficulty": 4},
+    "celula_tesuturi": {"title": "Celula și țesuturile — structură, organite, tipuri de țesuturi", "profile": "both", "kb_unit": null, "prereqs": [], "exam_weight": 4, "difficulty": 3},
+    "molecular_adn": {"title": "Bazele moleculare — ADN→ARNm→proteine, cod genetic, mutații (substituție)", "profile": "real", "kb_unit": "molecular_adn", "prereqs": ["celula_tesuturi"], "exam_weight": 5, "difficulty": 5},
+    "sisteme_organe_om": {"title": "Sistemele de organe ale omului — ochi, ureche, hormoni, reflex", "profile": "both", "kb_unit": "sisteme_organe_om", "prereqs": ["celula_tesuturi"], "exam_weight": 5, "difficulty": 4},
+    "genetica_probleme": {"title": "Genetica — probleme de încrucișare (monohibrid; dihibrid+înlănțuire cu sexul la real)", "profile": "both", "kb_unit": "genetica_probleme", "prereqs": ["molecular_adn"], "exam_weight": 5, "difficulty": 5},
+    "ameliorare_biotehnologii": {"title": "Ameliorarea organismelor, biotehnologii, fermentație (accent umanist)", "profile": "uman", "kb_unit": null, "prereqs": ["genetica_probleme"], "exam_weight": 4, "difficulty": 3},
+    "ecologie": {"title": "Ecologia și protecția mediului — lanțuri trofice, biocenoză/biotop/ecosistem, cicluri C și N", "profile": "both", "kb_unit": null, "prereqs": ["diversitate_sistematica"], "exam_weight": 4, "difficulty": 3}
+  }
+}

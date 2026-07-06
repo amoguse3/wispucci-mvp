@@ -1,0 +1,20 @@
+{
+  "subject": "informatica",
+  "grade": 12,
+  "authority": "ANCE Moldova — Bacalaureat, Informatică",
+  "notes": "Граф BAC по информатике. 180 мин, 100 баллов. Ученик выбирает Pascal ИЛИ C++ (равноправны). ЗДЕСЬ АКЦЕНТ C++. Профили разные: real (4 subiecte, 25+32+30+13) глубже — системы счисления с дробями, логические схемы, файлы .in/.out, функции с параметрами, численные методы (метод хорд, половинного деления, прямоугольников), двумерные массивы, MS Access. uman/arte/sport (13+40+22+25) проще — трассировка кода, простые циклы, switch/case, Access базовый. 'profile' = both/real/uman. Барем: баллы по компонентам (объявление, заголовок функции, цикл, ветвление, возврат, файлы, вывод) по 1p; принимается любой корректный вариант. exam_weight из баремов sb26/pr26/es26.",
+  "bkt_defaults": {"p_L0": 0.30, "p_transit": 0.15, "p_slip": 0.10, "p_guess": 0.20, "mastery_threshold": 0.95},
+  "language": "C++ (Pascal alternativ acceptat)",
+  "nodes": {
+    "sisteme_numeratie": {"title": "Sisteme de numerație — conversii 2/8/10/16 (cu fracții la real)", "profile": "both", "kb_unit": "sisteme_numeratie", "prereqs": [], "exam_weight": 5, "difficulty": 3},
+    "reprezentare_info": {"title": "Reprezentarea informației — biți/octeți, capacitate, codificare", "profile": "both", "kb_unit": "reprezentare_info", "prereqs": ["sisteme_numeratie"], "exam_weight": 4, "difficulty": 3},
+    "tipuri_date": {"title": "Tipuri de date, variabile, operatori (C++)", "profile": "both", "kb_unit": null, "prereqs": [], "exam_weight": 4, "difficulty": 3},
+    "instructiuni_control": {"title": "Instrucțiuni de control — if/else, switch, cicluri (for/while)", "profile": "both", "kb_unit": null, "prereqs": ["tipuri_date"], "exam_weight": 5, "difficulty": 4},
+    "trasare_cod": {"title": "Trasarea (execuția pas cu pas) a unui program", "profile": "both", "kb_unit": "trasare_cod", "prereqs": ["instructiuni_control"], "exam_weight": 5, "difficulty": 4},
+    "functii": {"title": "Funcții cu parametri, valoare de retur (accent real)", "profile": "real", "kb_unit": null, "prereqs": ["instructiuni_control"], "exam_weight": 4, "difficulty": 4},
+    "tablouri": {"title": "Tablouri unidimensionale și bidimensionale (matrici la real)", "profile": "both", "kb_unit": null, "prereqs": ["instructiuni_control"], "exam_weight": 5, "difficulty": 5},
+    "fisiere": {"title": "Fișiere text (.in/.out) — citire/scriere (real)", "profile": "real", "kb_unit": null, "prereqs": ["functii"], "exam_weight": 4, "difficulty": 4},
+    "metode_numerice": {"title": "Metode numerice — coarde, înjumătățire, dreptunghiuri (real)", "profile": "real", "kb_unit": null, "prereqs": ["functii", "tablouri"], "exam_weight": 4, "difficulty": 5},
+    "baze_date_access": {"title": "Baze de date MS Access — tabele, relații, interogări, criterii", "profile": "both", "kb_unit": null, "prereqs": ["tipuri_date"], "exam_weight": 4, "difficulty": 3}
+  }
+}

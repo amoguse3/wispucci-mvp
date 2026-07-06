@@ -1,0 +1,14 @@
+{
+  "title": "Comprehensiunea textului scris (BAC, 30p)",
+  "summary": "Înțelegerea unui text: 7 tipuri de itemi — multiple choice, lexic în context, răspuns scurt (un cuvânt din text), matching, true/false cu citat justificativ, ordonare de idei, idee principală.",
+  "formulas": [],
+  "key_facts": ["Răspuns scurt = exact un cuvânt, textual din text, fără adăugiri.", "True/false: justificarea NU se punctează dacă răspunsul t/f este greșit (NB dur).", "Punctaje pe tip de item: MC 4p, lexic 2p, răspuns scurt 4p, matching 4p, t/f 6p, ordonare 8p, idee principală 2p."],
+  "terminology": ["multiple choice", "lexic în context", "true/false", "matching", "idee principală"],
+  "worked_pattern": "La true/false: alege t/f corect ȘI susține cu un citat din text. Dacă t/f e greșit, citatul nu primește puncte, deci prioritatea e răspunsul corect.",
+  "common_mistakes": ["Răspuns scurt cu mai multe cuvinte sau reformulat.", "Justificare corectă dar t/f greșit (0 puncte)."],
+  "exam_notes": "Domeniul I (30p). Test unic toate profilurile. Verificat pe teste len/lfr sb26/pr26/es26.",
+  "_verified": false,
+  "_node_id": "comprehensiune_l2",
+  "_subject": "limbi_straine",
+  "_grade": 12
+}
