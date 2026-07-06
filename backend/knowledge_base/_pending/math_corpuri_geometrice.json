@@ -1,0 +1,13 @@
+{
+  "title": "Corpuri geometrice — paralelipiped, cilindru, volume",
+  "summary": "Calculul volumelor și ariilor pentru paralelipiped dreptunghic, cub, prismă și cilindru circular drept. Probleme aplicate cu transformări (topire/turnare) și comparații de volum. Formulele de volum sunt în anexă.",
+  "formulas": ["V paralelipiped = L·l·h", "V cub = a³", "A totală paralelipiped = 2(Ll + lh + Lh)", "V cilindru = π·r²·h", "A laterală cilindru = 2π·r·h", "A totală cilindru = 2π·r·(r+h)"],
+  "key_facts": ["La probleme de topire/turnare volumul se CONSERVĂ: volumul total inițial = volumul recipientului umplut.", "Compararea 'încape/nu încape' = compari volumul topit cu volumul vasului.", "Atenție la unități: cm³ vs cm² vs cm."],
+  "terminology": ["paralelipiped dreptunghic", "cub", "cilindru circular drept", "volum", "arie laterală", "arie totală", "rază", "înălțime"],
+  "worked_pattern": "6 pachete unt 6×10×2 cm: V total = 6·(6·10·2) = 720 cm³. Vas cilindru r=5, h=10: V = π·25·10 ≈ 785 cm³. 720 < 785 ⇒ încape. (item real ANCE 2025)",
+  "common_mistakes": ["Uitarea lui π sau folosirea diametrului în loc de rază.", "Confuzia ariei cu volumul.", "Neconservarea volumului la turnare."],
+  "exam_notes": "Item aplicat cu rezolvare desfășurată (tip item 10 din 2025); formulele de volum sunt în anexă.",
+  "_verified": false,
+  "_node_id": "corpuri_geometrice",
+  "_subject": "math"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Organizarea datelor — medii, grafice, probabilități simple",
+  "summary": "Citirea și interpretarea tabelelor și diagramelor, media aritmetică, frecvențe, și probabilitatea unui eveniment simplu ca raport cazuri favorabile / cazuri posibile.",
+  "formulas": ["media aritmetică = (x₁+x₂+...+xₙ)/n", "P(A) = nr. cazuri favorabile / nr. cazuri posibile", "0 ≤ P(A) ≤ 1", "media ponderată = Σ(xᵢ·fᵢ)/Σfᵢ"],
+  "key_facts": ["Probabilitatea unui eveniment sigur = 1, a unuia imposibil = 0.", "Media aritmetică poate să nu fie niciuna dintre valorile din set.", "La diagrame se citește axa și legenda înainte de a calcula."],
+  "terminology": ["media aritmetică", "frecvență", "diagramă", "eveniment", "cazuri favorabile", "cazuri posibile", "probabilitate"],
+  "worked_pattern": "Note: 7, 8, 9, 8, 10 ⇒ media = (7+8+9+8+10)/5 = 42/5 = 8,4. P(notă ≥ 9) = 2/5 = 0,4.",
+  "common_mistakes": ["Împărțirea la un n greșit (numărul de valori).", "P(A) > 1 (imposibil — semnal de eroare).", "Citirea greșită a scării unei diagrame."],
+  "exam_notes": "Pondere mică pe examen dar apare la interpretarea datelor; de obicei item scurt.",
+  "_verified": false,
+  "_node_id": "organizare_date",
+  "_subject": "math"
+}

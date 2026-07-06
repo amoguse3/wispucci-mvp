@@ -1,0 +1,13 @@
+{
+  "title": "Formule de calcul prescurtat",
+  "summary": "Identități folosite pentru dezvoltarea și factorizarea expresiilor: pătratul sumei/diferenței, diferența de pătrate, pătratul trinomului, cubul sumei/diferenței. Sunt în anexa de examen dar trebuie aplicate corect.",
+  "formulas": ["(a+b)² = a² + 2ab + b²", "(a−b)² = a² − 2ab + b²", "(a−b)(a+b) = a² − b²", "(a+b+c)² = a²+b²+c²+2ab+2bc+2ca", "(a+b)³ = a³ + 3a²b + 3ab² + b³", "(a−b)³ = a³ − 3a²b + 3ab² − b³", "a³−b³ = (a−b)(a²+ab+b²)", "a³+b³ = (a+b)(a²−ab+b²)"],
+  "key_facts": ["Diferența de pătrate a²−b² factorizată = (a−b)(a+b) e cel mai frecvent instrument de simplificare.", "La (a−b)² termenul din mijloc e −2ab, nu +2ab: semnul se păstrează.", "Formulele merg în ambele sensuri: dezvoltare ȘI factorizare."],
+  "terminology": ["pătratul sumei", "pătratul diferenței", "diferență de pătrate", "factorizare", "dezvoltare", "trinom"],
+  "worked_pattern": "Simplifică (x+3)² − (x−3)² = [x²+6x+9] − [x²−6x+9] = 12x. Sau prin diferență de pătrate: (a−b)(a+b) cu a=x+3, b=x−3 ⇒ (6)(2x)=12x.",
+  "common_mistakes": ["(a+b)² = a²+b² (uită dublul produs 2ab).", "Semn greșit la (a−b)².", "A confunda a²−b² cu (a−b)²."],
+  "exam_notes": "Cheie la simplificarea expresiilor (item cu rezolvare desfășurată) și la ecuații de gradul II.",
+  "_verified": false,
+  "_node_id": "formule_calcul_prescurtat",
+  "_subject": "math"
+}
