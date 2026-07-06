@@ -1,0 +1,15 @@
+{
+  "title": "Termodinamică și MKT (BAC)",
+  "summary": "Ecuația de stare a gazului ideal, izoprocesele, principiul I al termodinamicii, căldura în transformări.",
+  "formulas": ["pV = νRT (ecuația de stare)", "izocor: Q = νC_vΔT; izobar: Q = νC_pΔT", "principiul I: ΔU = Q − L", "Q = cmΔT (calorimetrie)"],
+  "key_facts": ["uman sb26 it8: pV2=νRT2 → V2=4,00 L, T1=380 K.", "real sb26 it8: izocor, Q=(3/2)VΔp = 0,3 kJ.", "real es26-t2 it8: izobar, Q=-5/4·pV1 = -1 kJ."],
+  "terminology": ["gaz ideal", "ecuație de stare", "izocor", "izobar", "izoterm", "principiul I", "căldură"],
+  "worked_pattern": "Izocor (V const): L=0, deci Q=ΔU=(3/2)νRΔT=(3/2)VΔp. Cu datele din item real sb26 → Q=0,3 kJ.",
+  "common_mistakes": ["Confuzia între izocor și izobar (formula căldurii diferă).", "Semn greșit la lucru/căldură în principiul I."],
+  "exam_notes": "Itemi 8/10. La ambele profiluri. Verificat pe baremе fizică sb26/es26.",
+  "_verified": false,
+  "_node_id": "termodinamica",
+  "_subject": "fizica",
+  "_grade": 12,
+  "_profile": "both"
+}

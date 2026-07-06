@@ -1,0 +1,17 @@
+{
+  "subject": "fizica",
+  "grade": 12,
+  "authority": "ANCE Moldova — Bacalaureat, Fizică (profil real / umanist)",
+  "notes": "Граф BAC по физике. 180 мин, 100 баллов, 12 итемов (1-3 теория по 10p; 4-9 короткие расчёты; 10-12 полные задачи, 12 = экспериментальная с выводом формулы). Домены: механика, МКТ+термодинамика, электродинамика, оптика, физика модерна (фотоэффект, релятивизм, радиоактивность). real глубже (LC-контур, сила Лоренца, электростатика 2 зарядов, дифракция); uman проще (упругая энергия, простые цепи, базовая кинематика). Анекса с формулами дана. 'profile' = both/real/uman. exam_weight из баремов sb26/pr26/es26.",
+  "bkt_defaults": {"p_L0": 0.30, "p_transit": 0.15, "p_slip": 0.10, "p_guess": 0.20, "mastery_threshold": 0.95},
+  "nodes": {
+    "mecanica_cinematica": {"title": "Mecanică — cinematică, legile lui Newton, energie, impuls", "profile": "both", "kb_unit": null, "prereqs": [], "exam_weight": 5, "difficulty": 4},
+    "mkt_termodinamica": {"title": "MKT și termodinamică — ecuația de stare, izoprocese, principiul I", "profile": "both", "kb_unit": "termodinamica", "prereqs": ["mecanica_cinematica"], "exam_weight": 5, "difficulty": 4},
+    "electrostatica": {"title": "Electrostatică — legea lui Coulomb, câmp, condensatoare", "profile": "real", "kb_unit": null, "prereqs": ["mecanica_cinematica"], "exam_weight": 5, "difficulty": 5},
+    "curent_continuu": {"title": "Curent continuu — legea lui Ohm, circuite, t.e.m.", "profile": "both", "kb_unit": "curent_ohm", "prereqs": ["electrostatica"], "exam_weight": 5, "difficulty": 4},
+    "magnetism_inductie": {"title": "Magnetism, forța Lorentz, inducție electromagnetică, circuit LC", "profile": "real", "kb_unit": null, "prereqs": ["curent_continuu"], "exam_weight": 4, "difficulty": 5},
+    "optica_difractie": {"title": "Optică — rețeaua de difracție, interferență", "profile": "real", "kb_unit": null, "prereqs": ["mecanica_cinematica"], "exam_weight": 4, "difficulty": 5},
+    "fizica_moderna": {"title": "Fizică modernă — efect fotoelectric, relativitate, radioactivitate", "profile": "both", "kb_unit": "efect_fotoelectric", "prereqs": ["optica_difractie"], "exam_weight": 4, "difficulty": 5},
+    "item_experimental": {"title": "Item experimental — deducerea unei formule + schemă (item 12)", "profile": "both", "kb_unit": null, "prereqs": ["mkt_termodinamica", "curent_continuu"], "exam_weight": 4, "difficulty": 5}
+  }
+}

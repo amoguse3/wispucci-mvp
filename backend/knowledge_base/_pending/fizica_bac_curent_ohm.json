@@ -1,0 +1,15 @@
+{
+  "title": "Curent continuu — legea lui Ohm și circuite (BAC)",
+  "summary": "Legea lui Ohm pentru porțiune și circuit complet, t.e.m., puterea și căldura Joule.",
+  "formulas": ["I = U/R (porțiune)", "I = ε/(R+r) (circuit complet)", "P = UI = I²R", "Q = I²Rt (Joule)"],
+  "key_facts": ["uman pr26 it10: τ = cmΔT/(I²R) = 10 min; ε = I(R+r) = 15 V.", "t.e.m. ε include căderea internă pe r.", "Căldura Joule încălzește; timpul se află din Q=I²Rt."],
+  "terminology": ["tensiune", "intensitate", "rezistență", "t.e.m.", "rezistență internă", "căldură Joule"],
+  "worked_pattern": "τ = cmΔT/(I²R): timpul de încălzire din bilanțul Q=I²Rt=cmΔT. Cu datele uman pr26 → τ=10 min, ε=15 V.",
+  "common_mistakes": ["Uitarea rezistenței interne r la circuit complet.", "Confuzie putere vs energie."],
+  "exam_notes": "Item 10 la uman (și real). Verificat pe barem fizică pr26 uman.",
+  "_verified": false,
+  "_node_id": "curent_ohm",
+  "_subject": "fizica",
+  "_grade": 12,
+  "_profile": "both"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Bazele moleculare — ADN, cod genetic (BAC real)",
+  "summary": "Replicarea/transcripția (ADN→ARNm), traducerea, codul genetic și proprietățile lui, tipuri de mutații. DOAR profil real.",
+  "formulas": ["complementaritate ADN: A-T, G-C", "transcripție ADN→ARNm: A-U, T-A, G-C, C-G", "codon = 3 nucleotide"],
+  "key_facts": ["Codoni: Phe = UUU/UUC; Lys = AAA/AAG.", "Codul genetic: degenerat, universal, neperecuperabil (neperedășurător).", "Mutații prin substituție de nucleotide schimbă codonul și posibil aminoacidul."],
+  "terminology": ["ADN", "ARNm", "codon", "transcripție", "traducere", "cod genetic", "mutație", "substituție"],
+  "worked_pattern": "Secvență ADN → ARNm prin complementaritate (A-U, T-A, G-C, C-G) → citirea codonilor → aminoacizi. O substituție A→G în ADN schimbă codonul și poate schimba aminoacidul.",
+  "common_mistakes": ["Folosirea T în loc de U la ARNm.", "Complementaritate greșită."],
+  "exam_notes": "Item 12 la real (moleculară). NB: acest conținut NU apare la umanist. Verificat pe baremе bio real es26.",
+  "_verified": false,
+  "_node_id": "molecular_adn",
+  "_subject": "bio",
+  "_grade": 12,
+  "_profile": "real"
+}

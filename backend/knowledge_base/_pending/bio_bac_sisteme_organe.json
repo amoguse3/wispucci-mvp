@@ -1,0 +1,15 @@
+{
+  "title": "Sistemele de organe ale omului (BAC)",
+  "summary": "Structura și funcțiile organelor de simț, sistemul endocrin și nervos, patologii. La ambele profiluri.",
+  "formulas": [],
+  "key_facts": ["Ochi: cornee, pupilă, cristalin, retină. Ureche: externă/medie/organul Corti, trompa Eustachio.", "Hormoni: testosteron (caractere secundare), glucagon (↑glucoză), TSH (→T3/T4), melatonină (epifiză).", "Patologii: gigantism (STH), miopie/hipermetropie (+lentile), sindrom Turner (45,X0).", "Arcul reflex are 5 componente (receptor→cale aferentă→centru→cale eferentă→efector)."],
+  "terminology": ["cristalin", "retină", "organul Corti", "hormon", "glucagon", "arc reflex", "epifiză"],
+  "worked_pattern": "Miopie: imaginea se formează înaintea retinei → corecție cu lentile divergente (concave). Hipermetropie → lentile convergente.",
+  "common_mistakes": ["Confundarea miopiei cu hipermetropia și a lentilelor.", "Confundarea hormonilor și glandelor."],
+  "exam_notes": "Itemi pe sisteme la ambele profiluri. Verificat pe baremе bio sb26/pr26.",
+  "_verified": false,
+  "_node_id": "sisteme_organe_om",
+  "_subject": "bio",
+  "_grade": 12,
+  "_profile": "both"
+}

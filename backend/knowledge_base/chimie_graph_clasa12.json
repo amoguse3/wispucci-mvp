@@ -1,0 +1,18 @@
+{
+  "subject": "chimie",
+  "grade": 12,
+  "authority": "ANCE Moldova — Bacalaureat, Chimie (profil real / umanist)",
+  "notes": "Граф BAC по химии. 180 мин, 100 баллов, 12 итемов. Домены: неорганика, органика, 3 расчётные задачи, идентификация ионов (EM/EIC/EIR). real vs uman: real = ОВР с полным электронным балансом (it3=7p всегда), pH через [H+]/[OH-], задачи на сплавы/эфиры; uman = проще, ОВР готовым уравнением, задачи на газ, органика на уровне гомологов/изомеров. 'profile' = both/real/uman. Логика барема: уравнение реакции = 2 балла (формулы 1 + коэффициенты 1), ошибка расчёта штрафуется ОДИН раз, любой метод принимается. exam_weight из баремов sb26/pr26/es26.",
+  "bkt_defaults": {"p_L0": 0.30, "p_transit": 0.15, "p_slip": 0.10, "p_guess": 0.20, "mastery_threshold": 0.95},
+  "nodes": {
+    "structura_atom_psce": {"title": "Structura atomului, PSCE, tipuri de legături chimice", "profile": "both", "kb_unit": null, "prereqs": [], "exam_weight": 4, "difficulty": 3},
+    "legatura_cristale": {"title": "Legătura chimică, rețele cristaline, caracteristici", "profile": "both", "kb_unit": null, "prereqs": ["structura_atom_psce"], "exam_weight": 4, "difficulty": 3},
+    "ovr_bilant": {"title": "Reacții redox — bilanț electronic complet", "profile": "real", "kb_unit": null, "prereqs": ["structura_atom_psce"], "exam_weight": 5, "difficulty": 4},
+    "echilibru_lechatelier": {"title": "Echilibru chimic, principiul Le Chatelier", "profile": "both", "kb_unit": null, "prereqs": ["legatura_cristale"], "exam_weight": 4, "difficulty": 4},
+    "tipuri_reactii": {"title": "Tipuri de reacții, disociere, identificare ioni EM/EIC/EIR", "profile": "both", "kb_unit": "identificare_ioni", "prereqs": ["legatura_cristale"], "exam_weight": 5, "difficulty": 4},
+    "calcule_stoechiometrie": {"title": "Calcule stoechiometrice — ν→m→ω, gaze, impurități, aliaje", "profile": "both", "kb_unit": "calcule_stoechiometrie", "prereqs": ["tipuri_reactii"], "exam_weight": 5, "difficulty": 5},
+    "ph_solutii": {"title": "pH-ul soluțiilor — [H+]/[OH-]→pH→pOH", "profile": "real", "kb_unit": null, "prereqs": ["calcule_stoechiometrie"], "exam_weight": 5, "difficulty": 5},
+    "organica_izomeri": {"title": "Organică — izomeri, nomenclatură, omologi", "profile": "both", "kb_unit": null, "prereqs": ["structura_atom_psce"], "exam_weight": 4, "difficulty": 4},
+    "organica_reactii": {"title": "Organică — lanțuri de transformări, aldehide/acizi, oglinda de argint", "profile": "both", "kb_unit": null, "prereqs": ["organica_izomeri"], "exam_weight": 5, "difficulty": 5}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Calcule stoechiometrice (BAC)",
+  "summary": "Rezolvarea problemelor cantitative: ν→m→ω, volume de gaze, impurități, aliaje. Punctare pe lanțul de pași.",
+  "formulas": ["ν = m/M", "ν = V/22,4 (gaze la c.n.)", "ω = m_component/m_total × 100%", "m = ν·M"],
+  "key_facts": ["uman sb26 it5: Na2CO3 + 2HCl, m(HCl)=73·0,1=7,3g → ν(HCl)=0,2 → ν(CO2)=0,1 → V=2,24 L.", "uman pr26 it5: MnO2+4HCl → ν(Cl2)=0,1 → V=2,24 L.", "real sb26 it5: alamă 380g, Zn+2HCl, ν(Zn)=2 → m(Zn)=130g → Zn=34,2%, Cu=65,8%.", "O greșeală de calcul se penalizează O SINGURĂ dată, nu se propagă."],
+  "terminology": ["mol", "masă molară", "volum molar", "fracție de masă", "impuritate", "aliaj", "randament"],
+  "worked_pattern": "Na2CO3 + 2HCl → 2NaCl + H2O + CO2. m(HCl)=73g·0,1=7,3g → ν(HCl)=7,3/36,5=0,2 mol → ν(CO2)=0,1 mol → V(CO2)=0,1·22,4=2,24 L.",
+  "common_mistakes": ["Coeficienți greșiți în ecuație (afectează raportul molar).", "Confuzie între masă soluție și masă substanță dizolvată."],
+  "exam_notes": "Itemi 5, 10, 11 (calcule). uman: gaze; real: aliaje/eteri, mai complexe. Ecuația reacției = 2p (formule 1 + coeficienți 1). Verificat pe baremе chimie sb26/pr26/es26.",
+  "_verified": false,
+  "_node_id": "calcule_stoechiometrie",
+  "_subject": "chimie",
+  "_grade": 12,
+  "_profile": "both"
+}

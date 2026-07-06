@@ -1,0 +1,15 @@
+{
+  "title": "Identificarea ionilor EM/EIC/EIR (BAC)",
+  "summary": "Ecuații moleculare (EM), ionice complete (EIC) și ionice reduse (EIR) pentru identificarea ionilor prin reacții caracteristice.",
+  "formulas": ["EM: ecuația moleculară completă", "EIC: toți ionii disociați", "EIR: doar ionii care participă efectiv"],
+  "key_facts": ["Fiecare ecuație (EM, EIC, EIR) se punctează după regula: formule 1p + coeficienți 1p = 2p.", "Ioni frecvenți: Cl- (cu AgNO3 → AgCl alb), SO4^2- (cu BaCl2 → BaSO4 alb), CO3^2- (cu acid → CO2), NH4+ (cu bază → NH3)."],
+  "terminology": ["ecuație moleculară", "ecuație ionică completă", "ecuație ionică redusă", "reacție caracteristică", "precipitat"],
+  "worked_pattern": "Identificarea Cl-: EM: NaCl + AgNO3 → AgCl↓ + NaNO3. EIR: Ag+ + Cl- → AgCl↓ (precipitat alb).",
+  "common_mistakes": ["Scrierea ca disociați a substanțelor insolubile/gazelor în EIC.", "Omiterea stării de agregare (precipitat↓, gaz↑)."],
+  "exam_notes": "Item 12 (11-14p). La ambele profiluri. Verificat pe baremе chimie es26/sb26.",
+  "_verified": false,
+  "_node_id": "identificare_ioni",
+  "_subject": "chimie",
+  "_grade": 12,
+  "_profile": "both"
+}
