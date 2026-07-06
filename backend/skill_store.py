@@ -29,8 +29,9 @@ from student_model import StudentModel
 
 class SkillMastery(Base):
     __tablename__ = "skill_mastery"
-    __table_args__ = (UniqueConstraint("user_id", "subject", "grade", name
-="uq_user_subject_grade"),)
+    __table_args__ = (
+        UniqueConstraint("user_id", "subject", "grade", name="uq_user_subject_grade"),
+    )
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     user_id: Mapped[int] = mapped_column(Integer, index=True, nullable=False)
