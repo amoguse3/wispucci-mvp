@@ -1,0 +1,63 @@
+{
+  "subject": "history",
+  "name": "Istoria românilor și universală (BAC)",
+  "authority": "ANCE Moldova, ciclul liceal, Bacalaureat",
+  "exam_format": "180 min, 100 puncte, 4 subiecte. Sub. I (24p): dosar surse A-B, 5 itemi. Sub. II (20p): o sursă, ~5 itemi. Sub. III (21p): analiză de hartă, 3 itemi. Sub. IV (35p): eseu de o pagină din surse A-C. Aceeași structură real și umanist; itemii umanist au scări de punctaj mai adânci și ajung mai departe în istoria premodernă.",
+  "grading_notes": "Eseul (Sub. IV, 35p) se punctează pe dimensiuni separate: ≥3 argumente corecte științific (10p), ≥2 relații cauză-efect (6p), integrarea critică a surselor (4p), plasare în timp și spațiu (4p), o personalitate istorică (2p), plan logic intro/cuprins/concluzie (7p), limbaj istoric corect (2p). Predă eseul ca o listă de bife, nu ca proză liberă.",
+  "units": {
+    "antichitate_dacia": {
+      "title": "Antichitate — Dacia, romanizarea",
+      "summary": "Cucerirea Daciei de către Traian, colonizarea și romanizarea, factorii și consecințele procesului.",
+      "dates": {"101-102, 105-106": "Războaiele daco-romane", "106": "Dacia devine provincie romană"},
+      "key_facts": ["Romanizarea = asimilarea culturală/lingvistică prin colonizare, administrație, armată.", "Colonizarea cu romani (orășeni, săteni, veterani) a fost un factor central (surse Miron Costin, C. Cantacuzino)."],
+      "terminology": ["romanizare", "colonizare", "provincie romană", "geto-daci"],
+      "common_mistakes": ["Argumentare fără trimitere la surse."],
+      "exam_notes": "Sub. I la profil real pr25 (romanizarea)."
+    },
+    "medieval_tarile_romane": {
+      "title": "Evul Mediu — Țările Române",
+      "summary": "Domniile lui Mircea cel Bătrân (Țara Românească) și Alexandru cel Bun (Moldova): instituții, politică economică, cultură, consolidarea statală.",
+      "dates": {"1386-1418": "Mircea cel Bătrân", "1400-1432": "Alexandru cel Bun"},
+      "key_facts": ["Mircea: cristalizarea Sfatului domnesc, politici vamale preferențiale (Brașov, Lvov), reorganizarea mănăstirilor.", "Alexandru cel Bun: stabilitate, diplomație, rol politic în răsăritul Europei."],
+      "terminology": ["Sfat domnesc", "domnie", "politică vamală", "exarh"],
+      "common_mistakes": ["Confundarea celor doi domnitori și a țărilor."],
+      "exam_notes": "Sub. I la profil umanist pr25."
+    },
+    "roma_antica": {
+      "title": "Roma antică — instituții și personalități",
+      "summary": "Iulius Caesar, triumviratul, formele de guvernare romane, tranziția republică → putere personală.",
+      "dates": {"59 î.H.": "Caesar consul", "58-51 î.H.": "Războiul galic", "45 î.H.": "Sfârșitul războiului civil"},
+      "key_facts": ["Triumviratul = alianță politică informală a trei conducători.", "Caesar a păstrat aparențele republicane deținând putere de monarh absolut."],
+      "terminology": ["triumvirat", "consul", "guvernator", "republică", "monarhie absolută"],
+      "common_mistakes": ["A trata triumviratul ca instituție oficială permanentă."],
+      "exam_notes": "Sub. II la profil umanist pr25."
+    },
+    "romania_moderna": {
+      "title": "România modernă — independență, Carol I",
+      "summary": "Războiul ruso-turc 1877-1878, participarea României, cucerirea independenței, rolul lui Carol I.",
+      "dates": {"1877-1878": "Războiul ruso-turc / de independență", "9 mai 1877": "Proclamarea independenței României"},
+      "key_facts": ["România a trecut Dunărea pentru dobândirea păcii și întărirea drepturilor de națiune liberă (Proclamația lui Carol I).", "Independența a consolidat statul român modern."],
+      "terminology": ["independență", "război de independență", "suveranitate"],
+      "common_mistakes": ["Confundarea independenței (1877-78) cu Marea Unire (1918)."],
+      "exam_notes": "Sub. II la profil real pr25 (Carol I)."
+    },
+    "marile_descoperiri": {
+      "title": "Marile descoperiri geografice",
+      "summary": "Cauzele economice, politice, religioase și de cunoaștere ale marilor descoperiri; progresul navigației (caravela, busola, astrolabul).",
+      "dates": {"sec. XV-XVI": "Epoca marilor descoperiri geografice"},
+      "key_facts": ["Motivații: sete de aur/mirodenii, expansiunea creștinismului, dorința de cunoaștere.", "Progres tehnic: caravela, busola, astrolabul."],
+      "terminology": ["caravelă", "busolă", "astrolab", "monopol comercial", "mirodenii"],
+      "common_mistakes": ["Reducerea cauzelor doar la economie."],
+      "exam_notes": "Sub. IV (eseu) la profil real pr25."
+    },
+    "romania_wwii": {
+      "title": "România în al Doilea Război Mondial",
+      "summary": "Pierderile teritoriale 1940 (Molotov-Ribbentrop, Dictatul de la Viena, Tratatul de la Craiova), campaniile din Est și Vest, 23 august 1944, intrarea în sfera sovietică.",
+      "dates": {"23 august 1939": "Pactul Molotov-Ribbentrop", "1940": "Pierderile teritoriale", "22 iunie 1941": "Intrarea în război (campania din Est)", "23 august 1944": "Întoarcerea armelor, ieșirea din Axă", "12 mai 1945": "Sfârșitul campaniei din Vest"},
+      "key_facts": ["România a pierdut peste o treime din teritoriu și un sfert din populație în 1940.", "Trei campanii: Est (aliat cu Germania), pe teritoriul țării (23-31 aug 1944), Vest (de partea Aliaților).", "23 august 1944 = ieșirea din coaliția nazistă și intrarea în sfera de influență sovietică."],
+      "terminology": ["pact de neagresiune", "dictat", "armistițiu", "sferă de influență", "campanie militară"],
+      "common_mistakes": ["Confundarea celor trei acte teritoriale din 1940.", "A ignora schimbarea de tabără de la 23 august 1944."],
+      "exam_notes": "Sub. IV (eseu) la profil umanist pr25."
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Integrale — primitive și formula Newton-Leibniz",
+  "summary": "Calculul primitivelor funcțiilor uzuale și al integralelor definite prin formula Newton-Leibniz. BLOC EXCLUSIV PROFIL REAL — nu apare la profilul umanist.",
+  "formulas": ["∫ x^n dx = x^(n+1)/(n+1) + C, n≠−1", "∫ (1/x) dx = ln|x| + C", "∫ e^x dx = e^x + C", "∫ 2^x dx = 2^x/ln2 + C", "Newton-Leibniz: ∫[a,b] f(x)dx = F(b) − F(a)"],
+  "key_facts": ["O primitivă F satisface F'(x) = f(x).", "Integrala definită = diferența primitivei la capete (Newton-Leibniz).", "La item cu arie/integrală: 1p pentru limitele de integrare, puncte pentru fiecare primitivă corectă, apoi aplicarea formulei."],
+  "terminology": ["primitivă", "integrală nedefinită", "integrală definită", "Newton-Leibniz", "limite de integrare"],
+  "worked_pattern": "∫[0,ln2] (2^x − 1) dx: primitiva = 2^x/ln2 − x; se aplică Newton-Leibniz între 0 și ln2 (barem real sb25, item 10c).",
+  "common_mistakes": ["Uitarea constantei C la primitiva nedefinită.", "Greșirea primitivei lui 2^x (împărțirea la ln2).", "Inversarea limitelor de integrare."],
+  "exam_notes": "DOAR PROFIL REAL. Item 10, punctaj dens (8p pe limite/derivate/integrale). Nu preda la umanist.",
+  "_verified": false,
+  "_node_id": "integrale",
+  "_subject": "math",
+  "_grade": 12,
+  "_profiles": ["real"]
+}

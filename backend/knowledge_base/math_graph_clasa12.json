@@ -1,0 +1,139 @@
+{
+  "subject": "math",
+  "grade": 12,
+  "authority": "ANCE Moldova — Bacalaureat, ciclul liceal",
+  "notes": "Profile-aware BAC math graph. Each node has 'profiles': which BAC math variant it belongs to — 'real', 'uman', or both. Calculus is real-only. 'gimnaziu_link' points back to the clasa-9 graph node it builds on. exam_weight from 2024-2025 real tests/baremes sampling.",
+  "bkt_defaults": { "p_L0": 0.25, "p_transit": 0.14, "p_slip": 0.12, "p_guess": 0.18, "mastery_threshold": 0.95 },
+  "nodes": {
+    "puteri_radicali_liceu": {
+      "title": "Puteri și radicali (liceu)",
+      "domain": "calcul_algebric",
+      "profiles": ["real", "uman"],
+      "kb_unit": "puteri_radicali_liceu",
+      "prereqs": [],
+      "exam_weight": 4,
+      "difficulty": 3,
+      "gimnaziu_link": "radicali"
+    },
+    "logaritmi": {
+      "title": "Logaritmi — proprietăți, ecuații logaritmice",
+      "domain": "calcul_algebric",
+      "profiles": ["real", "uman"],
+      "kb_unit": "logaritmi",
+      "prereqs": ["puteri_radicali_liceu"],
+      "exam_weight": 5,
+      "difficulty": 4,
+      "gimnaziu_link": "puteri"
+    },
+    "numere_complexe": {
+      "title": "Numere complexe — operații, modul",
+      "domain": "calcul_algebric",
+      "profiles": ["real", "uman"],
+      "kb_unit": "numere_complexe",
+      "prereqs": ["puteri_radicali_liceu"],
+      "exam_weight": 4,
+      "difficulty": 4,
+      "gimnaziu_link": "numere_reale"
+    },
+    "trigonometrie": {
+      "title": "Trigonometrie — identități, ecuații pe interval",
+      "domain": "trigonometrie",
+      "profiles": ["real"],
+      "kb_unit": null,
+      "prereqs": ["puteri_radicali_liceu"],
+      "exam_weight": 4,
+      "difficulty": 5,
+      "gimnaziu_link": null
+    },
+    "inecuatii_liceu": {
+      "title": "Inecuații, curba semnelor, inecuații raționale",
+      "domain": "ecuatii",
+      "profiles": ["real", "uman"],
+      "kb_unit": null,
+      "prereqs": ["logaritmi"],
+      "exam_weight": 4,
+      "difficulty": 4,
+      "gimnaziu_link": "inecuatii"
+    },
+    "determinanti": {
+      "title": "Determinanți (2×2)",
+      "domain": "algebra_liceu",
+      "profiles": ["uman"],
+      "kb_unit": null,
+      "prereqs": ["puteri_radicali_liceu"],
+      "exam_weight": 3,
+      "difficulty": 3,
+      "gimnaziu_link": null
+    },
+    "siruri": {
+      "title": "Șiruri — monotonie, recurență, progresii",
+      "domain": "analiza",
+      "profiles": ["real", "uman"],
+      "kb_unit": null,
+      "prereqs": ["inecuatii_liceu"],
+      "exam_weight": 4,
+      "difficulty": 4,
+      "gimnaziu_link": null
+    },
+    "limite": {
+      "title": "Limite de funcții (nedeterminări)",
+      "domain": "analiza",
+      "profiles": ["real"],
+      "kb_unit": null,
+      "prereqs": ["siruri", "trigonometrie"],
+      "exam_weight": 5,
+      "difficulty": 5,
+      "gimnaziu_link": null
+    },
+    "derivate": {
+      "title": "Derivate — reguli, tangentă, aplicații",
+      "domain": "analiza",
+      "profiles": ["real"],
+      "kb_unit": null,
+      "prereqs": ["limite"],
+      "exam_weight": 5,
+      "difficulty": 5,
+      "gimnaziu_link": null
+    },
+    "integrale": {
+      "title": "Integrale — primitive, Newton-Leibniz",
+      "domain": "analiza",
+      "profiles": ["real"],
+      "kb_unit": null,
+      "prereqs": ["derivate"],
+      "exam_weight": 5,
+      "difficulty": 5,
+      "gimnaziu_link": null
+    },
+    "geometrie_spatiala_liceu": {
+      "title": "Geometrie în spațiu — cilindru, con, piramidă, prismă",
+      "domain": "geometrie_spatiala",
+      "profiles": ["real", "uman"],
+      "kb_unit": null,
+      "prereqs": ["puteri_radicali_liceu"],
+      "exam_weight": 5,
+      "difficulty": 5,
+      "gimnaziu_link": "corpuri_geometrice"
+    },
+    "combinatorica": {
+      "title": "Combinatorică și probabilități",
+      "domain": "organizare_date",
+      "profiles": ["real", "uman"],
+      "kb_unit": null,
+      "prereqs": ["puteri_radicali_liceu"],
+      "exam_weight": 3,
+      "difficulty": 4,
+      "gimnaziu_link": null
+    },
+    "statistica": {
+      "title": "Statistică — medie, mediană, serie ordonată",
+      "domain": "organizare_date",
+      "profiles": ["uman"],
+      "kb_unit": null,
+      "prereqs": ["combinatorica"],
+      "exam_weight": 3,
+      "difficulty": 3,
+      "gimnaziu_link": "organizare_date"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Statistică — medie, mediană, serie ordonată",
+  "summary": "Calculul mediei aritmetice și al medianei unei serii statistice, ordonarea seriei. Accent la PROFILUL UMANIST (înlocuiește parțial blocul de analiză matematică al profilului real).",
+  "formulas": ["media = (Σ xᵢ)/n", "mediana = valoarea din mijloc a seriei ordonate (sau media celor două din mijloc dacă n este par)", "media ponderată = Σ(xᵢ·fᵢ)/Σfᵢ"],
+  "key_facts": ["Pentru mediană, seria TREBUIE ordonată crescător mai întâi.", "Dacă n este par, mediana = media celor două valori centrale.", "Barem uman ss25 item 14: determinarea valorii lipsă din medie, apoi ordonare și mediană."],
+  "terminology": ["serie statistică", "medie aritmetică", "mediană", "frecvență", "serie ordonată"],
+  "worked_pattern": "Media a 8 note = valoare dată → afli nota lipsă; ordonezi seria; mediana = media valorilor 4-a și 5-a (barem uman ss25, item 14: răspuns 2; 4,5).",
+  "common_mistakes": ["Calcularea medianei fără ordonarea seriei.", "Confundarea medianei cu media."],
+  "exam_notes": "Accent profil UMANIST (item 14). La real apare mai rar. 8 puncte.",
+  "_verified": false,
+  "_node_id": "statistica",
+  "_subject": "math",
+  "_grade": 12,
+  "_profiles": ["uman"]
+}

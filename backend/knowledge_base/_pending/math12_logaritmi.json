@@ -1,0 +1,14 @@
+{
+  "title": "Logaritmi — proprietăți și ecuații logaritmice",
+  "summary": "Definiția logaritmului, proprietățile (produs, cât, putere, schimbarea bazei), rezolvarea ecuațiilor logaritmice cu condiții de existență. Prezent la ambele profiluri (real și uman).",
+  "formulas": ["log_a(xy) = log_a x + log_a y", "log_a(x/y) = log_a x − log_a y", "log_a(x^n) = n·log_a x", "log_a x = log_b x / log_b a (schimbarea bazei)", "a^(log_a x) = x", "log_a a = 1, log_a 1 = 0"],
+  "key_facts": ["Condiția de existență: argumentul > 0 și baza > 0, ≠ 1.", "log4 36 = 6 prin proprietăți (barem uman 2025).", "Ecuațiile logaritmice se reduc la aceeași bază, apoi se egalează argumentele, cu verificarea condițiilor."],
+  "terminology": ["logaritm", "bază", "argument", "condiție de existență", "schimbarea bazei"],
+  "worked_pattern": "log3 27 = log3 3³ = 3 (barem uman ss25, item 1). Pentru ecuații: adu la aceeași bază, egalează argumentele, verifică x>0.",
+  "common_mistakes": ["Ignorarea condiției de existență (argument > 0).", "Confundarea log(x+y) cu log x + log y (fals)."],
+  "exam_notes": "Item de deschidere la ambele profiluri (item 1 uman, frecvent real). 5 puncte.",
+  "_verified": false,
+  "_node_id": "logaritmi",
+  "_subject": "math",
+  "_grade": 12
+}
